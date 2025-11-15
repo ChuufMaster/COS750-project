@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.4)  15 NOV 2025 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.4)  15 NOV 2025 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -963,24 +963,24 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 347--351
+Underfull \hbox (badness 10000) in paragraph at lines 347--352
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--351
+Underfull \hbox (badness 10000) in paragraph at lines 347--352
 
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-373.
+374.
 (E:\MiKTex\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 381.
+Package pdftex.def Info: up_logo.png  used on input line 382.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -993,7 +993,7 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 431.
+Package pdftex.def Info: up_logo.png  used on input line 432.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1006,7 +1006,7 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 432.
+Package pdftex.def Info: up_logo.png  used on input line 433.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1017,56 +1017,17 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 
 [10]
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 4
-44.
+45.
  (E:\MiKTex\tex/latex/lm\omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 444.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 448.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 448.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 448.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 448.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 448.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 448.
-
-
-Underfull \hbox (badness 3323) in paragraph at lines 503--503
-[]|\OT1/lmr/bx/n/12 Trigger (af-ter these micro-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 503--503
-[]|\OT1/lmr/m/n/12 \Why pat-terns?", FM in-tent,
- []
-
-
-Underfull \hbox (badness 1147) in paragraph at lines 503--503
-[]|\OT1/lmr/m/n/12 Role cues in code; life-cy-cle re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 503--503
-[]|\OT1/lmr/m/n/12 Add pro-duc-t/cre-ator; FM vs
- []
-
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 445.
 
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 505.
+Package pdftex.def Info: up_logo.png  used on input line 449.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1076,7 +1037,47 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 451.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 451.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 451.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 451.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leq' on input line 451.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 451.
+
+
+Underfull \hbox (badness 3323) in paragraph at lines 506--506
+[]|\OT1/lmr/bx/n/12 Trigger (af-ter these micro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+[]|\OT1/lmr/m/n/12 \Why pat-terns?", FM in-tent,
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 506--506
+[]|\OT1/lmr/m/n/12 Role cues in code; life-cy-cle re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--506
+[]|\OT1/lmr/m/n/12 Add pro-duc-t/cre-ator; FM vs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--533
 []|\OT1/lmr/m/n/12 Code-Read clas-sify (role/non-role + rea-son), trace
  []
 
@@ -1084,7 +1085,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 530--530
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 540.
+Package pdftex.def Info: up_logo.png  used on input line 543.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1094,7 +1095,7 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [12]
-Overfull \hbox (27.05098pt too wide) in paragraph at lines 544--546
+Overfull \hbox (27.05098pt too wide) in paragraph at lines 547--549
 []\OT1/lmr/bx/n/12 MQ5 (LO21) -- Refac-tor (5 pts). \OT1/lmr/m/n/12 Re-place cl
 ient \OT1/lmtt/m/n/12 new \OT1/lmr/m/n/12 + \OT1/lmtt/m/n/12 switch \OT1/lmr/m/
 n/12 with calls to \OT1/lmtt/m/n/12 Creator::make()\OT1/lmr/m/n/12 .
@@ -1104,7 +1105,7 @@ n/12 with calls to \OT1/lmtt/m/n/12 Creator::make()\OT1/lmr/m/n/12 .
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 574.
+Package pdftex.def Info: up_logo.png  used on input line 572.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1114,23 +1115,6 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [13]
-LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
-630.
-LaTeX Font Info:    No file OMSlmtt.fd. on input line 630.
-
-
-LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 630.
-
-
-Overfull \hbox (113.74014pt too wide) in paragraph at lines 632--633
-[]\OT1/lmr/m/n/12 Implement cre-ators. \OT1/lmtt/m/n/12 CSVExporter::make() \OT
-1/lmr/m/n/12 and \OT1/lmtt/m/n/12 MarkdownExporter::make() \OT1/lmr/m/n/12 re-t
-urn \OT1/lmtt/m/n/12 std::unique[]ptr<Product>
- []
-
-
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
@@ -1144,21 +1128,32 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [14]
-Overfull \hbox (12.29651pt too wide) in alignment at lines 668--668
-[][][] 
+LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
+633.
+LaTeX Font Info:    No file OMSlmtt.fd. on input line 633.
+
+
+LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 633.
+
+
+Overfull \hbox (113.74014pt too wide) in paragraph at lines 635--636
+[]\OT1/lmr/m/n/12 Implement cre-ators. \OT1/lmtt/m/n/12 CSVExporter::make() \OT
+1/lmr/m/n/12 and \OT1/lmtt/m/n/12 MarkdownExporter::make() \OT1/lmr/m/n/12 re-t
+urn \OT1/lmtt/m/n/12 std::unique[]ptr<Product>
  []
 
 
-Overfull \hbox (19.53279pt too wide) in paragraph at lines 684--686
-\OT1/lmr/m/n/12 "Product lacks a vir-tual de-struc-tor. Delet-ing via base is u
-n-de-fined; mark \OT1/lmtt/m/n/12 virtual ~Product()\OT1/lmr/m/n/12 ."
+Overfull \hbox (12.29651pt too wide) in alignment at lines 671--671
+[][][] 
  []
 
 
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 688.
+Package pdftex.def Info: up_logo.png  used on input line 687.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1168,40 +1163,46 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 695--703
+Overfull \hbox (19.53279pt too wide) in paragraph at lines 687--689
+\OT1/lmr/m/n/12 "Product lacks a vir-tual de-struc-tor. Delet-ing via base is u
+n-de-fined; mark \OT1/lmtt/m/n/12 virtual ~Product()\OT1/lmr/m/n/12 ."
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--706
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--703
+Underfull \hbox (badness 10000) in paragraph at lines 698--706
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--703
+Underfull \hbox (badness 10000) in paragraph at lines 698--706
 
  []
 
 
-main.tex:711: LaTeX Error: There's no line here to end.
+main.tex:714: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.711 \textbf
+l.714 \textbf
              {For Coding Micro-Lessons:}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 711--713
+Underfull \hbox (badness 10000) in paragraph at lines 714--716
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--718
+Underfull \hbox (badness 10000) in paragraph at lines 717--721
 
  []
 
@@ -1209,7 +1210,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 714--718
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 720.
+Package pdftex.def Info: up_logo.png  used on input line 723.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1221,40 +1222,40 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 725.
+(hyperref)                removing `math shift' on input line 728.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 725.
+(hyperref)                removing `\leq' on input line 728.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 725.
+(hyperref)                removing `math shift' on input line 728.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 774.
+(hyperref)                removing `math shift' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 774.
+(hyperref)                removing `\leq' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 774.
+(hyperref)                removing `math shift' on input line 777.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--811
+Underfull \hbox (badness 10000) in paragraph at lines 814--814
 []|\OT1/lmr/m/n/12 Fill in \OT1/lmtt/m/n/12 CSVWriter \OT1/lmr/m/n/12 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--811
+Underfull \hbox (badness 10000) in paragraph at lines 814--814
 \OT1/lmtt/m/n/12 MarkdownWriter \OT1/lmr/m/n/12 plus ex-porters;
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 811--811
+Underfull \hbox (badness 1466) in paragraph at lines 814--814
 \OT1/lmr/m/n/12 ation into \OT1/lmtt/m/n/12 Creator::make()\OT1/lmr/m/n/12 ; pa
 ss
  []
@@ -1268,38 +1269,38 @@ ss
 
 [18]
 
-main.tex:822: LaTeX Error: Unicode character ≈ (U+2248)
+main.tex:825: LaTeX Error: Unicode character ≈ (U+2248)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.822 ...f{Theory block (≈ 90 min instruction )}
+l.825 ...f{Theory block (≈ 90 min instruction )}
                                                   \\
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-main.tex:827: LaTeX Error: Unicode character ≈ (U+2248)
+main.tex:830: LaTeX Error: Unicode character ≈ (U+2248)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.827 ...f{Coding block (≈ 95 min instruction )}
+l.830 ...f{Coding block (≈ 95 min instruction )}
                                                   \\
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 822--831
+Underfull \hbox (badness 10000) in paragraph at lines 825--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 822--831
+Underfull \hbox (badness 10000) in paragraph at lines 825--834
 
  []
 
@@ -1307,7 +1308,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 822--831
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 876.
+Package pdftex.def Info: up_logo.png  used on input line 879.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1323,7 +1324,7 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 877.
+Package pdftex.def Info: up_logo.png  used on input line 880.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1333,17 +1334,17 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 880--883
+Underfull \hbox (badness 10000) in paragraph at lines 883--886
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 885--890
+Underfull \hbox (badness 10000) in paragraph at lines 888--893
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 885--890
+Underfull \hbox (badness 10000) in paragraph at lines 888--893
 
  []
 
@@ -1351,7 +1352,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 885--890
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 891.
+Package pdftex.def Info: up_logo.png  used on input line 894.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1361,21 +1362,21 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [21]
-Overfull \hbox (57.44292pt too wide) in alignment at lines 913--919
+Overfull \hbox (57.44292pt too wide) in alignment at lines 916--922
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (57.44292pt too wide) in alignment at lines 919--925
+Overfull \hbox (57.44292pt too wide) in alignment at lines 922--928
  [] [] [] [] [] [] [] 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 933.
+(Font)              <10.95> on input line 936.
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 958.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 961.
 
-Overfull \hbox (57.44292pt too wide) in alignment at lines 925--1012
+Overfull \hbox (57.44292pt too wide) in alignment at lines 928--1015
  [] [] [] [] [] [] [] 
  []
 
@@ -1385,12 +1386,12 @@ Overfull \hbox (57.44292pt too wide) in alignment at lines 925--1012
 ] [23]
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1027
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1030
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1027
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1030
 
  []
 
@@ -1398,7 +1399,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1022--1027
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 1028.
+Package pdftex.def Info: up_logo.png  used on input line 1031.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1414,7 +1415,7 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 1070.
+Package pdftex.def Info: up_logo.png  used on input line 1073.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1424,7 +1425,7 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1082--1085
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1088
 
  []
 
@@ -1432,7 +1433,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1082--1085
 
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 1086.
+Package pdftex.def Info: up_logo.png  used on input line 1108.
 (pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
 Package fancyhdr Warning: \headheight is too small (16.0pt): 
@@ -1441,7 +1442,20 @@ Package fancyhdr Warning: \headheight is too small (16.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
-[27] (main.aux)
+[27]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 1122.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[28] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -1454,9 +1468,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 016CB4B932E26098DC02D3EAB28B284A;9341.
  ) 
 Here is how much of TeX's memory you used:
- 19877 strings out of 468130
- 367470 string characters out of 5447468
- 1045358 words of memory out of 5000000
+ 19879 strings out of 468130
+ 367488 string characters out of 5447468
+ 1046358 words of memory out of 5000000
  48047 multiletter control sequences out of 15000+600000
  681883 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1467,9 +1481,9 @@ s/type1/public/lm/lmr10.pfb><E:/MiKTex/fonts/type1/public/lm/lmr12.pfb><E:/MiKT
 ex/fonts/type1/public/lm/lmri12.pfb><E:/MiKTex/fonts/type1/public/lm/lmsy10.pfb
 ><E:/MiKTex/fonts/type1/public/lm/lmtt10.pfb><E:/MiKTex/fonts/type1/public/lm/l
 mtt12.pfb>
-Output written on main.pdf (28 pages, 534342 bytes).
+Output written on main.pdf (29 pages, 539401 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 167 named destinations out of 1000 (max. 500000)
+ 494 PDF objects out of 1000 (max. 8388607)
+ 169 named destinations out of 1000 (max. 500000)
  283 words of extra memory for PDF output out of 10000 (max. 10000000)
 

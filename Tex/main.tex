@@ -176,7 +176,7 @@ Our project designs and prototypes an app-based learning experience that helps s
 \begin{itemize}
 \item \textbf{Where we are going:} Students can recognise when the Factory Method should be used, know how to implement it in C++ and understand and create its UML class diagram.
 \item \textbf{How we get there:} VARK-friendly lessons scripted by Gagn\'e's events, worked examples, and hands-on code practice that targets second-year Bloom levels.
-\item \textbf{How we know we arrived:} formative assessment during the learning stage, diagnostic assessment throughout the whole program to adapt to the current student base and to note lesson weakness for future improvement and finally summative assessment using BLOOM levels to ensure learning outcomes have been sufficiently met.
+\item \textbf{How we know we arrived:} formative assessment during the learning stage, diagnostic assessment throughout the whole program to adapt to the current student base and to note lesson weakness for future improvement and finally summative assessment using Bloom levels to ensure learning outcomes have been sufficiently met.
 \end{itemize}
 
 Note: Should the prototype be implemented it would revise instruction in short review cycles based on diagnostic assessment data, since this is just a prototype it will lack the data to do this.
@@ -203,7 +203,7 @@ By the end of this unit the instruction will have :\\
 \item Shown common pitfalls \& misconceptions in code (e.g., "wrapper around new", client constructing concrete types, misuse of switch).
 \item Demonstrated correct C++ realisation of FM in small examples (including lifecycle concerns that matter in FM implementations).
 \item Situated FM among related patterns at recognition level (esp. Abstract Factory and Strategy) so learners know when FM is appropriate.
-\item Provided guided C++ practice opportunities that culminate in a small refactor of na\"ive code to FM and a brief transfer d iscussion.
+\item Provided guided C++ practice opportunities that culminate in a small refactor of na\"ive code to FM and a brief transfer discussion.
 \end{enumerate}
 
 \section{Stage Two: Instructional Analysis}
@@ -344,10 +344,11 @@ Students will confidentially answer an up to date VARK survey to help them quant
 \newpage
 
 \section{Stage Four: Learning Outcomes (Performance Objectives)}
-Below are the four main learning outcomes and the sub-outcomes that define them.\\
-Note: All sub outcomes are paired with the BLOOM level at which they will be summatively assessed and all code is in C++ and all diagrams are UML Class diagrams.
+Below are the four main learning outcomes and the sub-outcomes that define them.
 \\ \\
-After this unit the student will be able to:\\
+Note: All sub outcomes are paired with the Bloom level at which they will be summatively assessed and all code is in C++ and all diagrams are UML Class diagrams.
+\\ \\
+After this unit the student will be able to:
 
 
 \subsection{Know and Understand the aspects of the Factory Method Pattern}
@@ -444,6 +445,8 @@ Purpose. After every 3 micro-learning tasks, the app delivers a micro-quiz (MQ) 
 \item Analytics logged: \{user\_or\_anon\_id, mq\_id, item\_id, lo\_ids[], pass\_fail, attempts, time\_ms, error\_class, remedial\_clicked\}.
 \item Error classes (examples): client-still-constructs, wrapper-around-new, type switch present, wrong factory return type, missing virtual dtor, mislabelled UML role, AF vs FM confusion, Simple-Factory confusion.
 \end{itemize}
+
+\newpage
 
 \subsection{Micro-quiz blueprint ($\leq$ 6 MQs)}
 \noindent\textbf{Scoring and timing:} All micro-questions have a maximum of obtainable 5 marks. Each MQ is designed to take roughly 8 to 10 minutes to complete.
@@ -825,7 +828,7 @@ T1 $\rightarrow$ T2 $\rightarrow$ T3 $\rightarrow$ MQ1 $\rightarrow$ T4 $\righta
 MQ1 and MQ2 are formative and counted in Stage five time, not here.
 \medskip \\
 \noindent \textbf{Coding block (≈ 95 min instruction )}\\
-C1 $\rightarrow$ C2 $\rightarrow$ C3 $\rightarrow$ MQ3 $\rightarrow$ C4 $\rightarrow$ MQ5 $\rightarrow$ C5 (+ recognition triage) $\rightarrow$ MQ6 $\rightarrow$ C6.\\
+C1 $\rightarrow$ C2 $\rightarrow$ MQ3 $\rightarrow$ C3 $\rightarrow$ MQ4 $\rightarrow$ C4 $\rightarrow$ MQ5 $\rightarrow$ C5 (+ recognition triage) $\rightarrow$ MQ6 $\rightarrow$ C6.\\
 \\
 The practical defined in Stage five is separate and optional during the formative window.
 
@@ -877,7 +880,7 @@ Teacher/admin pack & Mini slide deck; run-sheet; traceability CSV; onboarding se
 \newpage
 
 \section{Stage Eight: Diagnostic Assessment}
-During all formative and summative assessment student performance will be stored per question; learning outcome and BLOOM level. This data is to be used by the lecturing team to adjust the prototype application and lesson plan as needed for this and future cohorts.
+During all formative and summative assessment student performance will be stored per question; learning outcome and Bloom level. This data is to be used by the lecturing team to adjust the prototype application and lesson plan as needed for this and future cohorts.
 \\ \\
 A survey should also be sent to the students directly to be answered anonymously, this survey would allow the students to provide input on how effective they feel the prototype had been on teaching them the specified learning outcomes and whether they preferred it over classical teaching approaches.
 
@@ -894,7 +897,7 @@ Summatively assess all students confirming whether or not they were able meet th
 \clearpage
 \begin{landscape}
 \pagestyle{landscapenohdr}
-\subsection*{Summative Question-Type Library (aligned LOs \& BLOOM)}
+\subsection*{Summative Question-Type Library (aligned LOs \& Bloom)}
 
 \begingroup
 \setlength{\LTcapwidth}{\linewidth}   % caption width = table width (if you add one)
@@ -1019,7 +1022,7 @@ Auto: unit tests pass. \\
 
 
 \section*{References}
-University of Pretoria 2025 Yearbook
+University of Pretoria 2025 Yearbook - Programme: BSc in Computer Science; available at: \\ https://www.up.ac.za/yearbooks/2025/EBIT-faculty/UD-programmes/view/12134002 
 \\ \\
 Dick and Carey Instructional Model - Educational Technology; available at: \\ https://educationaltechnology.net/dick-and-carey-instructional-model/
 \\ \\
@@ -1082,5 +1085,38 @@ COS214 Tackling Design Patterns - Linda Marshall and Vreda Pieterse; available a
 In short: No. One could view an ID document as the SE document counterpart in teaching.
 \\ \\
 They're distinct yet interlocking in this context. ID defines outcomes, lesson flow, assessment, and analytics; SE builds the product that delivers them. In this assignment they are separate documents, tied by a traceability chain (Instructional Goals $\leftrightarrow$ Learning Outcomes $\leftrightarrow$ Micro-lessons $\leftrightarrow$ Micro-quizzes/practicals $\leftrightarrow$ Analytics \& error classes).
+
+\section*{Appendix B: Generative AI Acknowledgement}
+
+\textbf{Tool(s) used.} We used ChatGPT (GPT-5 Thinking) as a writing assistant for 
+\emph{formatting guidance, LaTeX layout help, and style polish} in this document, and to write most of this very section as it could easily qoute example previous prompts. No model fully generated the
+pedagogical substance, lesson plans, learning outcomes or assessment items.
+All major technical and instructional decisions are our own.
+\medskip
+\textbf{How it was used:} 
+\begin{itemize}
+  \item Refactoring LaTeX headers/footers and page styles (e.g., moving the page number to the footer, removing headers on landscape pages, and fixing table widths and column alignment).
+  \item Converting Google-Doc style tables to \texttt{tabularx}/\texttt{longtable} with \texttt{booktabs} rules, and improving readability (column sizing, row spacing, captions).
+  \item Was asked to provide examples of micro lessons and questions, and the summative question library that could be used in the ID document.
+  \item Wording polish for clarity and consistency (capitalisation of BLOOM/Gagn\'e, hyphen/en-dash ranges, etc.).
+  \item Guidance on creating concrete formative assessment tasks.
+\end{itemize}
+
+\textbf{Representative prompt snippets (verbatim excerpts):}
+\begin{itemize}
+  \item “make the header as I want it… if it's really impossible … simply have the line go under the logo…”
+  \item “Make the latex look more like the google doc version.”
+  \item “extract the marks column and simply say all micro questions have a maximum mark of 5…”
+  \item “is it possible to remove the number of the section just from the header”
+  \item “Carefully review and consider every part of the document we have right now as I believe its in its final state. Do not rewrite the document but point out any errors.
+Further you must also critically compare what I have done in this ID document to what was expected of us in the assignment spec. Us doing more than what was asked is fine but it is unacceptable if we did something wrong or left something out.
+I put the full everything of what we have right now in the latex and I attatch the ID doc and the assignment specs as PDFs.”
+\end{itemize}
+
+\textbf{Authorship and responsibility.} We reviewed, edited, and verified all AI-assisted
+outputs. Any errors or omissions remain our responsibility. The final content, including
+learning outcomes, mappings, assessments, lesson designs, time budgets, and analytics/error
+classes, was authored and validated by the authors of this document.
+
 
 \end{document}
