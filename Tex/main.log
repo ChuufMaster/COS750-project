@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.4)  6 NOV 2025 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.4)  15 NOV 2025 15:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (E:\MiKTex\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(E:\MiKTex\tex/latex/base\size10.clo
-File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(E:\MiKTex\tex/latex/base\size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
 \c@section=\count276
@@ -23,33 +23,79 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-) (E:\MiKTex\tex/latex/amsmath\amsmath.sty
+)
+(E:\MiKTex\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(E:\MiKTex\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(E:\MiKTex\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (E:\MiKTex\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks18
+ (E:\MiKTex\tex/latex/geometry\geometry.cfg))
+(E:\MiKTex\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip51
+\f@nch@offset@elh=\skip52
+\f@nch@offset@erh=\skip53
+\f@nch@offset@olh=\skip54
+\f@nch@offset@orh=\skip55
+\f@nch@offset@elf=\skip56
+\f@nch@offset@erf=\skip57
+\f@nch@offset@olf=\skip58
+\f@nch@offset@orf=\skip59
+\f@nch@height=\skip60
+\f@nch@footalignment=\skip61
+\f@nch@widthL=\skip62
+\f@nch@widthC=\skip63
+\f@nch@widthR=\skip64
+\@temptokenb=\toks19
+)
+(E:\MiKTex\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/06/16 v2.17y AMS math features
-\@mathmargin=\skip51
+\@mathmargin=\skip65
+
 For additional information on amsmath, use the `?' option.
 (E:\MiKTex\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
 
 (E:\MiKTex\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen149
+\@emptytoks=\toks20
+\ex@=\dimen157
 ))
 (E:\MiKTex\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen150
+\pmbraise@=\dimen158
 )
 (E:\MiKTex\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count283
+\inf@bad=\count286
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count284
-\leftroot@=\count285
+\uproot@=\count287
+\leftroot@=\count288
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count286
-\DOTSCASE@=\count287
+\classnum@=\count289
+\DOTSCASE@=\count290
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -59,34 +105,34 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen151
+\big@size=\dimen159
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count288
+\macc@depth=\count291
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count289
+\c@MaxMatrixCols=\count292
 \dotsspace@=\muskip17
-\c@parentequation=\count290
-\dspbrk@lvl=\count291
-\tag@help=\toks18
-\row@=\count292
-\column@=\count293
-\maxfields@=\count294
-\andhelp@=\toks19
-\eqnshift@=\dimen152
-\alignsep@=\dimen153
-\tagshift@=\dimen154
-\tagwidth@=\dimen155
-\totwidth@=\dimen156
-\lineht@=\dimen157
-\@envbody=\toks20
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks21
+\c@parentequation=\count293
+\dspbrk@lvl=\count294
+\tag@help=\toks21
+\row@=\count295
+\column@=\count296
+\maxfields@=\count297
+\andhelp@=\toks22
+\eqnshift@=\dimen160
+\alignsep@=\dimen161
+\tagshift@=\dimen162
+\tagwidth@=\dimen163
+\totwidth@=\dimen164
+\lineht@=\dimen165
+\@envbody=\toks23
+\multlinegap=\skip66
+\multlinetaggap=\skip67
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2949.
 LaTeX Info: Redefining \] on input line 2950.
 )
@@ -104,10 +150,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (E:\MiKTex\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(E:\MiKTex\tex/latex/graphics\keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks22
-)
 (E:\MiKTex\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 
@@ -122,30 +164,30 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 (E:\MiKTex\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen158
-\Gin@req@width=\dimen159
+\Gin@req@height=\dimen166
+\Gin@req@width=\dimen167
 )
 (E:\MiKTex\tex/latex/listings\listings.sty
-\lst@mode=\count295
+\lst@mode=\count298
 \lst@gtempboxa=\box55
-\lst@token=\toks23
-\lst@length=\count296
-\lst@currlwidth=\dimen160
-\lst@column=\count297
-\lst@pos=\count298
-\lst@lostspace=\dimen161
-\lst@width=\dimen162
-\lst@newlines=\count299
-\lst@lineno=\count300
-\lst@maxwidth=\dimen163
+\lst@token=\toks25
+\lst@length=\count299
+\lst@currlwidth=\dimen168
+\lst@column=\count300
+\lst@pos=\count301
+\lst@lostspace=\dimen169
+\lst@width=\dimen170
+\lst@newlines=\count302
+\lst@lineno=\count303
+\lst@maxwidth=\dimen171
 
 (E:\MiKTex\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 (E:\MiKTex\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count301
-\lst@skipnumbers=\count302
+\c@lstnumber=\count304
+\lst@skipnumbers=\count305
 \lst@framebox=\box56
 )
 (E:\MiKTex\tex/latex/listings\listings.cfg
@@ -204,13 +246,13 @@ Package: expl3 2025-09-02 L3 programming layer (loader)
 
 (E:\MiKTex\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count303
+\l__color_backend_stack_int=\count306
 ))
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
 (E:\MiKTex\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count304
+\etb@tempcnta=\count307
 )
 (E:\MiKTex\tex/latex/zref\zref-abspage.sty
 Package: zref-abspage 2025-06-08 v2.36 Module abspage for zref (HO)
@@ -227,10 +269,6 @@ Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 (E:\MiKTex\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(E:\MiKTex\tex/generic/iftex\iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
@@ -245,7 +283,7 @@ Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count305
+\c@abspage=\count308
 Package zref Info: New property: abspage on input line 67.
 )
 (E:\MiKTex\tex/latex/needspace\needspace.sty
@@ -260,47 +298,47 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 
 (E:\MiKTex\tex/latex/graphics\mathcolor.ltx))
-\mdf@templength=\skip54
-\c@mdf@globalstyle@cnt=\count306
-\mdf@skipabove@length=\skip55
-\mdf@skipbelow@length=\skip56
-\mdf@leftmargin@length=\skip57
-\mdf@rightmargin@length=\skip58
-\mdf@innerleftmargin@length=\skip59
-\mdf@innerrightmargin@length=\skip60
-\mdf@innertopmargin@length=\skip61
-\mdf@innerbottommargin@length=\skip62
-\mdf@splittopskip@length=\skip63
-\mdf@splitbottomskip@length=\skip64
-\mdf@outermargin@length=\skip65
-\mdf@innermargin@length=\skip66
-\mdf@linewidth@length=\skip67
-\mdf@innerlinewidth@length=\skip68
-\mdf@middlelinewidth@length=\skip69
-\mdf@outerlinewidth@length=\skip70
-\mdf@roundcorner@length=\skip71
-\mdf@footenotedistance@length=\skip72
-\mdf@userdefinedwidth@length=\skip73
-\mdf@needspace@length=\skip74
-\mdf@frametitleaboveskip@length=\skip75
-\mdf@frametitlebelowskip@length=\skip76
-\mdf@frametitlerulewidth@length=\skip77
-\mdf@frametitleleftmargin@length=\skip78
-\mdf@frametitlerightmargin@length=\skip79
-\mdf@shadowsize@length=\skip80
-\mdf@extratopheight@length=\skip81
-\mdf@subtitleabovelinewidth@length=\skip82
-\mdf@subtitlebelowlinewidth@length=\skip83
-\mdf@subtitleaboveskip@length=\skip84
-\mdf@subtitlebelowskip@length=\skip85
-\mdf@subtitleinneraboveskip@length=\skip86
-\mdf@subtitleinnerbelowskip@length=\skip87
-\mdf@subsubtitleabovelinewidth@length=\skip88
-\mdf@subsubtitlebelowlinewidth@length=\skip89
-\mdf@subsubtitleaboveskip@length=\skip90
-\mdf@subsubtitlebelowskip@length=\skip91
-\mdf@subsubtitleinneraboveskip@length=\skip92
-\mdf@subsubtitleinnerbelowskip@length=\skip93
+\mdf@templength=\skip68
+\c@mdf@globalstyle@cnt=\count309
+\mdf@skipabove@length=\skip69
+\mdf@skipbelow@length=\skip70
+\mdf@leftmargin@length=\skip71
+\mdf@rightmargin@length=\skip72
+\mdf@innerleftmargin@length=\skip73
+\mdf@innerrightmargin@length=\skip74
+\mdf@innertopmargin@length=\skip75
+\mdf@innerbottommargin@length=\skip76
+\mdf@splittopskip@length=\skip77
+\mdf@splitbottomskip@length=\skip78
+\mdf@outermargin@length=\skip79
+\mdf@innermargin@length=\skip80
+\mdf@linewidth@length=\skip81
+\mdf@innerlinewidth@length=\skip82
+\mdf@middlelinewidth@length=\skip83
+\mdf@outerlinewidth@length=\skip84
+\mdf@roundcorner@length=\skip85
+\mdf@footenotedistance@length=\skip86
+\mdf@userdefinedwidth@length=\skip87
+\mdf@needspace@length=\skip88
+\mdf@frametitleaboveskip@length=\skip89
+\mdf@frametitlebelowskip@length=\skip90
+\mdf@frametitlerulewidth@length=\skip91
+\mdf@frametitleleftmargin@length=\skip92
+\mdf@frametitlerightmargin@length=\skip93
+\mdf@shadowsize@length=\skip94
+\mdf@extratopheight@length=\skip95
+\mdf@subtitleabovelinewidth@length=\skip96
+\mdf@subtitlebelowlinewidth@length=\skip97
+\mdf@subtitleaboveskip@length=\skip98
+\mdf@subtitlebelowskip@length=\skip99
+\mdf@subtitleinneraboveskip@length=\skip100
+\mdf@subtitleinnerbelowskip@length=\skip101
+\mdf@subsubtitleabovelinewidth@length=\skip102
+\mdf@subsubtitlebelowlinewidth@length=\skip103
+\mdf@subsubtitleaboveskip@length=\skip104
+\mdf@subsubtitlebelowskip@length=\skip105
+\mdf@subsubtitleinneraboveskip@length=\skip106
+\mdf@subsubtitleinnerbelowskip@length=\skip107
 
 (E:\MiKTex\tex/latex/mdframed\md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
@@ -310,91 +348,91 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@splitbox@one=\box59
 \mdf@splitbox@two=\box60
 \mdf@splitbox@save=\box61
-\mdfsplitboxwidth=\skip94
-\mdfsplitboxtotalwidth=\skip95
-\mdfsplitboxheight=\skip96
-\mdfsplitboxdepth=\skip97
-\mdfsplitboxtotalheight=\skip98
-\mdfframetitleboxwidth=\skip99
-\mdfframetitleboxtotalwidth=\skip100
-\mdfframetitleboxheight=\skip101
-\mdfframetitleboxdepth=\skip102
-\mdfframetitleboxtotalheight=\skip103
-\mdffootnoteboxwidth=\skip104
-\mdffootnoteboxtotalwidth=\skip105
-\mdffootnoteboxheight=\skip106
-\mdffootnoteboxdepth=\skip107
-\mdffootnoteboxtotalheight=\skip108
-\mdftotallinewidth=\skip109
-\mdfboundingboxwidth=\skip110
-\mdfboundingboxtotalwidth=\skip111
-\mdfboundingboxheight=\skip112
-\mdfboundingboxdepth=\skip113
-\mdfboundingboxtotalheight=\skip114
-\mdf@freevspace@length=\skip115
-\mdf@horizontalwidthofbox@length=\skip116
-\mdf@verticalmarginwhole@length=\skip117
-\mdf@horizontalspaceofbox=\skip118
-\mdfsubtitleheight=\skip119
-\mdfsubsubtitleheight=\skip120
-\c@mdfcountframes=\count307
+\mdfsplitboxwidth=\skip108
+\mdfsplitboxtotalwidth=\skip109
+\mdfsplitboxheight=\skip110
+\mdfsplitboxdepth=\skip111
+\mdfsplitboxtotalheight=\skip112
+\mdfframetitleboxwidth=\skip113
+\mdfframetitleboxtotalwidth=\skip114
+\mdfframetitleboxheight=\skip115
+\mdfframetitleboxdepth=\skip116
+\mdfframetitleboxtotalheight=\skip117
+\mdffootnoteboxwidth=\skip118
+\mdffootnoteboxtotalwidth=\skip119
+\mdffootnoteboxheight=\skip120
+\mdffootnoteboxdepth=\skip121
+\mdffootnoteboxtotalheight=\skip122
+\mdftotallinewidth=\skip123
+\mdfboundingboxwidth=\skip124
+\mdfboundingboxtotalwidth=\skip125
+\mdfboundingboxheight=\skip126
+\mdfboundingboxdepth=\skip127
+\mdfboundingboxtotalheight=\skip128
+\mdf@freevspace@length=\skip129
+\mdf@horizontalwidthofbox@length=\skip130
+\mdf@verticalmarginwhole@length=\skip131
+\mdf@horizontalspaceofbox=\skip132
+\mdfsubtitleheight=\skip133
+\mdfsubsubtitleheight=\skip134
+\c@mdfcountframes=\count310
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count308
-\c@mdf@env@i=\count309
-\c@mdf@env@ii=\count310
-\c@mdf@zref@counter=\count311
+\mdf@envdepth=\count311
+\c@mdf@env@i=\count312
+\c@mdf@env@ii=\count313
+\c@mdf@zref@counter=\count314
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (E:\MiKTex\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen164
-\lightrulewidth=\dimen165
-\cmidrulewidth=\dimen166
-\belowrulesep=\dimen167
-\belowbottomsep=\dimen168
-\aboverulesep=\dimen169
-\abovetopsep=\dimen170
-\cmidrulesep=\dimen171
-\cmidrulekern=\dimen172
-\defaultaddspace=\dimen173
-\@cmidla=\count312
-\@cmidlb=\count313
-\@aboverulesep=\dimen174
-\@belowrulesep=\dimen175
-\@thisruleclass=\count314
-\@lastruleclass=\count315
-\@thisrulewidth=\dimen176
+\heavyrulewidth=\dimen172
+\lightrulewidth=\dimen173
+\cmidrulewidth=\dimen174
+\belowrulesep=\dimen175
+\belowbottomsep=\dimen176
+\aboverulesep=\dimen177
+\abovetopsep=\dimen178
+\cmidrulesep=\dimen179
+\cmidrulekern=\dimen180
+\defaultaddspace=\dimen181
+\@cmidla=\count315
+\@cmidlb=\count316
+\@aboverulesep=\dimen182
+\@belowrulesep=\dimen183
+\@thisruleclass=\count317
+\@lastruleclass=\count318
+\@thisrulewidth=\dimen184
 )
 (E:\MiKTex\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
  (E:\MiKTex\tex/latex/tools\array.sty
 Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
-\col@sep=\dimen177
+\col@sep=\dimen185
 \ar@mcellbox=\box62
-\extrarowheight=\dimen178
-\NC@list=\toks24
-\extratabsurround=\skip121
-\backup@length=\skip122
+\extrarowheight=\dimen186
+\NC@list=\toks26
+\extratabsurround=\skip135
+\backup@length=\skip136
 \ar@cellbox=\box63
 )
-\TX@col@width=\dimen179
-\TX@old@table=\dimen180
-\TX@old@col=\dimen181
-\TX@target=\dimen182
-\TX@delta=\dimen183
-\TX@cols=\count316
-\TX@ftn=\toks25
+\TX@col@width=\dimen187
+\TX@old@table=\dimen188
+\TX@old@col=\dimen189
+\TX@target=\dimen190
+\TX@delta=\dimen191
+\TX@cols=\count319
+\TX@ftn=\toks27
 )
 (E:\MiKTex\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count317
-\float@exts=\toks26
+\c@float@type=\count320
+\float@exts=\toks28
 \float@box=\box64
-\@float@everytoks=\toks27
+\@float@everytoks=\toks29
 \@floatcapt=\box65
 ) (E:\MiKTex\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
@@ -402,9 +440,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (E:\MiKTex\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
-\everycr=\toks28
-\minrowclearance=\skip123
-\rownum=\count318
+\everycr=\toks30
+\minrowclearance=\skip137
+\rownum=\count321
 )
 (E:\MiKTex\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -432,64 +470,64 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 (E:\MiKTex\tex/latex/sttools\stfloats.sty
 Package: stfloats 2025/06/18 v3.4 Improve float mechanism and baselineskip sett
 ings
-\@dblbotnum=\count319
-\c@dblbotnumber=\count320
+\@dblbotnum=\count322
+\c@dblbotnumber=\count323
 )
 (E:\MiKTex\tex/latex/makecell\makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen184
-\c@nlinenum=\count321
-\TeXr@lab=\toks29
+\rotheadsize=\dimen192
+\c@nlinenum=\count324
+\TeXr@lab=\toks31
 )
 (E:\MiKTex\tex/latex/subfig\subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 (E:\MiKTex\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen185
-\captionmargin=\dimen186
-\caption@leftmargin=\dimen187
-\caption@rightmargin=\dimen188
-\caption@width=\dimen189
-\caption@indent=\dimen190
-\caption@parindent=\dimen191
-\caption@hangindent=\dimen192
+\caption@tempdima=\dimen193
+\captionmargin=\dimen194
+\caption@leftmargin=\dimen195
+\caption@rightmargin=\dimen196
+\caption@width=\dimen197
+\caption@indent=\dimen198
+\caption@parindent=\dimen199
+\caption@hangindent=\dimen256
 Package caption Info: Standard document class detected.
 )
-\c@KVtest=\count322
-\sf@farskip=\skip124
-\sf@captopadj=\dimen193
-\sf@capskip=\skip125
-\sf@nearskip=\skip126
-\c@subfigure=\count323
-\c@subfigure@save=\count324
-\c@lofdepth=\count325
-\c@subtable=\count326
-\c@subtable@save=\count327
-\c@lotdepth=\count328
-\sf@top=\skip127
-\sf@bottom=\skip128
+\c@KVtest=\count325
+\sf@farskip=\skip138
+\sf@captopadj=\dimen257
+\sf@capskip=\skip139
+\sf@nearskip=\skip140
+\c@subfigure=\count326
+\c@subfigure@save=\count327
+\c@lofdepth=\count328
+\c@subtable=\count329
+\c@subtable@save=\count330
+\c@lotdepth=\count331
+\sf@top=\skip141
+\sf@bottom=\skip142
 )
-(E:\MiKTex\tex/latex/geometry\geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(E:\MiKTex\tex/generic/iftex\ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count329
-\Gm@cntv=\count330
-\c@Gm@tempcnt=\count331
-\Gm@bindingoffset=\dimen194
-\Gm@wd@mp=\dimen195
-\Gm@odd@mp=\dimen196
-\Gm@even@mp=\dimen197
-\Gm@layoutwidth=\dimen198
-\Gm@layoutheight=\dimen199
-\Gm@layouthoffset=\dimen256
-\Gm@layoutvoffset=\dimen257
-\Gm@dimlist=\toks30
+main.tex:47: LaTeX Error: Option clash for package geometry.
 
-(E:\MiKTex\tex/latex/geometry\geometry.cfg))
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.47 
+     
+The package geometry has already been loaded with options:
+  [a4paper,left=1.8cm,right=1.8cm,bottom=1.8cm,top=1.8cm,includehead,headheight
+=16pt,heightrounded]
+There has now been an attempt to load it with options
+  [pass]
+Adding the global options:
+  a4paper,left=1.8cm,right=1.8cm,bottom=1.8cm,top=1.8cm,includehead,headheight=
+16pt,heightrounded,pass
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
 (E:\MiKTex\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
@@ -539,10 +577,10 @@ Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
 )
 (E:\MiKTex\tex/latex/tools\longtable.sty
 Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
-\LTleft=\skip129
-\LTright=\skip130
-\LTpre=\skip131
-\LTpost=\skip132
+\LTleft=\skip143
+\LTright=\skip144
+\LTpre=\skip145
+\LTpost=\skip146
 \LTchunksize=\count346
 \LTcapwidth=\dimen263
 \LT@head=\box74
@@ -554,7 +592,7 @@ Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
 \LT@rows=\count348
 \c@LT@tables=\count349
 \c@LT@chunks=\count350
-\LT@p@ftn=\toks31
+\LT@p@ftn=\toks32
 ) (E:\MiKTex\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ) (E:\MiKTex\tex/latex/hyperref\hyperref.sty
@@ -649,7 +687,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
-\Hy@SectionHShift=\skip133
+\Hy@SectionHShift=\skip147
 )
 (E:\MiKTex\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
@@ -659,35 +697,71 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 (E:\MiKTex\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-) (useable/results_macros.tex)
-Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 79.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-9.
+)
 
+Package array Warning: Column C is already defined on input line 99.
+
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 102.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+02.
 (E:\MiKTex\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead heightrounded 
+* h-part:(L,W,R)=(51.21504pt, 495.07779pt, 51.21504pt)
+* v-part:(T,H,B)=(51.21504pt, 742.61676pt, 51.21504pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=495.07779pt
+* \textheight=708.0pt
+* \oddsidemargin=-21.05495pt
+* \evensidemargin=-21.05495pt
+* \topmargin=-21.05495pt
+* \headheight=16.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (E:\MiKTex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -696,12 +770,12 @@ LaTeX Font Info:    ... okay on input line 79.
 \scratchbox=\box79
 \nofMPsegments=\count364
 \nofMParguments=\count365
-\everyMPshowfont=\toks32
+\everyMPshowfont=\toks33
 \MPscratchCnt=\count366
 \MPscratchDim=\dimen269
 \MPnumerator=\count367
 \makeMPintoPDFobject=\count368
-\everyMPtoPDFconversion=\toks33
+\everyMPtoPDFconversion=\toks34
 ) (E:\MiKTex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -715,1597 +789,659 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* pass: disregarded the geometry package!
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=345.0pt
-* \textheight=598.0pt
-* \oddsidemargin=53.0pt
-* \evensidemargin=54.0pt
-* \topmargin=17.0pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=57.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-
 (E:\MiKTex\tex/latex/translations/dicts\translations-basic-dictionary-english.t
 rsl
 File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 79.
-Package hyperref Info: Link coloring OFF on input line 79.
+or `english'. on input line 102.
+Package hyperref Info: Link coloring OFF on input line 102.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<up_logo.png, id=331, 642.4pt x 185.69376pt>
+<up_logo.png, id=139, 642.4pt x 185.69376pt>
 File: up_logo.png Graphic file (type png)
 <use up_logo.png>
-Package pdftex.def Info: up_logo.png  used on input line 82.
-(pdftex.def)             Requested size: 341.43306pt x 98.69772pt.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-2.
- (E:\MiKTex\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-82.
-
-(E:\MiKTex\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-82.
- (E:\MiKTex\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 82.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 82.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 82.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
-
-
-(E:\MiKTex\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
-
- (E:\MiKTex\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: No \author given.
-
+Package pdftex.def Info: up_logo.png  used on input line 112.
+(pdftex.def)             Requested size: 405.9674pt x 117.3532pt.
 
 
 [1
 
 {C:/Users/charl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{E:/MiKTex/fon
-ts/enc/dvips/lm/lm-rm.enc} <./up_logo.png>]
+ts/enc/dvips/lm/lm-rm.enc} <./up_logo.png>] (main.toc
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+.
+
+(E:\MiKTex\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+3.
+ (E:\MiKTex\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+3.
+
+(E:\MiKTex\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 87.
+(Font)              <12> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 87.
+(Font)              <8> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 87.
-
-
-[2{E:/MiKTex/fonts/enc/dvips/lm/lm-mathit.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 94--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--112
-
- []
-
-
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 130--135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--135
-
- []
-
-
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 152--156
-
- []
-
-
-
-[5{E:/MiKTex/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \hbox (9.08328pt too wide) in paragraph at lines 166--167
-\OT1/lmr/m/n/10 In school ex-am-i-na-tions these char-ac-ter-is-tics are com-mo
-nly op-er-a-tionalised through
- []
-
-<ExampleLog.jpg, id=418, 321.72195pt x 242.5863pt>
-File: ExampleLog.jpg Graphic file (type jpg)
-<use ExampleLog.jpg>
-Package pdftex.def Info: ExampleLog.jpg  used on input line 182.
-(pdftex.def)             Requested size: 269.09958pt x 202.90863pt.
-
-
-[6]
-Overfull \hbox (1.20024pt too wide) in paragraph at lines 187--190
-\OT1/lmr/m/n/10 Assessing drawn log-a-rith-mic graphs there-fore in-volves both
- \OT1/lmr/bx/n/10 vi-sual checks \OT1/lmr/m/n/10 (axes,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--196
-
- []
-
-
-
-[7 <./ExampleLog.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 202--205
-
- []
-
-
-Overfull \hbox (3.41644pt too wide) in paragraph at lines 207--212
-\OT1/lmr/m/n/10 Rule-based sys-tems have demon-strated fea-si-bil-ity for au-to
--matic grad-ing of graphs
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--212
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--212
-
- []
-
-
-
-[8]
-Overfull \hbox (11.02652pt too wide) in paragraph at lines 219--220
-\OT1/lmr/m/n/10 demon-strate prac-ti-cal de-ploy-ment via Ope-nAI APIs, us-ing 
-zero-shot prompts
- []
-
-
-
-[9]
-
-LaTeX Warning: Citation `liu2024cmmmathchinesemulti-modal' on page 10 undefined
- on input line 231.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--236
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--236
-
- []
-
-
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 244--249
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 244--249
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--255
-
- []
-
-
-
-[11{E:/MiKTex/fonts/enc/dvips/lm/lm-mathex.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 272--275
-
- []
-
-
-Overfull \hbox (3.56406pt too wide) in paragraph at lines 277--282
- []\OT1/lmr/bx/n/10 Scope and jus-ti-fi-ca-tion. \OT1/lmr/m/n/10 The study fo-c
-uses on hand-drawn sketches of $\OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\OML/lmm/m/i
-t/10 x\OT1/lmr/m/n/10 ) =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--282
-
- []
-
-
-
-[12]
-Overfull \hbox (4.20059pt too wide) in paragraph at lines 286--289
-\OT1/lmr/m/n/10 grad-ing of hand-drawn log-a-rith-mic graphs; named : ACA (Au-t
-o-mated Cathesian-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--289
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--294
-
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-95.
+(Font)              <6> on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (E:\MiKTex\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+
+(E:\MiKTex\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 139.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+39.
 (E:\MiKTex\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[13{E:/MiKTex/fonts/enc/dvips/lm/lm-ts1.enc}]
-Overfull \hbox (1.6328pt too wide) in paragraph at lines 305--306
-\OT1/lmr/m/n/10 scal-ing, curve shape and mono-tonic-ity, $\OML/lmm/m/it/10 x$\
-OT1/lmr/m/n/10 -intercept at $(1\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0)$, ver-ti-
-cal asymp-
- []
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--312
-
- []
-
-
-
-[14]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 319.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 319.
-
-
-Overfull \hbox (44.40479pt too wide) in paragraph at lines 320--325
-\OT1/lmr/m/n/10 For Chat-GPT mod-els (API range $[0\OML/lmm/m/it/10 ; \OT1/lmr/
-m/n/10 1]$), tem-per-a-tures are set to $\OML/lmm/m/it/10 T \OMS/lmsy/m/n/10 2 
-f\OT1/lmr/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 5\OML/lmm/m/it/10 ; \OT1/lm
-r/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 6\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10
- 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 7\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/l
-mm/m/it/10 :\OT1/lmr/m/n/10 8\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/lmm/m/it/
-10 :\OT1/lmr/m/n/10 9\OMS/lmsy/m/n/10 g$\OT1/lmr/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 320--325
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.139 \clearpage
+                 [1{E:/MiKTex/fonts/enc/dvips/lm/lm-ts1.enc}{E:/MiKTex/fonts/en
+c/dvips/lm/lm-mathsy.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
 
  []
 
+<DickandCarey.png, id=189, 604.2575pt x 266.9975pt>
+File: DickandCarey.png Graphic file (type png)
+<use DickandCarey.png>
+Package pdftex.def Info: DickandCarey.png  used on input line 189.
+(pdftex.def)             Requested size: 495.07779pt x 218.75601pt.
 
-Overfull \hbox (34.2947pt too wide) in paragraph at lines 320--325
-\OT1/lmr/m/n/10 For Gem-ini mod-els (API range $[0\OML/lmm/m/it/10 ; \OT1/lmr/m
-/n/10 2]$), the cor-re-spond-ing set is $\OML/lmm/m/it/10 T \OMS/lmsy/m/n/10 2 
-f\OT1/lmr/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 6\OML/lmm/m/it/10 ; \OT1/lm
-r/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 8\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10
- 1\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1\OML/l
-mm/m/it/10 :\OT1/lmr/m/n/10 2\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1\OML/lmm/m/it/
-10 :\OT1/lmr/m/n/10 4\OMS/lmsy/m/n/10 g$\OT1/lmr/m/n/10 . 
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 192.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[2
+
+]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 207.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[3 <./DickandCarey.png (PNG copy)>]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 251.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[4]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 290.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[5]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 332.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[6]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 344.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 347--351
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--325
+Underfull \hbox (badness 10000) in paragraph at lines 347--351
 
  []
 
-
-
-[15]
-<ExperimentalOverview.png, id=590, 432.6564pt x 1043.097pt>
-File: ExperimentalOverview.png Graphic file (type png)
-<use ExperimentalOverview.png>
-Package pdftex.def Info: ExperimentalOverview.png  used on input line 337.
-(pdftex.def)             Requested size: 248.40042pt x 598.88481pt.
-
-Overfull \vbox (40.88481pt too high) has occurred while \output is active []
-
-
-
-[16 <./ExperimentalOverview.png>]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-343.
- (E:\MiKTex\tex/latex/lm\ot1lmtt.fd
+373.
+(E:\MiKTex\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 364--370
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--370
-
- []
-
-
-
-[17{E:/MiKTex/fonts/enc/dvips/lm/lm-rmtt.enc}]
-Overfull \hbox (12.23221pt too wide) in paragraph at lines 388--388
-[]\OT1/lmr/bx/n/14.4 Automated Cartesian-graph As-sess-ment (ACA)
- []
-
-
-Overfull \hbox (31.5921pt too wide) in paragraph at lines 393--396
-\OT1/lmr/bx/n/10 Environment: \OT1/lmr/m/n/10 Python 3.13.7 with \OT1/lmtt/m/n/
-10 google-genai\OT1/lmr/m/n/10 , \OT1/lmtt/m/n/10 numpy\OT1/lmr/m/n/10 , \OT1/l
-mtt/m/n/10 pandas\OT1/lmr/m/n/10 , and \OT1/lmtt/m/n/10 scikit-learn\OT1/lmr/m/
-n/10 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--396
-
- []
-
-LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
-400.
-LaTeX Font Info:    No file OMSlmtt.fd. on input line 400.
-
-LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 400.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--403
-
- []
-
-
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 407--410
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 428--433
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 428--433
-
- []
-
-
-
-[19]
-Overfull \hbox (68.06335pt too wide) in paragraph at lines 441--446
-\OT1/lmr/bx/n/10 Execution unit: \OT1/lmr/m/n/10 A con-fig-u-ra-tion is the 7-t
-uple $([]\OML/lmm/m/it/10 ;  [];  [];  T;  p;  [];  []\OT1/lmr/m/n/10 )$. 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 449--454
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 449--454
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 472.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\kappa' on input line 472.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 472.
-
-
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 491--496
-
- []
-
-
-Overfull \hbox (4.31119pt too wide) in paragraph at lines 491--496
-\OT1/lmr/m/n/10 ([]\OML/lmm/m/it/10 ; y[]\OT1/lmr/m/n/10 )$; strict and re-laxe
-d con-fu-sion ma-tri-ces (CSV); \OT1/lmtt/m/n/10 per[]student[]appendix.csv
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 491--496
-
- []
-
-(useable/results_macros.tex
-
-useable/results_macros.tex:3: LaTeX Error: Command \BestStrictPct already defin
-ed.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \newcommand\BestStrictPct{96.15\%}
-                                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:4: LaTeX Error: Command \BestRelaxedPct already defi
-ned.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 \newcommand\BestRelaxedPct{100.00\%}
-                                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:5: LaTeX Error: Command \BestKappa already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 \newcommand\BestKappa{0.98}
-                               
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:6: LaTeX Error: Command \WinnersStrictLoPct already 
-defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 \newcommand\WinnersStrictLoPct{88.46\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:7: LaTeX Error: Command \WinnersStrictHiPct already 
-defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 \newcommand\WinnersStrictHiPct{96.15\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:8: LaTeX Error: Command \WinnersRelaxedLoPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 \newcommand\WinnersRelaxedLoPct{96.15\%}
-                                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:9: LaTeX Error: Command \WinnersRelaxedHiPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 \newcommand\WinnersRelaxedHiPct{100.00\%}
-                                             
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:10: LaTeX Error: Command \WinnersKappaLo already def
-ined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.10 \newcommand\WinnersKappaLo{0.89}
-                                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:11: LaTeX Error: Command \WinnersKappaHi already def
-ined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 \newcommand\WinnersKappaHi{0.98}
-                                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:12: LaTeX Error: Command \CrossModelDeltaPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 \newcommand\CrossModelDeltaPct{3.84\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:13: LaTeX Error: Command \StabRangeStrictPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \newcommand\StabRangeStrictPct{15.39\%}
-                                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:14: LaTeX Error: Command \StabRangeRelaxedPct alread
-y defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 \newcommand\StabRangeRelaxedPct{3.85\%}
-                                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:15: LaTeX Error: Command \GeminiZSStrictPct already 
-defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.15 \newcommand\GeminiZSStrictPct{81.2\%}
-                                          
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:16: LaTeX Error: Command \GeminiZSRelaxedPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 \newcommand\GeminiZSRelaxedPct{91.9\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:17: LaTeX Error: Command \GPTZSStrictPct already def
-ined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.17 \newcommand\GPTZSStrictPct{56.2\%}
-                                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:18: LaTeX Error: Command \GPTZSRelaxedPct already de
-fined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \newcommand\GPTZSRelaxedPct{71.2\%}
-                                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:19: LaTeX Error: Command \GeminiFSStrictPct already 
-defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.19 \newcommand\GeminiFSStrictPct{70.8\%}
-                                          
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:20: LaTeX Error: Command \GeminiFSRelaxedPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 \newcommand\GeminiFSRelaxedPct{81.9\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:21: LaTeX Error: Command \GPTFSStrictPct already def
-ined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.21 \newcommand\GPTFSStrictPct{37.3\%}
-                                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:22: LaTeX Error: Command \GPTFSRelaxedPct already de
-fined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.22 \newcommand\GPTFSRelaxedPct{52.7\%}
-                                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:23: LaTeX Error: Command \GeminiSTStrictPct already 
-defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 \newcommand\GeminiSTStrictPct{68.5\%}
-                                          
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:24: LaTeX Error: Command \GeminiSTRelaxedPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 \newcommand\GeminiSTRelaxedPct{80.8\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:25: LaTeX Error: Command \GPTSTStrictPct already def
-ined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 \newcommand\GPTSTStrictPct{50.0\%}
-                                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:26: LaTeX Error: Command \GPTSTRelaxedPct already de
-fined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 \newcommand\GPTSTRelaxedPct{58.5\%}
-                                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:27: LaTeX Error: Command \GeminiSMEStrictPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.27 \newcommand\GeminiSMEStrictPct{71.9\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:28: LaTeX Error: Command \GeminiSMERelaxedPct alread
-y defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 \newcommand\GeminiSMERelaxedPct{88.5\%}
-                                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:29: LaTeX Error: Command \GPTSMEStrictPct already de
-fined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29 \newcommand\GPTSMEStrictPct{72.7\%}
-                                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:30: LaTeX Error: Command \GPTSMERelaxedPct already d
-efined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.30 \newcommand\GPTSMERelaxedPct{77.3\%}
-                                         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:31: LaTeX Error: Command \GeminiAPEStrictPct already
- defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \newcommand\GeminiAPEStrictPct{82.1\%}
-                                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:32: LaTeX Error: Command \GeminiAPERelaxedPct alread
-y defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 \newcommand\GeminiAPERelaxedPct{92.7\%}
-                                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:33: LaTeX Error: Command \GPTAPEStrictPct already de
-fined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33 \newcommand\GPTAPEStrictPct{76.2\%}
-                                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-useable/results_macros.tex:34: LaTeX Error: Command \GPTAPERelaxedPct already d
-efined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.34 \newcommand\GPTAPERelaxedPct{88.0\%}
-                                         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-Overfull \hbox (13.58351pt too wide) in paragraph at lines 503--506
-\OT1/lmr/m/n/10 strongest con-fig-u-ra-tion achieved strict 96.15% and re-laxed
- 100.00%, with quadratic-
- []
-
-
-Overfull \hbox (25.97438pt too wide) in paragraph at lines 510--511
-[]\OT1/lmr/bx/n/10 Gemini-2.5-Pro Group 1\OT1/lmr/m/n/10 : APE+HITL It-er-a-tio
-n 1. (Gem-ini[]APE[]Iteration1) 
- []
-
-
-Overfull \hbox (25.97438pt too wide) in paragraph at lines 511--512
-[]\OT1/lmr/bx/n/10 Gemini-2.5-Pro Group 2\OT1/lmr/m/n/10 : APE+HITL It-er-a-tio
-n 3. (Gem-ini[]APE[]Iteration3) 
- []
-
-
-
-[21]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 522.
-
-
-main.tex:557: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.557 \\ \\
-           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-main.tex:558: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.558 \noindent
-               \textit{Note:} For all winners, $\kappa$ CIs have lower bound...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 560.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 560.
-
-<useable/figs/heatbar_both_groups_gemini_p0.95.png, id=670, 650.43pt x 361.35pt
->
-File: useable/figs/heatbar_both_groups_gemini_p0.95.png Graphic file (type png)
-
-<use useable/figs/heatbar_both_groups_gemini_p0.95.png>
-Package pdftex.def Info: useable/figs/heatbar_both_groups_gemini_p0.95.png  use
-d on input line 568.
-(pdftex.def)             Requested size: 345.0pt x 191.66898pt.
-
-
-[22
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.572 
-      ]
-<useable/figs/heatbar_both_groups_gpt_p0.95.png, id=685, 650.43pt x 361.35pt>
-File: useable/figs/heatbar_both_groups_gpt_p0.95.png Graphic file (type png)
-<use useable/figs/heatbar_both_groups_gpt_p0.95.png>
-Package pdftex.def Info: useable/figs/heatbar_both_groups_gpt_p0.95.png  used o
-n input line 575.
-(pdftex.def)             Requested size: 345.0pt x 191.66898pt.
-<useable/figs/heatmap_gemini_Group1_strict.png, id=686, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gemini_Group1_strict.png Graphic file (type png)
-<use useable/figs/heatmap_gemini_Group1_strict.png>
-Package pdftex.def Info: useable/figs/heatmap_gemini_Group1_strict.png  used on
- input line 586.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-
-
-[23 <./useable/figs/heatbar_both_groups_gemini_p0.95.png> <./useable/figs/heatb
-ar_both_groups_gpt_p0.95.png>]
-<useable/figs/heatmap_gemini_Group2_strict.png, id=694, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gemini_Group2_strict.png Graphic file (type png)
-<use useable/figs/heatmap_gemini_Group2_strict.png>
-Package pdftex.def Info: useable/figs/heatmap_gemini_Group2_strict.png  used on
- input line 593.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-<useable/figs/heatmap_gpt_Group1_strict.png, id=695, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gpt_Group1_strict.png Graphic file (type png)
-<use useable/figs/heatmap_gpt_Group1_strict.png>
-Package pdftex.def Info: useable/figs/heatmap_gpt_Group1_strict.png  used on in
-put line 600.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-
-
-[24 <./useable/figs/heatmap_gemini_Group1_strict.png> <./useable/figs/heatmap_g
-emini_Group2_strict.png>]
-<useable/figs/heatmap_gpt_Group2_strict.png, id=704, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gpt_Group2_strict.png Graphic file (type png)
-<use useable/figs/heatmap_gpt_Group2_strict.png>
-Package pdftex.def Info: useable/figs/heatmap_gpt_Group2_strict.png  used on in
-put line 607.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-<useable/figs/heatmap_gemini_Group1_relaxed.png, id=705, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gemini_Group1_relaxed.png Graphic file (type png)
-<use useable/figs/heatmap_gemini_Group1_relaxed.png>
-Package pdftex.def Info: useable/figs/heatmap_gemini_Group1_relaxed.png  used o
-n input line 618.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-
-
-[25 <./useable/figs/heatmap_gpt_Group1_strict.png> <./useable/figs/heatmap_gpt_
-Group2_strict.png>]
-<useable/figs/heatmap_gemini_Group2_relaxed.png, id=716, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gemini_Group2_relaxed.png Graphic file (type png)
-<use useable/figs/heatmap_gemini_Group2_relaxed.png>
-Package pdftex.def Info: useable/figs/heatmap_gemini_Group2_relaxed.png  used o
-n input line 625.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-<useable/figs/heatmap_gpt_Group1_relaxed.png, id=717, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gpt_Group1_relaxed.png Graphic file (type png)
-<use useable/figs/heatmap_gpt_Group1_relaxed.png>
-Package pdftex.def Info: useable/figs/heatmap_gpt_Group1_relaxed.png  used on i
-nput line 632.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-
-
-[26 <./useable/figs/heatmap_gemini_Group1_relaxed.png> <./useable/figs/heatmap_
-gemini_Group2_relaxed.png>]
-<useable/figs/heatmap_gpt_Group2_relaxed.png, id=726, 621.522pt x 361.35pt>
-File: useable/figs/heatmap_gpt_Group2_relaxed.png Graphic file (type png)
-<use useable/figs/heatmap_gpt_Group2_relaxed.png>
-Package pdftex.def Info: useable/figs/heatmap_gpt_Group2_relaxed.png  used on i
-nput line 639.
-(pdftex.def)             Requested size: 345.0pt x 200.5847pt.
-<useable/figs/winners_student_matrix.png, id=728, 686.565pt x 469.755pt>
-File: useable/figs/winners_student_matrix.png Graphic file (type png)
-<use useable/figs/winners_student_matrix.png>
-Package pdftex.def Info: useable/figs/winners_student_matrix.png  used on input
- line 651.
-(pdftex.def)             Requested size: 345.0pt x 236.05246pt.
-
-
-[27 <./useable/figs/heatmap_gpt_Group1_relaxed.png> <./useable/figs/heatmap_gpt
-_Group2_relaxed.png>]
-
-[28 <./useable/figs/winners_student_matrix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 701--708
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 701--708
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 701--708
-
- []
-
-
-
-[29]
-Overfull \hbox (6.98651pt too wide) in paragraph at lines 713--714
-\OT1/lmr/m/n/10 Gemini sat-is-fied ACA with prompts pro-duced by its own APE pr
-o-cess. ChatGPT-
- []
-
-
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 725--736
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 725--736
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 725--736
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 725--736
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 725--736
-
- []
-
-
-Overfull \hbox (4.08586pt too wide) in paragraph at lines 725--736
-\OT1/lmr/bx/n/10 Model and API into the fu-ture: \OT1/lmr/m/n/10 Be-haviour and
- pric-ing may change. Prompts
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 743--767
-
- []
-
-
-Overfull \hbox (5.93857pt too wide) in paragraph at lines 743--767
-\OT1/lmr/m/n/10 with pro-fes-sion-ally as-signed mem-o-ran-dum marks on as-sess
--ing hand-drawn $[][](\OML/lmm/m/it/10 x\OT1/lmr/m/n/10 )$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 743--767
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 743--767
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 743--767
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 743--767
-
- []
-
-
-
-[31]
-
-[32]
-
-[33] (main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 44--49
-\OT1/lmr/m/n/10 com / scholarly-[]journals / personal-[]dimension-[]teaching-[]
-why-[]students-[]value /
- []
-
-
-Underfull \hbox (badness 1655) in paragraph at lines 51--55
-\OT1/lmr/m/n/10 eral) math-e-mat-ics,'' De-part-ment of Ba-sic Ed-u-ca-tion, So
-uth Africa,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--55
-\OT1/lmr/m/n/10 Cur-ricu-lum and As-sess-ment Pol-icy State-ment, 2006, avail-a
-ble:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--55
-[]$\OT1/lmr/m/n/10 https : / / www . education . gov . za / Portals / 0 / CD / 
-SUBSTATEMENTS /
- []
-
-
-
-[34]
-
-[35])
-
-[36]
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
-* v-part:(T,H,B)=(34.1433pt, 739.77167pt, 71.13188pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=455.24411pt
-* \textheight=739.77167pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-75.1267pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=57.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 8
-11.
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 381.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[8{E:/MiKTex/fonts/enc/dvips/lm/lm-rmtt.enc}]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 431.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[9]
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 432.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[10]
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 4
+44.
  (E:\MiKTex\tex/latex/lm\omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 811.
-<Group1/S1_w.jpg, id=837, 443.13554pt x 333.76695pt>
-File: Group1/S1_w.jpg Graphic file (type jpg)
-<use Group1/S1_w.jpg>
-Package pdftex.def Info: Group1/S1_w.jpg  used on input line 848.
-(pdftex.def)             Requested size: 104.7042pt x 78.85794pt.
-<Group1/S2_q.jpg, id=838, 490.59285pt x 367.25204pt>
-File: Group1/S2_q.jpg Graphic file (type jpg)
-<use Group1/S2_q.jpg>
-Package pdftex.def Info: Group1/S2_q.jpg  used on input line 849.
-(pdftex.def)             Requested size: 104.7042pt x 78.38045pt.
-<Group1/S3_q.jpg, id=839, 466.1415pt x 349.42545pt>
-File: Group1/S3_q.jpg Graphic file (type jpg)
-<use Group1/S3_q.jpg>
-Package pdftex.def Info: Group1/S3_q.jpg  used on input line 850.
-(pdftex.def)             Requested size: 104.7042pt x 78.48402pt.
-<Group1/S4_q.jpg, id=840, 444.7014pt x 295.1025pt>
-File: Group1/S4_q.jpg Graphic file (type jpg)
-<use Group1/S4_q.jpg>
-Package pdftex.def Info: Group1/S4_q.jpg  used on input line 851.
-(pdftex.def)             Requested size: 104.7042pt x 69.47968pt.
-<Group1/S5_q.jpg, id=841, 377.36984pt x 283.5393pt>
-File: Group1/S5_q.jpg Graphic file (type jpg)
-<use Group1/S5_q.jpg>
-Package pdftex.def Info: Group1/S5_q.jpg  used on input line 852.
-(pdftex.def)             Requested size: 104.7042pt x 78.66794pt.
-<Group1/S6_r.jpg, id=842, 342.3189pt x 256.91985pt>
-File: Group1/S6_r.jpg Graphic file (type jpg)
-<use Group1/S6_r.jpg>
-Package pdftex.def Info: Group1/S6_r.jpg  used on input line 853.
-(pdftex.def)             Requested size: 104.7042pt x 78.58192pt.
-<Group1/S7_q.jpg, id=843, 397.485pt x 255.95625pt>
-File: Group1/S7_q.jpg Graphic file (type jpg)
-<use Group1/S7_q.jpg>
-Package pdftex.def Info: Group1/S7_q.jpg  used on input line 854.
-(pdftex.def)             Requested size: 104.7042pt x 67.42189pt.
-<Group1/S8_r.jpg, id=844, 421.3341pt x 282.69615pt>
-File: Group1/S8_r.jpg Graphic file (type jpg)
-<use Group1/S8_r.jpg>
-Package pdftex.def Info: Group1/S8_r.jpg  used on input line 855.
-(pdftex.def)             Requested size: 104.7042pt x 70.25113pt.
-<Group1/S9_q.jpg, id=845, 428.92245pt x 293.6571pt>
-File: Group1/S9_q.jpg Graphic file (type jpg)
-<use Group1/S9_q.jpg>
-Package pdftex.def Info: Group1/S9_q.jpg  used on input line 856.
-(pdftex.def)             Requested size: 104.7042pt x 71.68448pt.
-<Group1/S10_q.jpg, id=846, 349.90726pt x 304.61806pt>
-File: Group1/S10_q.jpg Graphic file (type jpg)
-<use Group1/S10_q.jpg>
-Package pdftex.def Info: Group1/S10_q.jpg  used on input line 857.
-(pdftex.def)             Requested size: 104.7042pt x 91.14906pt.
-<Group1/S11_q.jpg, id=847, 298.716pt x 222.95296pt>
-File: Group1/S11_q.jpg Graphic file (type jpg)
-<use Group1/S11_q.jpg>
-Package pdftex.def Info: Group1/S11_q.jpg  used on input line 858.
-(pdftex.def)             Requested size: 104.7042pt x 78.14696pt.
-<Group1/S12_q.jpg, id=848, 321.72195pt x 242.5863pt>
-File: Group1/S12_q.jpg Graphic file (type jpg)
-<use Group1/S12_q.jpg>
-Package pdftex.def Info: Group1/S12_q.jpg  used on input line 859.
-(pdftex.def)             Requested size: 104.7042pt x 78.94695pt.
-<Group1/S13_r.jpg, id=849, 278.11905pt x 313.8927pt>
-File: Group1/S13_r.jpg Graphic file (type jpg)
-<use Group1/S13_r.jpg>
-Package pdftex.def Info: Group1/S13_r.jpg  used on input line 860.
-(pdftex.def)             Requested size: 104.7042pt x 118.16927pt.
-<Group1/S14_q.jpg, id=850, 294.3798pt x 270.89204pt>
-File: Group1/S14_q.jpg Graphic file (type jpg)
-<use Group1/S14_q.jpg>
-Package pdftex.def Info: Group1/S14_q.jpg  used on input line 861.
-(pdftex.def)             Requested size: 104.7042pt x 96.35127pt.
-<Group1/S15_r.jpg, id=851, 351.714pt x 263.7855pt>
-File: Group1/S15_r.jpg Graphic file (type jpg)
-<use Group1/S15_r.jpg>
-Package pdftex.def Info: Group1/S15_r.jpg  used on input line 862.
-(pdftex.def)             Requested size: 104.7042pt x 78.52847pt.
-<Group1/S16_q.jpg, id=852, 327.624pt x 207.05354pt>
-File: Group1/S16_q.jpg Graphic file (type jpg)
-<use Group1/S16_q.jpg>
-Package pdftex.def Info: Group1/S16_q.jpg  used on input line 863.
-(pdftex.def)             Requested size: 104.7042pt x 66.17001pt.
-<Group1/S17_q.jpg, id=853, 274.1442pt x 181.8795pt>
-File: Group1/S17_q.jpg Graphic file (type jpg)
-<use Group1/S17_q.jpg>
-Package pdftex.def Info: Group1/S17_q.jpg  used on input line 864.
-(pdftex.def)             Requested size: 104.7042pt x 69.4646pt.
-<Group1/S18_w.jpg, id=854, 403.0257pt x 302.0886pt>
-File: Group1/S18_w.jpg Graphic file (type jpg)
-<use Group1/S18_w.jpg>
-Package pdftex.def Info: Group1/S18_w.jpg  used on input line 865.
-(pdftex.def)             Requested size: 104.7042pt x 78.48125pt.
-<Group1/S19_w.jpg, id=855, 200.9106pt x 161.6439pt>
-File: Group1/S19_w.jpg Graphic file (type jpg)
-<use Group1/S19_w.jpg>
-Package pdftex.def Info: Group1/S19_w.jpg  used on input line 866.
-(pdftex.def)             Requested size: 104.7042pt x 84.2403pt.
-<Group1/S20_q.jpg, id=856, 259.56975pt x 166.9437pt>
-File: Group1/S20_q.jpg Graphic file (type jpg)
-<use Group1/S20_q.jpg>
-Package pdftex.def Info: Group1/S20_q.jpg  used on input line 867.
-(pdftex.def)             Requested size: 104.7042pt x 67.3418pt.
-<Group1/S21_q.jpg, id=857, 337.13956pt x 241.26135pt>
-File: Group1/S21_q.jpg Graphic file (type jpg)
-<use Group1/S21_q.jpg>
-Package pdftex.def Info: Group1/S21_q.jpg  used on input line 868.
-(pdftex.def)             Requested size: 104.7042pt x 74.92644pt.
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 444.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 448.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 448.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 448.
 
 
-[37
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 448.
 
 
-]
-<Group2/S1_w.jpg, id=866, 349.5459pt x 323.40825pt>
-File: Group2/S1_w.jpg Graphic file (type jpg)
-<use Group2/S1_w.jpg>
-Package pdftex.def Info: Group2/S1_w.jpg  used on input line 879.
-(pdftex.def)             Requested size: 104.7042pt x 96.87517pt.
-<Group2/S2_q.jpg, id=867, 431.6928pt x 325.4559pt>
-File: Group2/S2_q.jpg Graphic file (type jpg)
-<use Group2/S2_q.jpg>
-Package pdftex.def Info: Group2/S2_q.jpg  used on input line 880.
-(pdftex.def)             Requested size: 104.7042pt x 78.93536pt.
-<Group2/S3_q.jpg, id=868, 275.22826pt x 295.94565pt>
-File: Group2/S3_q.jpg Graphic file (type jpg)
-<use Group2/S3_q.jpg>
-Package pdftex.def Info: Group2/S3_q.jpg  used on input line 881.
-(pdftex.def)             Requested size: 104.7042pt x 112.58243pt.
-<Group2/S4_q.jpg, id=869, 416.15475pt x 278.4804pt>
-File: Group2/S4_q.jpg Graphic file (type jpg)
-<use Group2/S4_q.jpg>
-Package pdftex.def Info: Group2/S4_q.jpg  used on input line 882.
-(pdftex.def)             Requested size: 104.7042pt x 70.06609pt.
-<Group2/S5_q.jpg, id=870, 377.7312pt x 283.2984pt>
-File: Group2/S5_q.jpg Graphic file (type jpg)
-<use Group2/S5_q.jpg>
-Package pdftex.def Info: Group2/S5_q.jpg  used on input line 883.
-(pdftex.def)             Requested size: 104.7042pt x 78.5276pt.
-<Group2/S6_r.jpg, id=871, 353.6412pt x 269.68755pt>
-File: Group2/S6_r.jpg Graphic file (type jpg)
-<use Group2/S6_r.jpg>
-Package pdftex.def Info: Group2/S6_r.jpg  used on input line 884.
-(pdftex.def)             Requested size: 104.7042pt x 79.8493pt.
-<Group2/S7_q.jpg, id=872, 396.88275pt x 312.2064pt>
-File: Group2/S7_q.jpg Graphic file (type jpg)
-<use Group2/S7_q.jpg>
-Package pdftex.def Info: Group2/S7_q.jpg  used on input line 885.
-(pdftex.def)             Requested size: 104.7042pt x 82.36272pt.
-<Group2/S8_r.jpg, id=873, 449.15805pt x 312.4473pt>
-File: Group2/S8_r.jpg Graphic file (type jpg)
-<use Group2/S8_r.jpg>
-Package pdftex.def Info: Group2/S8_r.jpg  used on input line 886.
-(pdftex.def)             Requested size: 104.7042pt x 72.83394pt.
-<Group2/S9_q.jpg, id=874, 421.0932pt x 280.52805pt>
-File: Group2/S9_q.jpg Graphic file (type jpg)
-<use Group2/S9_q.jpg>
-Package pdftex.def Info: Group2/S9_q.jpg  used on input line 887.
-(pdftex.def)             Requested size: 104.7042pt x 69.75087pt.
-<Group2/S10_q.jpg, id=875, 397.9668pt x 330.39435pt>
-File: Group2/S10_q.jpg Graphic file (type jpg)
-<use Group2/S10_q.jpg>
-Package pdftex.def Info: Group2/S10_q.jpg  used on input line 888.
-(pdftex.def)             Requested size: 104.7042pt x 86.9239pt.
-<Group2/S11_q.jpg, id=876, 234.6366pt x 169.23225pt>
-File: Group2/S11_q.jpg Graphic file (type jpg)
-<use Group2/S11_q.jpg>
-Package pdftex.def Info: Group2/S11_q.jpg  used on input line 889.
-(pdftex.def)             Requested size: 104.7042pt x 75.51857pt.
-<Group2/S12_q.jpg, id=877, 306.78615pt x 219.82124pt>
-File: Group2/S12_q.jpg Graphic file (type jpg)
-<use Group2/S12_q.jpg>
-Package pdftex.def Info: Group2/S12_q.jpg  used on input line 890.
-(pdftex.def)             Requested size: 104.7042pt x 75.02333pt.
-<Group2/S13_r.jpg, id=878, 266.1945pt x 265.35135pt>
-File: Group2/S13_r.jpg Graphic file (type jpg)
-<use Group2/S13_r.jpg>
-Package pdftex.def Info: Group2/S13_r.jpg  used on input line 891.
-(pdftex.def)             Requested size: 104.7042pt x 104.3733pt.
-<Group2/S14_q.jpg, id=879, 324.0105pt x 303.89536pt>
-File: Group2/S14_q.jpg Graphic file (type jpg)
-<use Group2/S14_q.jpg>
-Package pdftex.def Info: Group2/S14_q.jpg  used on input line 892.
-(pdftex.def)             Requested size: 104.7042pt x 98.20372pt.
-<Group2/S15_r.jpg, id=880, 320.8788pt x 213.79875pt>
-File: Group2/S15_r.jpg Graphic file (type jpg)
-<use Group2/S15_r.jpg>
-Package pdftex.def Info: Group2/S15_r.jpg  used on input line 893.
-(pdftex.def)             Requested size: 104.7042pt x 69.76106pt.
-<Group2/S16_q.jpg, id=881, 311.9655pt x 201.51285pt>
-File: Group2/S16_q.jpg Graphic file (type jpg)
-<use Group2/S16_q.jpg>
-Package pdftex.def Info: Group2/S16_q.jpg  used on input line 894.
-(pdftex.def)             Requested size: 104.7042pt x 67.63405pt.
-<Group2/S17_q.jpg, id=882, 217.5327pt x 193.08134pt>
-File: Group2/S17_q.jpg Graphic file (type jpg)
-<use Group2/S17_q.jpg>
-Package pdftex.def Info: Group2/S17_q.jpg  used on input line 895.
-(pdftex.def)             Requested size: 104.7042pt x 92.93431pt.
-<Group2/S18_w.jpg, id=883, 435.0654pt x 333.4056pt>
-File: Group2/S18_w.jpg Graphic file (type jpg)
-<use Group2/S18_w.jpg>
-Package pdftex.def Info: Group2/S18_w.jpg  used on input line 896.
-(pdftex.def)             Requested size: 104.7042pt x 80.23773pt.
-<Group2/S19_w.jpg, id=884, 217.89404pt x 173.9298pt>
-File: Group2/S19_w.jpg Graphic file (type jpg)
-<use Group2/S19_w.jpg>
-Package pdftex.def Info: Group2/S19_w.jpg  used on input line 897.
-(pdftex.def)             Requested size: 104.7042pt x 83.57823pt.
-<Group2/S20_q.jpg, id=885, 262.21965pt x 186.6975pt>
-File: Group2/S20_q.jpg Graphic file (type jpg)
-<use Group2/S20_q.jpg>
-Package pdftex.def Info: Group2/S20_q.jpg  used on input line 898.
-(pdftex.def)             Requested size: 104.7042pt x 74.54663pt.
-<Group2/S21_q.jpg, id=886, 291.2481pt x 292.09125pt>
-File: Group2/S21_q.jpg Graphic file (type jpg)
-<use Group2/S21_q.jpg>
-Package pdftex.def Info: Group2/S21_q.jpg  used on input line 899.
-(pdftex.def)             Requested size: 104.7042pt x 105.00568pt.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leq' on input line 448.
 
 
-[38 <./Group1/S1_w.jpg> <./Group1/S2_q.jpg> <./Group1/S3_q.jpg> <./Group1/S4_q.
-jpg> <./Group1/S5_q.jpg> <./Group1/S6_r.jpg> <./Group1/S7_q.jpg> <./Group1/S8_r
-.jpg> <./Group1/S9_q.jpg> <./Group1/S10_q.jpg> <./Group1/S11_q.jpg> <./Group1/S
-12_q.jpg> <./Group1/S13_r.jpg> <./Group1/S14_q.jpg> <./Group1/S15_r.jpg> <./Gro
-up1/S16_q.jpg> <./Group1/S17_q.jpg> <./Group1/S18_w.jpg> <./Group1/S19_w.jpg> <
-./Group1/S20_q.jpg> <./Group1/S21_q.jpg>]
-Overfull \vbox (19.49376pt too high) has occurred while \output is active []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 448.
+
+
+Underfull \hbox (badness 3323) in paragraph at lines 503--503
+[]|\OT1/lmr/bx/n/12 Trigger (af-ter these micro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--503
+[]|\OT1/lmr/m/n/12 \Why pat-terns?", FM in-tent,
+ []
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 503--503
+[]|\OT1/lmr/m/n/12 Role cues in code; life-cy-cle re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--503
+[]|\OT1/lmr/m/n/12 Add pro-duc-t/cre-ator; FM vs
+ []
 
 
 
-[39 <./Group2/S1_w.jpg> <./Group2/S2_q.jpg> <./Group2/S3_q.jpg> <./Group2/S4_q.
-jpg> <./Group2/S5_q.jpg> <./Group2/S6_r.jpg> <./Group2/S7_q.jpg> <./Group2/S8_r
-.jpg> <./Group2/S9_q.jpg> <./Group2/S10_q.jpg> <./Group2/S11_q.jpg> <./Group2/S
-12_q.jpg> <./Group2/S13_r.jpg> <./Group2/S14_q.jpg> <./Group2/S15_r.jpg> <./Gro
-up2/S16_q.jpg> <./Group2/S17_q.jpg> <./Group2/S18_w.jpg> <./Group2/S19_w.jpg> <
-./Group2/S20_q.jpg> <./Group2/S21_q.jpg>]
-<Group1/S22_r.jpg, id=940, 229.69815pt x 172.0026pt>
-File: Group1/S22_r.jpg Graphic file (type jpg)
-<use Group1/S22_r.jpg>
-Package pdftex.def Info: Group1/S22_r.jpg  used on input line 910.
-(pdftex.def)             Requested size: 136.57462pt x 102.27325pt.
-<Group1/S23_r.jpg, id=941, 267.27855pt x 200.9106pt>
-File: Group1/S23_r.jpg Graphic file (type jpg)
-<use Group1/S23_r.jpg>
-Package pdftex.def Info: Group1/S23_r.jpg  used on input line 911.
-(pdftex.def)             Requested size: 136.57462pt x 102.66537pt.
-<Group1/S24_r.jpg, id=942, 241.98405pt x 180.4341pt>
-File: Group1/S24_r.jpg Graphic file (type jpg)
-<use Group1/S24_r.jpg>
-Package pdftex.def Info: Group1/S24_r.jpg  used on input line 912.
-(pdftex.def)             Requested size: 136.57462pt x 101.84082pt.
-<Group1/S25_r.jpg, id=943, 461.68484pt x 148.6353pt>
-File: Group1/S25_r.jpg Graphic file (type jpg)
-<use Group1/S25_r.jpg>
-Package pdftex.def Info: Group1/S25_r.jpg  used on input line 916.
-(pdftex.def)             Requested size: 136.57462pt x 43.9695pt.
-<Group1/S26_r.jpg, id=944, 307.3884pt x 228.855pt>
-File: Group1/S26_r.jpg Graphic file (type jpg)
-<use Group1/S26_r.jpg>
-Package pdftex.def Info: Group1/S26_r.jpg  used on input line 916.
-(pdftex.def)             Requested size: 136.57462pt x 101.68475pt.
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 505.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 530--530
+[]|\OT1/lmr/m/n/12 Code-Read clas-sify (role/non-role + rea-son), trace
+ []
 
 
-[40 <./Group1/S22_r.jpg> <./Group1/S23_r.jpg> <./Group1/S24_r.jpg> <./Group1/S2
-5_r.jpg> <./Group1/S26_r.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 957--962
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 540.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[12]
+Overfull \hbox (27.05098pt too wide) in paragraph at lines 544--546
+[]\OT1/lmr/bx/n/12 MQ5 (LO21) -- Refac-tor (5 pts). \OT1/lmr/m/n/12 Re-place cl
+ient \OT1/lmtt/m/n/12 new \OT1/lmr/m/n/12 + \OT1/lmtt/m/n/12 switch \OT1/lmr/m/
+n/12 with calls to \OT1/lmtt/m/n/12 Creator::make()\OT1/lmr/m/n/12 .
+ []
+
+
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 574.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[13]
+LaTeX Font Info:    Trying to load font information for OMS+lmtt on input line 
+630.
+LaTeX Font Info:    No file OMSlmtt.fd. on input line 630.
+
+
+LaTeX Font Warning: Font shape `OMS/lmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 630.
+
+
+Overfull \hbox (113.74014pt too wide) in paragraph at lines 632--633
+[]\OT1/lmr/m/n/12 Implement cre-ators. \OT1/lmtt/m/n/12 CSVExporter::make() \OT
+1/lmr/m/n/12 and \OT1/lmtt/m/n/12 MarkdownExporter::make() \OT1/lmr/m/n/12 re-t
+urn \OT1/lmtt/m/n/12 std::unique[]ptr<Product>
+ []
+
+
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 633.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[14]
+Overfull \hbox (12.29651pt too wide) in alignment at lines 668--668
+[][][] 
+ []
+
+
+Overfull \hbox (19.53279pt too wide) in paragraph at lines 684--686
+\OT1/lmr/m/n/12 "Product lacks a vir-tual de-struc-tor. Delet-ing via base is u
+n-de-fined; mark \OT1/lmtt/m/n/12 virtual ~Product()\OT1/lmr/m/n/12 ."
+ []
+
+
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 688.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 695--703
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 957--962
+Underfull \hbox (badness 10000) in paragraph at lines 695--703
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--703
+
+ []
+
+
+main.tex:711: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.711 \textbf
+             {For Coding Micro-Lessons:}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--713
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 714--718
 
  []
 
 
 
-[41]
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 720.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
-[42]
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
-[43
+[16]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leq' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 774.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leq' on input line 774.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 774.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 811--811
+[]|\OT1/lmr/m/n/12 Fill in \OT1/lmtt/m/n/12 CSVWriter \OT1/lmr/m/n/12 and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 811--811
+\OT1/lmtt/m/n/12 MarkdownWriter \OT1/lmr/m/n/12 plus ex-porters;
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 811--811
+\OT1/lmr/m/n/12 ation into \OT1/lmtt/m/n/12 Creator::make()\OT1/lmr/m/n/12 ; pa
+ss
+ []
+
+
+
+[17
+
 
 ]
 
-[44
+[18]
+
+main.tex:822: LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.822 ...f{Theory block (≈ 90 min instruction )}
+                                                  \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+main.tex:827: LaTeX Error: Unicode character ≈ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.827 ...f{Coding block (≈ 95 min instruction )}
+                                                  \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--831
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--831
+
+ []
+
+
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 876.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[19
 
 
 ]
 
-[45
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 877.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 880--883
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 885--890
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 885--890
+
+ []
+
+
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 891.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[21]
+Overfull \hbox (57.44292pt too wide) in alignment at lines 913--919
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (57.44292pt too wide) in alignment at lines 919--925
+ [] [] [] [] [] [] [] 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 933.
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 958.
+
+Overfull \hbox (57.44292pt too wide) in alignment at lines 925--1012
+ [] [] [] [] [] [] [] 
+ []
+
+[22
+
+
+] [23]
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1027
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1027
+
+ []
+
+
+
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 1028.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[25
 
 
 ]
 
-[46
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 1070.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
+
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1085
+
+ []
 
 
-]
 
-[47
+File: up_logo.png Graphic file (type png)
+<use up_logo.png>
+Package pdftex.def Info: up_logo.png  used on input line 1086.
+(pdftex.def)             Requested size: 41.5124pt x 12.0pt.
 
+Package fancyhdr Warning: \headheight is too small (16.0pt): 
+(fancyhdr)                Make it at least 16.35004pt, for example:
+(fancyhdr)                \setlength{\headheight}{16.35004pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.35004pt}.
 
-]
-
-[48
-
-
-]
-
-[49
-
-
-]
-
-[50
-
-
-]
-File: useable/figs/winners_student_matrix.png Graphic file (type png)
-<use useable/figs/winners_student_matrix.png>
-Package pdftex.def Info: useable/figs/winners_student_matrix.png  used on input
- line 1171.
-(pdftex.def)             Requested size: 386.96027pt x 264.7598pt.
-
-
-[51
-
-] (main.aux)
+[27] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -2314,39 +1450,26 @@ L3 programming layer <2025-09-02>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B3D1CCBE65A67700E96940E61C107C16;17115.
+(rerunfilecheck)             Checksum: 016CB4B932E26098DC02D3EAB28B284A;9341.
  ) 
 Here is how much of TeX's memory you used:
- 19842 strings out of 468130
- 374623 string characters out of 5447468
- 963252 words of memory out of 5000000
- 47876 multiletter control sequences out of 15000+600000
- 694388 words of font info for 96 fonts, out of 8000000 for 9000
+ 19877 strings out of 468130
+ 367470 string characters out of 5447468
+ 1045358 words of memory out of 5000000
+ 48047 multiletter control sequences out of 15000+600000
+ 681883 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,93p,1830b,1162s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 76i,15n,79p,668b,1336s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <E:/MiKTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/MiKTex/fonts/type1/p
 ublic/lm/lmbx10.pfb><E:/MiKTex/fonts/type1/public/lm/lmbx12.pfb><E:/MiKTex/font
-s/type1/public/lm/lmbx9.pfb><E:/MiKTex/fonts/type1/public/lm/lmex10.pfb><E:/MiK
-Tex/fonts/type1/public/lm/lmmi10.pfb><E:/MiKTex/fonts/type1/public/lm/lmmi12.pf
-b><E:/MiKTex/fonts/type1/public/lm/lmmi5.pfb><E:/MiKTex/fonts/type1/public/lm/l
-mmi6.pfb><E:/MiKTex/fonts/type1/public/lm/lmmi7.pfb><E:/MiKTex/fonts/type1/publ
-ic/lm/lmmi9.pfb><E:/MiKTex/fonts/type1/public/lm/lmmib10.pfb><E:/MiKTex/fonts/t
-ype1/public/lm/lmmib7.pfb><E:/MiKTex/fonts/type1/public/lm/lmr10.pfb><E:/MiKTex
-/fonts/type1/public/lm/lmr12.pfb><E:/MiKTex/fonts/type1/public/lm/lmr17.pfb><E:
-/MiKTex/fonts/type1/public/lm/lmr6.pfb><E:/MiKTex/fonts/type1/public/lm/lmr7.pf
-b><E:/MiKTex/fonts/type1/public/lm/lmr8.pfb><E:/MiKTex/fonts/type1/public/lm/lm
-r9.pfb><E:/MiKTex/fonts/type1/public/lm/lmri10.pfb><E:/MiKTex/fonts/type1/publi
-c/lm/lmsy10.pfb><E:/MiKTex/fonts/type1/public/lm/lmsy7.pfb><E:/MiKTex/fonts/typ
-e1/public/lm/lmsy8.pfb><E:/MiKTex/fonts/type1/public/lm/lmsy9.pfb><E:/MiKTex/fo
-nts/type1/public/lm/lmtt10.pfb><E:/MiKTex/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb>
-Output written on main.pdf (51 pages, 36561282 bytes).
+s/type1/public/lm/lmr10.pfb><E:/MiKTex/fonts/type1/public/lm/lmr12.pfb><E:/MiKT
+ex/fonts/type1/public/lm/lmri12.pfb><E:/MiKTex/fonts/type1/public/lm/lmsy10.pfb
+><E:/MiKTex/fonts/type1/public/lm/lmtt10.pfb><E:/MiKTex/fonts/type1/public/lm/l
+mtt12.pfb>
+Output written on main.pdf (28 pages, 534342 bytes).
 PDF statistics:
- 1201 PDF objects out of 1440 (max. 8388607)
- 282 named destinations out of 1000 (max. 500000)
- 962 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 488 PDF objects out of 1000 (max. 8388607)
+ 167 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 

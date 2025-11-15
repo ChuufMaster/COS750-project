@@ -1,0 +1,52 @@
+\contentsline {section}{\numberline {1}Stage One: Instructional Goals}{3}{section.1}%
+\contentsline {section}{\numberline {2}Stage Two: Instructional Analysis}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}What learners need to take part}{4}{subsection.2.1}%
+\contentsline {paragraph}{A. Cognitive prerequisites from prior modules (assumed)}{4}{section*.5}%
+\contentsline {paragraph}{B. Digital and tool skills}{4}{section*.6}%
+\contentsline {paragraph}{C. Study and self-management skills}{4}{section*.7}%
+\contentsline {paragraph}{D. Motivation and attitudes}{4}{section*.8}%
+\contentsline {paragraph}{E. Accessibility and learning preferences}{5}{section*.9}%
+\contentsline {paragraph}{F. Environment and equipment}{5}{section*.10}%
+\contentsline {subsection}{\numberline {2.2}What learners may not yet have and how we accommodate}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Onboarding self-check (non-blocking)}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Risks and mitigations}{6}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Stage Three: Learner Characteristics}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Prerequisite modules (in order)}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Expected entry knowledge and skills}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Variability and likely gaps}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Identification of gaps (onboarding self-check, non-blocking)}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Support if something is missing}{7}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}VARK Analysis}{7}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Stage Four: Learning Outcomes (Performance Objectives)}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Know and Understand the aspects of the Factory Method Pattern}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Know how to analyse and apply the Factory Method UML class diagram from given code or a given context.}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Know how to understand, analyse and apply the Factory Method pattern in C++ coding contexts.}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Know how the Factory Method pattern interacts with other design patterns.}{9}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Stage Five: Formative Assessment}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Global rules}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Micro-quiz blueprint ($\leq $ 6 MQs)}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Item design snippets (representative examples)}{12}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Mastery \& reporting}{13}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Encouraging \& constructive feedback templates}{13}{subsection.5.5}%
+\contentsline {paragraph}{Constructive (miss):}{13}{section*.12}%
+\contentsline {paragraph}{Encouraging (hard hit):}{13}{section*.13}%
+\contentsline {subsection}{\numberline {5.6}Additional Practical Assignment Used Formatively}{13}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Stage Six: Instructional Strategy}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Theory micro-lessons ($\leq $ 120 min total)}{17}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Coding micro-lessons ($\leq $ 120 min total)}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Orchestration timeline (what runs when)}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}How each micro-lesson advances the outcomes}{19}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Accessibility and VARK within lessons}{19}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Stage Seven: Instructional Materials}{20}{section.7}%
+\contentsline {section}{\numberline {8}Stage Eight: Diagnostic Assessment}{21}{section.8}%
+\contentsline {section}{\numberline {9}Stage Nine: Summative Assessment \& Evaluation}{21}{section.9}%
+\contentsline {paragraph}{What is instructional design?}{26}{section*.20}%
+\contentsline {paragraph}{What does an instructional designer do?}{26}{section*.21}%
+\contentsline {paragraph}{Why is instructional design important?}{26}{section*.22}%
+\contentsline {paragraph}{Instructional design theories (toolbox we draw from)}{26}{section*.23}%
+\contentsline {paragraph}{How do Gagn\'e's principles impact our design?}{26}{section*.24}%
+\contentsline {paragraph}{What are Merrill's principles?}{26}{section*.25}%
+\contentsline {paragraph}{How do Merrill's principles differ from Gagn\'e's?}{26}{section*.26}%
+\contentsline {paragraph}{Models (frameworks/methods) for instructional design:}{27}{section*.27}%
+\contentsline {paragraph}{How do learning theories, learning styles and motivation link to ID?}{27}{section*.28}%
+\contentsline {paragraph}{Are SE and ID so different?}{27}{section*.29}%
