@@ -1,9 +1,11 @@
-// import CodeViewer from "../../components/CodeViewer";
-// import ApollonUmlEditor from "../../components/UMLEditor";
-// import CodeEditor from "../../components/CodeEditor";
+import CTD from "../../components/CTD";
 
 const UML: React.FC = () => {
-  return <main></main>;
+  return (
+    <main>
+      <CTD />
+    </main>
+  );
 };
 
 export default UML;

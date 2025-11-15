@@ -21,7 +21,7 @@ const codeBlockStyle: React.CSSProperties = {
   overflow: "scroll", // <— always show scrollbars (browser permitting)
   fontSize: "0.9rem",
   borderRadius: "8px",
-  border: "1px solid #444",
+  border: "2px solid #ffffffff",
   boxSizing: "border-box",
 };
 
