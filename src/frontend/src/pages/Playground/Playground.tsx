@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import CodeEditor from "../../CodeEditor";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 import axios from "axios";
 
 const Playground: React.FC = () => {
-  const [code, setCode] = useState(`
-#include <iostream>
-int main() {
-    std::cout << "Hello";
-    return 0;
-}
-`);
+  const [code, setCode] = useState({});
   const [output, setOutput] = useState<{
     compile_errors?: string;
     runtime_output?: string;
@@ -23,7 +19,7 @@ int main() {
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/playground/run",
-        { code },
+        code,
       );
       setOutput(response.data);
     } catch (err) {
@@ -31,6 +27,15 @@ int main() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const downloadZip = async (code: Record<string, string>) => {
+    const zip = new JSZip();
+    for (const [filename, content] of Object.entries(code)) {
+      zip.file(filename, content);
+    }
+    const blob = await zip.generateAsync({ type: "blob" });
+    saveAs(blob, "project.zip");
   };
 
   return (
@@ -44,6 +49,7 @@ int main() {
       >
         {loading ? "Runnning..." : "Run Code"}
       </button>
+      <button onClick={() => downloadZip(code)}>Download ZIP</button>
 
       {output && (
         <div
