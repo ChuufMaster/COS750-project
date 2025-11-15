@@ -55,3 +55,8 @@
   background-color: #ccc;
   color: black;
 }
+
+.task1-desc {
+  padding-left: 60px;
+  padding-right: 60px;
+}

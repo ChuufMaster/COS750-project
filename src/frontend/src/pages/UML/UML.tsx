@@ -9,6 +9,7 @@ const UML: React.FC = () => {
   return (
     <main>
       <h1 className="title">UML</h1>
+      <p className="task1-desc">Task 1: Code to Diagram</p>
       <div className="top-wrapper">
         <div className="code-wrapper">
           <CodeViewer code={factoryMethodCode} language="cpp" />
@@ -24,6 +25,7 @@ const UML: React.FC = () => {
           </button>
         </div>
       </div>
+      <p className="task1-desc">Task 2: Diagram to Code</p>
     </main>
   );
 };
