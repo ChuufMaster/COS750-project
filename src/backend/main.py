@@ -19,8 +19,8 @@ app.add_middleware(
 )
 
 app.include_router(playground.router, prefix="/playground")
-app.include_router(quiz.router, prefix="/playground")
-app.include_router(uml.router, prefix="/playground")
+app.include_router(quiz.router, prefix="/quiz")
+app.include_router(uml.router, prefix="/uml")
 
 
 @app.get("/")
