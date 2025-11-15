@@ -1,0 +1,29 @@
+{
+  "id": "R-DTC-001",
+  "sections": [
+    {
+      "name": "Compiles",
+      "points": 10,
+      "criteria": ["Submission compiles with the provided toolchain and flags"]
+    },
+    {
+      "name": "Unit Tests",
+      "points": 70,
+      "criteria": [
+        "FactoryMethod returns a Product* whose Operation() returns the expected value",
+        "ConcreteProductA implements Product::Operation()",
+        "Creator::DoSomething() composes behavior using FactoryMethod()"
+      ]
+    },
+    {
+      "name": "Design Fidelity",
+      "points": 20,
+      "criteria": [
+        "Abstract base classes present (Product, Creator)",
+        "Correct inheritance for Concrete* classes",
+        "Method names match UML (Operation, FactoryMethod, DoSomething)"
+      ]
+    }
+  ],
+  "notes": "Minor naming deviations may be tolerated if tests still pass; major structural deviations reduce Design Fidelity points."
+}

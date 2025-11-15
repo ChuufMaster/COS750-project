@@ -1,0 +1,16 @@
+{
+  "toolchain": "gcc-13",
+  "std": "c++20",
+  "warnFlags": ["-Wall", "-Wextra", "-Wpedantic"],
+  "optFlags": ["-O2"],
+  "timeoutSeconds": 30,
+  "memoryLimitMB": 512,
+  "entryPoint": "main.cpp",
+  "includePaths": [],
+  "linkWith": [],
+  "runner": {
+    "kind": "custom",
+    "expectsJUnitXml": true,
+    "junitXmlPath": "build/test-results/results.xml"
+  }
+}

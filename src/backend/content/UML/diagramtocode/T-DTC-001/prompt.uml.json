@@ -1,0 +1,59 @@
+{
+  "apollonVersion": "2.9.0",
+  "type": "ClassDiagram",
+  "elements": {
+    "e_product": {
+      "id": "e_product",
+      "type": "UMLClass",
+      "name": "Product",
+      "isAbstract": true,
+      "attributes": [],
+      "methods": [{ "id": "m_op", "name": "Operation()" }]
+    },
+    "e_concreteProductA": {
+      "id": "e_concreteProductA",
+      "type": "UMLClass",
+      "name": "ConcreteProductA",
+      "attributes": [],
+      "methods": [{ "id": "m_op_impl", "name": "Operation()" }]
+    },
+    "e_creator": {
+      "id": "e_creator",
+      "type": "UMLClass",
+      "name": "Creator",
+      "isAbstract": true,
+      "attributes": [],
+      "methods": [
+        { "id": "m_factory", "name": "FactoryMethod()" },
+        { "id": "m_do", "name": "DoSomething()" }
+      ]
+    },
+    "e_concreteCreatorA": {
+      "id": "e_concreteCreatorA",
+      "type": "UMLClass",
+      "name": "ConcreteCreatorA",
+      "attributes": [],
+      "methods": [{ "id": "m_factory_impl", "name": "FactoryMethod()" }]
+    }
+  },
+  "relationships": {
+    "r_prod_gen": {
+      "id": "r_prod_gen",
+      "type": "UMLGeneralization",
+      "source": "e_concreteProductA",
+      "target": "e_product"
+    },
+    "r_creator_gen": {
+      "id": "r_creator_gen",
+      "type": "UMLGeneralization",
+      "source": "e_concreteCreatorA",
+      "target": "e_creator"
+    },
+    "r_creator_dep_prod": {
+      "id": "r_creator_dep_prod",
+      "type": "UMLDependency",
+      "source": "e_creator",
+      "target": "e_product"
+    }
+  }
+}
