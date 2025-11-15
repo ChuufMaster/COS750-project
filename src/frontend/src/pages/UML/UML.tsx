@@ -1,16 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import "pepjs";
 import { ApollonEditor } from "@ls1intum/apollon";
 
-// const container = document.getElementById("...");
-// const editor = new ApollonEditor(container);
-
 const UML: React.FC = () => {
-  return (
-    <div>
-      <h1>UML</h1>
-      <p>UML diagrams go here</p>
-    </div>
-  );
+  return <></>;
 };
 
 export default UML;
