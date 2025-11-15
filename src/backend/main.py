@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from routers import playground, quiz, uml
+from fastapi.staticfiles import StaticFiles
+
 
 app = FastAPI()
 
@@ -21,6 +23,8 @@ app.add_middleware(
 app.include_router(playground.router, prefix="/playground")
 app.include_router(quiz.router, prefix="/quiz")
 app.include_router(uml.router, prefix="/uml")
+
+app.mount("/static", StaticFiles(directory="../../examples"), name="static")
 
 
 @app.get("/")

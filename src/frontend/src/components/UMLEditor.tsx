@@ -1,21 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { ApollonEditor, ApollonMode, UMLDiagramType } from "@ls1intum/apollon";
 
-// A simplified type for the model
-type ApollonModel = {
-  elements: any[];
-  relationships: any[];
-};
+// No props needed
+type ApollonUmlEditorProps = {};
 
-type ApollonUmlEditorProps = {
-  initialModel?: ApollonModel | undefined;
-  readOnly?: boolean; // Prop to make editor un-editable
-};
-
-const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = ({
-  initialModel,
-  readOnly = false, // Default to false (editable)
-}) => {
+const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const editorRef = useRef<any>(null);
 
@@ -23,19 +12,11 @@ const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
-    // Determine the mode based on the prop
-    const editorMode = readOnly
-      ? ApollonMode.Presentation // Read-only mode
-      : ApollonMode.Modelling;
-
+    // Simple options: Always create a new, editable Class Diagram
     const options: any = {
+      mode: ApollonMode.Modelling,
       type: UMLDiagramType.ClassDiagram,
-      mode: editorMode,
     };
-
-    if (initialModel) {
-      options.model = initialModel;
-    }
 
     const editor = new ApollonEditor(container, options);
     editorRef.current = editor;
@@ -53,28 +34,19 @@ const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = ({
     resizeObserver.observe(container);
 
     return () => {
+      // --- Robust cleanup ---
       resizeObserver.disconnect();
       if (editorRef.current?.destroy) {
         editorRef.current.destroy();
       }
+      if (container) {
+        container.innerHTML = "";
+      }
       editorRef.current = null;
     };
-  }, [initialModel, readOnly]);
+  }, []); // Empty dependency array, this runs only once
 
-  return (
-    <div
-      ref={containerRef}
-      style={{
-        width: "100%",
-        height: "100%",
-        // These styles are applied from your CSS:
-        // border: "1px solid #444",
-        // borderRadius: 8,
-        boxSizing: "border-box",
-        overflow: "hidden",
-      }}
-    />
-  );
+  return <div ref={containerRef} className="apollon-editor-container" />;
 };
 
 export default ApollonUmlEditor;
