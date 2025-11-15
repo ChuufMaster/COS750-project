@@ -118,7 +118,7 @@
     {\Large \bfseries COS750 Exam Assignment\\[2pt] Factory Method\par}
 
     \vspace{12mm}
-    {\Large \bfseries Group: Concrete Creators\par}
+    {\Large \bfseries Group 7\par}
 
     \vspace{5mm}
     {\large
@@ -629,13 +629,13 @@ std::string export_report(const Creator& exporter, const std::vector<int>& v) {
 
 \subsubsection*{Tasks learners complete}
 \begin{itemize}
-\item Implement products. \texttt{CSVWriter} and \texttt{MarkdownWriter} implement \texttt{Product::render}.
+\item Implement products: \texttt{CSVWriter} and \texttt{MarkdownWriter} implement \texttt{Product::render}.
 \item CSV: \texttt{1,2,3\textbackslash n}
 \item Markdown list: \texttt{- 1\textbackslash n- 2\textbackslash n- 3\textbackslash n}
-\item Implement creators. \texttt{CSVExporter::make()} and \texttt{MarkdownExporter::make()} return \texttt{std::unique\_ptr<Product>} to the correct concrete.
-\item Keep the client abstract. Do not include any \texttt{Concrete*.h} in \texttt{client.cpp}. Do not instantiate concrete types in client. No switch on output type in client.
-\item Extension step. Add \texttt{TSVWriter} and \texttt{TSVExporter}. Constraint: do not change \texttt{client.cpp}.
-\item UML check. Produce the minimal UML (in-app drag build) that matches your code: roles, inheritance, factory op signature.
+\item Implement creators: \texttt{CSVExporter::make()} and \texttt{MarkdownExporter::make()}\\ return \texttt{std::unique\_ptr<Product>} to the correct concrete.
+\item Keep the client abstract: Do not include any \texttt{Concrete*.h} in \texttt{client.cpp}. Do not instantiate concrete types in client. No switch on output type in client.
+\item Extension step: Add \texttt{TSVWriter} and \texttt{TSVExporter}. Constraint: do not change \texttt{client.cpp}.
+\item UML check: Produce the minimal UML (in-app drag build) that matches your code: roles, inheritance, factory op signature.
 \end{itemize}
 
 \subsubsection*{Autograder checks and marks (10)}

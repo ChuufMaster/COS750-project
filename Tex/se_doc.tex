@@ -1,0 +1,387 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper,
+  left=1.8cm,right=1.8cm,bottom=1.8cm,top=1.8cm,
+  includehead,headheight=16pt,heightrounded]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear
+\fancyfoot[C]{\thepage}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\includegraphics[height=12pt]{up_logo.png}\hspace{0.4em}COS750 • SE Document}
+\fancyhead[R]{\nouppercase{\leftmark}}
+
+\fancypagestyle{landscapenohdr}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{16pt}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{colortbl}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{comment}
+\usepackage{stfloats}
+\usepackage{makecell}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage[pass]{geometry}
+\usepackage{pdflscape}
+\usepackage{siunitx}
+\usepackage{longtable}
+\lstset{basicstyle=\ttfamily\small,breaklines=true}
+\usepackage{ifthen}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\BlackBox}{\rule{1.5ex}{1.5ex}}
+
+\definecolor{blue}{rgb}{0,0,0.8}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{upTabHeader}{HTML}{000000}
+\definecolor{upRowShade}{HTML}{EFEFEF}
+
+\lstset
+{
+   basicstyle=\ttfamily\footnotesize,
+   language=C++,
+   numbers=right,
+   numberstyle=\color{gray},
+   showtabs=true,
+   breaklines=true,
+   breakatwhitespace=true,
+   captionpos=bottom,
+   keywordstyle=\color{blue},
+   commentstyle=\color{dkgreen},
+   stringstyle=\color{mauve},
+   frame=single
+}
+
+\mdfsetup
+{
+   skipabove=\topskip,
+   skipbelow=\topskip,
+   leftmargin=2em,
+   rightmargin=2em
+}
+
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.25}
+\usepackage{booktabs, tabularx, makecell}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+
+% --- Cover page ---
+\newcommand{\coverdate}{\today}
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \vspace*{6mm} % small top breathing room
+
+    \includegraphics[width=0.82\textwidth]{up_logo.png}
+
+    \vspace{16mm}
+    {\Huge \bfseries Software Engineering Document\par}
+
+    \vspace{6mm}
+    {\Large \bfseries COS750 Exam Assignment\\[2pt] Factory Method\par}
+
+    \vspace{12mm}
+    {\Large \bfseries Group 7\par}
+
+    \vspace{5mm}
+    {\large
+      Charl Pieter Pretorius: u22519042\\
+      Ivan Gareth Horak: u21456552\\
+      James Alexander Fawkes Fitzsimons: u21516741
+    \par}
+
+    \vfill % pushes the date to the bottom of the page
+    {\large \coverdate\par}
+  \end{center}
+\end{titlepage}
+% --- End cover page ---
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\tableofcontents
+\clearpage
+
+\section{Purpose \& Scope}
+Build a post-lecture practice and assessment web app that helps COS214 students recognise, diagram, and implement the Factory Method (FM) pattern, and produces intervention reports for lecturers on FM misunderstandings and prerequisite C++ gaps (constructors/destructors (ctors/dtors), virtual dtor, ownership). Students are assumed to have attended the lecture; the app supplements it.
+
+\subsection*{Primary goals}
+\begin{itemize}
+\item Deliver micro-quizzes + dynamic formative assessments tied to specific LOs (Learning Outcomes) from the ID doc.
+\item Provide a coding practical environment with automated tests and feedback.
+\item Create an environment where a UML diagram can be created or edited to be assessed against a provided context.
+\item Generate actionable analytics per LO and per C++ prerequisite to support intervention.
+\end{itemize}
+
+\section{Development Approach (SE)}
+Use a lightweight Agile / Iterative approach (2x1-week sprints) with an MVP cutline:
+
+\paragraph{Sprint 1 (MVP):} micro-quiz engine, UML label/build interactions, code runner for the FM practical, LO-tagged analytics, intervention notification.
+
+\paragraph{Sprint 2 (Polish):} micro-lessons, AF vs FM discrimination items, accessibility passes, lecturer dashboard.
+
+\section{Users \& Key Scenarios}
+\paragraph{Student:} completes micro-lessons (Theory T* and Coding C*); after each set of three micro-lessons, the system serves the next Micro-Quiz (MQ); runs the FM coding practical; views mastery heatmap and feedback.
+
+\paragraph{COS214 Lecturing Team:} views cohort dashboards, LO mastery, top error classes, and C++ prereq gaps flagged by items.
+
+\section{Functional Requirements}
+An asterisk (*) implies it does not form part of the MVP.
+
+\begin{itemize}
+\item Module Home (FM): shows goals, time budget, and entry points (UML strand, code strand, recognition strand).
+\item Micro-Lessons*: short pages with dual-coding (UML + text) and quick “try-it” bits (e.g., identify Creator vs Product).
+\item Micro-Quizzes (MQ): triggered after each \textbf{three micro-lessons (T*/C*)}, 5$\pm$1 marks, mixed question types (UML-label, code-read, trace, refactor), immediate feedback, LO-tagged. MQs themselves do not count toward the three.
+\item FM Coding Practical: scaffolded C++ task (Creator/Product with make()), unit test execution with structure checks (e.g., no new Concrete* in client).
+\item UML Workbench: drag-to-label roles, add abstract markers, set return types; code$\rightarrow$UML and UML$\rightarrow$code-signature tasks.
+\item Pattern Discrimination*: triage FM vs Abstract Factory vs Simple Factory with one decisive cue.
+\item Analytics: store attempt-level events \{user/session, item\_id, lo\_ids[], pass\_fail, time\_ms, error\_class\} and compute mastery bands per LO.
+\item Reports: per-student and cohort roll-ups; “intervention reasons” by error class (e.g., wrapper-around-new, wrong return type, no virtual dtor).
+\item Accessibility \& Preferences*: captions, transcripts, keyboard-first navigation, high-contrast theme; student can pick preferred modality.
+\item Formative policy (from ID): total MQ time \(\leq 60\) minutes and \(\leq 30\) marks across MQ1-MQ6; unlimited retries for learning, but only the first graded attempt counts; variants are parameterised.
+\end{itemize}
+
+\section{Non-Functional Requirements}
+\begin{itemize}
+\item Usability: first correct attempt rate on easy items $\ge 80\%$; keyboard-only path for all actions.
+\item Performance: item load $< 3.0$ s (p95); code tests return $< 10$ s (p95) per run.
+\item Reliability: autosave state; graceful retry on network hiccups.
+\item Maintainability: content in YAML/JSON with LO tags; CI on content schema.
+\item Security \& Privacy: minimal PII (anonymous or student number); store only necessary analytics for intervention.
+\item Accessibility: WCAG-aware (alt text, focus states, ARIA live regions for result panels). High Contrast, text-to-speech.
+\end{itemize}
+
+\subsection*{Target platforms}
+\textbf{Desktop browsers:} Chromium.
+\\
+\textbf{Minimum viewport:} 1366$\times$768. Keyboard-only navigation supported. High-contrast theme available.
+
+
+\section{Architecture (high level)}
+\paragraph{Front-end (SPA):} React + TypeScript, Monaco editor, custom UML canvas. Feature slices: Lessons*, MQ Engine, UML Workbench, Code Practical, Analytics views.
+
+\paragraph{API:} FastAPI/Node for content delivery, item evaluation, and analytics ingestion.
+
+\paragraph{Grading Service:} containerised C++ runner with unit tests + static checks (grep/AST) for FM invariants. Gemini-2.5-Pro API for formative feedback.
+
+\paragraph{Store:} PostgreSQL (content, attempts, mastery), object storage for static lesson assets.
+
+\paragraph{Auth:} simple session; prototype may run anonymous sessions if allowed.
+
+\paragraph{MQ Scheduler*:} Emits a Micro-Quiz (MQ) after each \textbf{three} completed micro-lessons (T*/C*) on a per-user path; maintains a rolling counter across reloads. Feature-flagged off until micro-lessons ship.
+
+\subsection*{Key integration}
+\begin{itemize}
+\item \textbf{Code practical flow:} upload or inline edit $\rightarrow$ build in sandbox $\rightarrow$ run tests $\rightarrow$ return structured results (per-check verdicts + hints).
+\item \textbf{UML workbench:} client-side checks for labels/markers; server verifies on submit for consistency.
+\end{itemize}
+
+\subsection*{Environments \& deployment MUST STILL BE UPDATED}
+Mono-repo with Docker Compose. Services:
+\begin{itemize}
+  \item \texttt{web} (SPA) — React build served by a lightweight web server.
+  \item \texttt{api} (FastAPI/Node) — content delivery, item evaluation, analytics ingestion.
+  \item \texttt{grader} (C++) — containerised runner with unit tests and static checks.
+  \item \texttt{db} (PostgreSQL) — content, attempts, mastery.
+  \item \texttt{obj} (object storage or local volume) — lesson assets and fixtures.
+\end{itemize}
+
+\section{Data Model}
+\begin{itemize}
+\item \texttt{learning\_outcome(lo\_id, name, bloom, strand)}
+\item \texttt{item(item\_id, type, prompt, lo\_ids[], difficulty, error\_classes[])}
+\item \texttt{attempt(attempt\_id, session\_id, item\_id, mq\_id, outcome, attempts\_n, \\ time\_ms, error\_class, remedial\_clicked)}
+\item \texttt{mastery(session\_id, lo\_id, band, updated\_at)}
+\item \texttt{practical\_run(run\_id, checks\_json, tests\_passed, time\_ms)}
+\item \texttt{user} (optional for named cohorts)
+\end{itemize}
+
+\section{Content Authoring \& Pipeline}
+\begin{itemize}
+\item Content format: YAML/JSON; each item lists lo\_ids[], error\_classes[], and render\_spec (e.g., UML nodes/edges).
+\item Validation: schema check in CI; preview tool for authors.
+\item Randomisation: parameterised names and class variants to deter memorisation.
+\item Traceability: every item $\rightarrow$ LO(s) (reuses your ID mapping table).
+\end{itemize}
+
+\section{Item Types (engine support)}
+\begin{verbatim}
+UML_LABEL, UML_BUILD_FROM_CODE, UML_SCAN, UML_DESIGN_FROM_CONTEXT,
+CODE_READ_ROLE, CODE_TRACE_OVERRIDE, CODE_FIX_LIFECYCLE,
+REFACTOR_TO_FM, EXTEND_NEW_PRODUCT,
+MCQ_INTENT, SCENARIO_DECISION, PATTERN_TRIAGE.
+\end{verbatim}
+
+\section{Testing Strategy}
+\begin{itemize}
+\item Unit: item validators, LO mapping, hint selection.
+\item Integration: code-runner path (compile errors, timeouts), UML canvas $\rightarrow$ evaluator.
+\item E2E: happy path (student completes a module), network-loss recovery.
+\item Accessibility: axe-core scans + manual keyboard audits.
+\item Content QA: rubric consistency; AF vs FM discrimination sanity checks; General assessment through Gemini-2.5-Pro.
+\item Logging smoke test: API emits JSON on success and error paths; client error hook posts redacted payload.
+\item Health checks: liveness/readiness endpoints return 200 within 100 ms on warm services.
+\item Scheduler cadence (unit)*: given a fresh session, emit no MQ after 1--2 micro-lessons; emit exactly one MQ after micro-lesson \#3; then again after \#6, \#9, \dots\; MQ completions do not affect the counter.
+\item Scheduler LO-selection (integration)*: with mixed T*/C* sequences, verify the emitted MQ targets the last three micro-lessons’ LOs and respects completion/persistence across reloads.
+\item UML design validator (unit)*: enforce role constraints (Creator abstract, factory op return = Product, no client$\rightarrow$Concrete deps) on the canvas graph.
+\item UML design flow (integration)*: given a short brief, user can place participants, add generalisation and dependencies, and pass validator checks; persisted and restored on reload.
+\end{itemize}
+
+\section{Risks \& Mitigations}
+\begin{itemize}
+\item C++ compile latency $\rightarrow$ cache and small test sets; pre-warm containers.
+\item False positives in static checks $\rightarrow$ pair static checks with unit tests; keep rules transparent in feedback.
+\item Scope creep $\rightarrow$ stick to MVP cutline (below).
+\end{itemize}
+
+\section{MVP Cutline}
+\subsection*{Included}
+FM strand: MQs, coding practical with tests, UML workbench (label/build), analytics + CSV export.
+\\
+Note: until micro-lessons ship, MQs are accessible via a direct "Start MQ" flow; the MQ scheduler is feature-flagged off and enabled once micro-lessons are available.
+\subsection*{Deferred/Nice-to-have}
+Micro-lessons, pattern discrimination, rich lecturer dashboards, cohort compare over time, item authoring UI (use files in prototype).
+
+\section{Work Plan (example)}
+\paragraph{Sprint 1 (week 1):} content loader, MQ engine, UML label, code runner v1, analytics ingestion, 40 core items.
+
+\paragraph{Sprint 2 (week 2):} UML build, AF vs FM triage, refactor/extend tasks, accessibility polish, lecturer CSV export, 20 more items.
+
+
+
+\newpage
+\clearpage
+\begin{landscape}
+\pagestyle{landscapenohdr}
+
+\subsection*{Traceability (ID \texorpdfstring{$\leftrightarrow$}{↔} SE)}
+
+\begingroup
+\setlength{\LTcapwidth}{\linewidth}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.22}
+\small
+
+\begin{longtable}{
+  C{0.9cm}   % Goal ID
+  L{3.6cm}   % Goal description
+  L{6.2cm}   % App features (MVP / *polish)
+  C{2.4cm}   % Formative (MQ)
+  L{4.6cm}   % Summative (from ID)
+  L{4.6cm}   % Core LOs (from ID)
+}
+\caption{Goal $\rightarrow$ Feature $\rightarrow$ Assessment $\rightarrow$ LO mapping (MVP unless marked *).}\\
+\toprule
+\textbf{ID} & \textbf{Goal (from ID)} & \textbf{App features (MVP / *polish)} &
+\textbf{Formative (MQ)} & \textbf{Summative (from ID)} & \textbf{Core LOs}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Goal (from ID)} & \textbf{App features (MVP / *polish)} &
+\textbf{Formative (MQ)} & \textbf{Summative (from ID)} & \textbf{Core LOs}\\
+\midrule
+\endhead
+
+G1 &
+Creation variability \& why creational &
+MCQ\_INTENT items (intent/recognition); Module Home cues; analytics tag for “intent/strategy” &
+MQ1 &
+Q1 (Intent MCQ/FITB) &
+LO4, LO6 \\ \midrule
+
+G2 &
+Canonical FM \& “client must not construct concretes” &
+UML Workbench (UML\_LABEL, UML\_SCAN); CODE\_READ\_ROLE; grader invariants (no \texttt{\#include "Concrete"}, no \texttt{new Concrete}, no type switch) &
+MQ1, MQ5 &
+Q11 (Refactor) &
+LO1–LO4, LO9 \\ \midrule
+
+G3 &
+UML structure \& notation; produce/read/locate FM in diagrams &
+UML\_LABEL, UML\_BUILD\_FROM\_CODE, UML\_SCAN; *UML\_DESIGN\_FROM\_CONTEXT (palette, signatures, constraints) &
+MQ2, MQ3 &
+Q3 (Label), Q4 (Build from code), Q5 (Scan), Q13 (Outline from UML), Q14 (Translation duet), *Q6 (Design from brief) &
+LO5, LO7, LO10, LO11*, LO12, LO13, LO17, LO23 \\ \midrule
+
+G4 &
+Code role cues \& conformance &
+CODE\_READ\_ROLE, CODE\_TRACE\_OVERRIDE, CODE\_FIX\_LIFECYCLE &
+MQ4 &
+Q7 (Role classify), Q9 (Trace), Q10 (Lifecycle fix) &
+LO7, LO14, LO19 \\ \midrule
+
+G5 &
+Pitfalls \& misconceptions (wrapper, switch, tight coupling) &
+Smell-detection + seam-pointer items; error classes feed reports &
+MQ5 &
+Q15 (Smell + seam) &
+LO14, LO19, LO21 \\ \midrule
+
+G6 &
+Correct C++ realisation \& UML$\leftrightarrow$code conformance &
+Grader invariants; REFACTOR\_TO\_FM; EXTEND\_NEW\_PRODUCT; round-trip checks &
+MQ4–MQ6 &
+Q10 (Lifecycle), Q11 (Refactor), Q12 (Extend), Q14 (Translation duet) &
+LO10, LO14, LO16–LO18, LO20–LO23 \\ \midrule
+
+G7 &
+Related patterns (recognition) &
+Pattern triage (FM vs AF vs Simple) *
+&
+MQ6 &
+Q16 (Pattern discrimination) &
+LO8, LO9, LO12, LO15, LO24* \\ \midrule
+
+G8 &
+Guided hands-on culminating in refactor/transfer &
+FM coding practical with tests + static checks; extend step &
+Practical (formative use possible) &
+(Practical rubric) &
+LO9, LO11, LO16, LO21, LO22 \\
+
+\bottomrule
+\end{longtable}
+\endgroup
+
+\end{landscape}
+\pagestyle{fancy}
+\clearpage
+
+
+\section{Assumptions \& Constraints}
+\begin{itemize}
+\item Students attended the lectures first; web-app is supplemental.
+\item Assessment must surface why intervention is needed (mapping to potential LOs).
+\item Pattern content must follow pure forms (avoid collapsed hierarchies unless teaching why).
+\end{itemize}
+
+\section{Deliverables}
+\begin{itemize}
+\item Running prototype (SPA + API + grader).
+\item Item/content bundle (YAML/JSON) and sample analytics export.
+\end{itemize}
+
+\end{document}
