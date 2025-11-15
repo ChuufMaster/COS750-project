@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: IEEEtran.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: references.bib
+Warning--I didn't find a database entry for "liu2024cmmmathchinesemulti-modal"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in zhou2022ape
+Warning--empty journal in ramnath2025survey
+
+Done.
+You've used 31 entries,
+            4087 wiz_defined-function locations,
+            1020 strings with 15483 characters,
+and the built_in function-call counts, 19364 in all, are:
+= -- 1644
+> -- 529
+< -- 66
++ -- 263
+- -- 117
+* -- 974
+:= -- 3351
+add.period$ -- 62
+call.type$ -- 31
+change.case$ -- 37
+chr.to.int$ -- 123
+cite$ -- 33
+duplicate$ -- 1449
+empty$ -- 1487
+format.name$ -- 138
+if$ -- 4359
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 293
+newline$ -- 170
+num.names$ -- 31
+pop$ -- 673
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1498
+stack$ -- 0
+substring$ -- 381
+swap$ -- 1078
+text.length$ -- 25
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 31
+warning$ -- 2
+while$ -- 61
+width$ -- 33
+write$ -- 386
+(There were 3 warnings)
