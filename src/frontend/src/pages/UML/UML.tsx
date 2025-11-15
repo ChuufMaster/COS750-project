@@ -1,5 +1,8 @@
 import React from "react";
-// import ApollonEditor from "@ls1intum/apollon";
+import { ApollonEditor } from "@ls1intum/apollon";
+
+// const container = document.getElementById("...");
+// const editor = new ApollonEditor(container);
 
 const UML: React.FC = () => {
   return (

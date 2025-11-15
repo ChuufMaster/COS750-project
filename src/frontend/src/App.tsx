@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div>
-        <nav style={{ padding: "1rem", background: "#333", color: "#fff" }}>
+        {/* <nav style={{ padding: "1rem", background: "#333", color: "#fff" }}>
           <Link to="/" style={{ marginRight: "1rem", color: "#fff" }}>
             Playground
           </Link>
@@ -20,10 +20,10 @@ function App() {
           <Link to="/uml" style={{ marginRight: "1rem", color: "#fff" }}>
             UML
           </Link>
-        </nav>
+        </nav> */}
         <div style={{ padding: "1rem" }}>
           <Routes>
-            <Route path="/" element={<Playground />} />
+            <Route path="/playground" element={<Playground />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/uml" element={<UML />} />
           </Routes>
