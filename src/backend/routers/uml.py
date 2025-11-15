@@ -336,16 +336,24 @@ def get_code_to_diagram_task():
 # POST: Submit CTD (student UML JSON)
 # -------------------------------------------------
 @router.post("/SubmitCTD")
+@router.post("/SubmitCTD")
 def submit_code_to_diagram_task(submission: dict):
+    """
+    Body:
+    {
+      "userId": "u21516741",   # optional for now
+      "uml": { ...Apollon JSON... }
+    }
+    """
+    user_id = submission.get("userId")  # currently unused, reserved for future
     student_raw = submission.get("uml")
+
     if not student_raw:
         raise HTTPException(status_code=400, detail="Missing UML model")
 
-    # Load rubric
     rubric_path = BASE / "CTD" / "rubric.uml.json"
     rubric = read_json(rubric_path)
 
-    # Normalize both
     student = normalize_apollon_model(student_raw)
     rub = {
         "classes": rubric["classes"],
@@ -358,8 +366,10 @@ def submit_code_to_diagram_task(submission: dict):
         "score": score,
         "maxScore": max_score,
         "feedback": feedback,
-        "normalizedStudent": student
+        "normalizedStudent": student,
+        "userId": user_id,
     }
+
 
 # -------------------------------------------------
 # GET: Diagram To Code (DTC)
@@ -398,20 +408,30 @@ def get_diagram_to_code_task():
 # -------------------------------------------------
 @router.post("/SubmitDTC")
 def submit_diagram_to_code_task(payload: dict):
+    """
+    Body:
+    {
+      "userId": "u21516741",   # optional for now
+      "code": "class Product { ... }"
+    }
+    """
+    user_id = payload.get("userId")  # currently unused, reserved for future
     code = payload.get("code")
+
     if not code:
         raise HTTPException(status_code=400, detail="Missing 'code' field")
 
     rubric_path = BASE / "DTC" / "rubric.uml.json"
-    rubric = json.loads(rubric_path.read_text())
+    rubric = json.loads(rubric_path.read_text(encoding="utf-8"))
 
     student = normalize_cpp(code)
-
     score, max_score, feedback = compare_cpp_to_rubric(student, rubric)
 
     return {
         "score": score,
         "maxScore": max_score,
         "feedback": feedback,
-        "normalizedStudent": student
+        "normalizedStudent": student,
+        "userId": user_id,
     }
+
