@@ -83,7 +83,7 @@ const ApollonUmlEditor = forwardRef<
         minHeight: "320px",
         borderRadius: "8px",
         border: "2px solid #ffffff",
-        backgroundColor: "#3b393cff",
+        backgroundColor: "#e5e5e5ff",
         ...style,
       }}
     />

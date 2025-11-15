@@ -106,7 +106,7 @@ const CTD: React.FC = () => {
         flexDirection: "column",
         gap: 24,
         padding: 24,
-        maxWidth: 1200,
+        maxWidth: 1500,
         margin: "0 auto",
         fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
       }}
@@ -116,12 +116,12 @@ const CTD: React.FC = () => {
         <h1 style={{ fontSize: "1.75rem", marginBottom: 8 }}>
           UML – Code to Diagram
         </h1>
-        <p style={{ marginBottom: 8, color: "#4b5563" }}>
+        <p style={{ marginBottom: 8, color: "#dcebffff" }}>
           Read the C++ implementation and construct a UML class diagram that
           captures the Factory Method design. Focus on classes, inheritance, and
           key operations.
         </p>
-        <ul style={{ paddingLeft: "1.2rem", color: "#374151" }}>
+        <ul style={{ paddingLeft: "1.2rem", color: "#dcebffff" }}>
           <li>🧱 Distinguish abstract vs concrete classes.</li>
           <li>🧬 Represent the inheritance structure accurately.</li>
           <li>🛠️ Include the core factory method and product behavior.</li>
@@ -145,36 +145,55 @@ const CTD: React.FC = () => {
 
       {!loadingTask && !taskError && (
         <>
-          {/* Code + UML editor */}
+          {/* Code + UML editor HORIZONTAL layout (20% / 80%) */}
           <section
             style={{
               display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr)",
+              gridTemplateColumns: "30% 70%",
               gap: 24,
+              alignItems: "stretch",
+              height: "700px", // 👈 main control
+              maxHeight: "62vh", // optional: responsive cap
             }}
           >
-            <div style={{ minHeight: 260 }}>
+            {/* Code panel (20%) */}
+            <div
+              style={{
+                minHeight: 260,
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <h2 style={{ fontSize: "1.1rem", marginBottom: 8 }}>
                 C++ Implementation
               </h2>
               <div
                 style={{
+                  flex: 1,
                   borderRadius: 8,
                   overflow: "hidden",
-                  height: 320,
                   border: "1px solid #111827",
+                  minHeight: 320,
                 }}
               >
                 <CodeViewer code={codeSnippet} language={language} />
               </div>
             </div>
 
-            <div style={{ minHeight: 320 }}>
+            {/* UML editor (80%) */}
+            <div
+              style={{
+                minHeight: 320,
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <h2 style={{ fontSize: "1.1rem", marginBottom: 8 }}>
                 UML Class Diagram
               </h2>
-              {/* 🔴 Important: attach the ref here */}
-              <ApollonUmlEditor ref={umlRef} />
+              <div style={{ flex: 1, minHeight: 320 }}>
+                <ApollonUmlEditor ref={umlRef} />
+              </div>
             </div>
           </section>
 
@@ -197,7 +216,7 @@ const CTD: React.FC = () => {
                 cursor: submitting ? "default" : "pointer",
               }}
             >
-              {submitting ? "Submitting…" : "Submit for Feedback"}
+              {submitting ? "Submitting…" : "Submit"}
             </button>
 
             {submitError && (
