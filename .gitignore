@@ -1,2 +1,3 @@
 examples/factory
 **/__pycache__
+.env
