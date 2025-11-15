@@ -13,16 +13,20 @@
 
 .code-wrapper {
   width: 25%;
+  height: 100%; /* <-- Fix: Gives height to the component */
   border: 1px solid #ccc;
   background-color: white;
   border-radius: 15px;
+  overflow: hidden; /* <-- Good practice */
 }
 
 .uml-wrapper {
   width: 40%;
+  height: 100%; /* <-- Fix: Gives height to the component */
   border: 1px solid #ccc;
   background-color: white;
   border-radius: 15px;
+  overflow: hidden; /* <-- Good practice */
 }
 
 .submit-wrapper {
@@ -34,6 +38,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  height: 100%; /* <-- Fix: Makes this column full height */
+  box-sizing: border-box;
 }
 .description {
   background-color: white;
@@ -41,6 +47,9 @@
   color: black;
   width: 90%;
   padding: 5px;
+  box-sizing: border-box;
+  flex: 1; /* <-- Allows it to fill space */
+  min-height: 50px;
 }
 
 .feedback {
@@ -49,14 +58,39 @@
   background-color: white;
   color: black;
   width: 90%;
+  box-sizing: border-box;
+  flex: 1; /* <-- Allows it to fill space */
+  min-height: 50px;
 }
 
 .submit {
   background-color: #ccc;
   color: black;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .task1-desc {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+/* --- STYLES FOR TASK 2 --- */
+
+/* This re-uses all the styles from .top-wrapper for Task 2 */
+.bottom-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50vh;
+  margin: 10px;
+  justify-content: space-evenly;
+}
+
+/* This re-uses all the styles from .task1-desc for Task 2 */
+.task2-desc {
   padding-left: 60px;
   padding-right: 60px;
 }

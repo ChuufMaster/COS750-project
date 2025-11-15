@@ -1,28 +1,46 @@
 import React, { useEffect, useRef } from "react";
 import { ApollonEditor, ApollonMode, UMLDiagramType } from "@ls1intum/apollon";
 
-type ApollonUmlEditorProps = {};
+// A simplified type for the model
+type ApollonModel = {
+  elements: any[];
+  relationships: any[];
+};
 
-const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = () => {
+type ApollonUmlEditorProps = {
+  initialModel?: ApollonModel | undefined;
+  readOnly?: boolean; // Prop to make editor un-editable
+};
+
+const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = ({
+  initialModel,
+  readOnly = false, // Default to false (editable)
+}) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const editorRef = useRef<any>(null); // Keep using 'any'
+  const editorRef = useRef<any>(null);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    // Prevent re-initialization if container is not empty
-    // This is a guard against the Strict Mode double-mount
-    if (container.children.length > 0) {
-      return;
+    // Determine the mode based on the prop
+    const editorMode = readOnly
+      ? ApollonMode.Presentation // Read-only mode
+      : ApollonMode.Modelling;
+
+    const options: any = {
+      type: UMLDiagramType.ClassDiagram,
+      mode: editorMode,
+    };
+
+    if (initialModel) {
+      options.model = initialModel;
     }
 
-    const editor = new ApollonEditor(container, {
-      type: UMLDiagramType.ClassDiagram,
-      mode: ApollonMode.Modelling,
-    });
+    const editor = new ApollonEditor(container, options);
     editorRef.current = editor;
 
+    // --- ResizeObserver logic ---
     const resizeObserver = new ResizeObserver(() => {
       if (!container || !editorRef.current) return;
       const w = container.clientWidth;
@@ -36,21 +54,12 @@ const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = () => {
 
     return () => {
       resizeObserver.disconnect();
-
       if (editorRef.current?.destroy) {
         editorRef.current.destroy();
       }
-
-      // 👇 ADD THIS LINE
-      // Force-clear the container div so the *next* mount
-      // gets a truly clean element.
-      if (container) {
-        container.innerHTML = "";
-      }
-
       editorRef.current = null;
     };
-  }, []);
+  }, [initialModel, readOnly]);
 
   return (
     <div
@@ -58,8 +67,9 @@ const ApollonUmlEditor: React.FC<ApollonUmlEditorProps> = () => {
       style={{
         width: "100%",
         height: "100%",
-        border: "1px solid #b5b5b5ff",
-        borderRadius: 8,
+        // These styles are applied from your CSS:
+        // border: "1px solid #444",
+        // borderRadius: 8,
         boxSizing: "border-box",
         overflow: "hidden",
       }}
