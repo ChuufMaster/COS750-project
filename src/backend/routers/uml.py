@@ -253,19 +253,60 @@ def normalize_cpp(code: str):
     }
 
 def compare_cpp_to_rubric(student, rubric):
+    """
+    Compare normalized C++ (classes + inheritance + methods) against the UML rubric.
+
+    `student` is from normalize_cpp:
+        {
+          "classes": { "ClassName": ["method1", "method2", ...], ... },
+          "relationships": [
+            { "type": "Inheritance", "from": "...", "to": "..." },
+            ...
+          ]
+        }
+
+    `rubric` is the UML rubric:
+        {
+          "classes": [
+            { "name": "...", "methods": [...], "kind": "abstract"/"class" },
+            ...
+          ],
+          "relationships": [
+            { "type": "...", "from": "...", "to": "..." },
+            ...
+          ]
+        }
+    """
+
     student_classes = student["classes"]
     rubric_classes = {c["name"]: c for c in rubric["classes"]}
 
-    student_rels = {(r["from"], r["to"]) for r in student["relationships"]}
-    rubric_rels = {(r["from"], r["to"]) for r in rubric["relationships"]}
+    # Build tuple-sets for comparison
+    student_rel_tuples = {(r["from"], r["to"]) for r in student["relationships"]}
+    rubric_rel_tuples = {(r["from"], r["to"]) for r in rubric["relationships"]}
 
+    # For nicer feedback, keep maps from (from, to) -> type
+    rubric_rel_type_map = {
+        (r["from"], r["to"]): r.get("type", "Unknown")
+        for r in rubric["relationships"]
+    }
+    student_rel_type_map = {
+        (r["from"], r["to"]): r.get("type", "Unknown")
+        for r in student["relationships"]
+    }
+
+    # ---------------------------
     # Class checks
+    # ---------------------------
     missing_classes = set(rubric_classes) - set(student_classes)
     extra_classes = set(student_classes) - set(rubric_classes)
 
     class_score = len(rubric_classes) - len(missing_classes)
+    class_score = max(class_score, 0)
 
+    # ---------------------------
     # Method checks
+    # ---------------------------
     method_score = 0
     total_methods = 0
     method_feedback = {}
@@ -283,27 +324,57 @@ def compare_cpp_to_rubric(student, rubric):
 
         if missing or extra:
             method_feedback[cname] = {
-                "missingMethods": list(missing),
-                "extraMethods": list(extra)
+                "missingMethods": sorted(list(missing)),
+                "extraMethods": sorted(list(extra)),
             }
 
-    # Relationship checks
-    missing_rels = rubric_rels - student_rels
-    rel_score = len(rubric_rels) - len(missing_rels)
+    method_score = max(method_score, 0)
 
+    # ---------------------------
+    # Relationship checks
+    # ---------------------------
+    missing_rel_tuples = rubric_rel_tuples - student_rel_tuples
+    extra_rel_tuples = student_rel_tuples - rubric_rel_tuples
+
+    rel_score = len(rubric_rel_tuples) - len(missing_rel_tuples)
+    rel_score = max(rel_score, 0)
+
+    # Structured relationship feedback
+    missing_rels = [
+        {
+            "type": rubric_rel_type_map.get((f, t), "Unknown"),
+            "from": f,
+            "to": t,
+        }
+        for (f, t) in sorted(missing_rel_tuples)
+    ]
+
+    extra_rels = [
+        {
+            "type": student_rel_type_map.get((f, t), "Unknown"),
+            "from": f,
+            "to": t,
+        }
+        for (f, t) in sorted(extra_rel_tuples)
+    ]
+
+    # ---------------------------
+    # Total scoring
+    # ---------------------------
     total_score = class_score + rel_score + method_score
-    max_score = len(rubric_classes) + len(rubric_rels) + total_methods
+    max_score = len(rubric_classes) + len(rubric_rel_tuples) + total_methods
 
     feedback = {
-        "missingClasses": list(missing_classes),
-        "extraClasses": list(extra_classes),
-        "missingRelationships": list(missing_rels),
+        "missingClasses": sorted(list(missing_classes)),
+        "extraClasses": sorted(list(extra_classes)),
+        "missingRelationships": missing_rels,
+        "extraRelationships": extra_rels,
         "methodFeedback": method_feedback,
         "scores": {
             "classScore": class_score,
             "relScore": rel_score,
-            "methodScore": method_score
-        }
+            "methodScore": method_score,
+        },
     }
 
     return total_score, max_score, feedback
