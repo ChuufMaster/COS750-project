@@ -31,6 +31,7 @@ app.include_router(ai.router, prefix="/ai")
 
 app.mount("/static", StaticFiles(directory="../../examples"), name="static")
 
+
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
