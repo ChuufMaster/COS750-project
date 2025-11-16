@@ -260,7 +260,7 @@ def _grade_non_mcq_with_llm(item: Item, resp: Any) -> Optional[ItemResult]:
             json_mode=True,   # expect strict JSON
             temperature=1.0,
             top_p=0.95,
-            max_output_tokens=256,
+            max_output_tokens=256000,
             seed=42424242,
         )
         raw_text = _resp_text(resp_obj)
@@ -294,8 +294,9 @@ def _grade_non_mcq_with_llm(item: Item, resp: Any) -> Optional[ItemResult]:
             lo_ids=item.lo_ids,
             error_class=None if correct else item.error_class_on_miss,
         )
-    except Exception:
+    except Exception as e:
         # Any API / parse error → caller will fall back to deterministic scoring.
+        print(f"[Gemini grading ERROR] item={item.id} error={e!r}")
         return None
 
 
@@ -553,8 +554,8 @@ def _ensure_item_bank_seeded() -> None:
             prompt=(
                 "From the given C++ sketch in the question text (Creator with a virtual "
                 "factory make() that returns Product and two ConcreteCreators), build a "
-                "correct Factory Method UML in the UML workspace. Submit the UML "
-                "workspace JSON as your answer."
+                "correct Factory Method UML in the UML workspace. Submit the final drawn UML "
+                "as your answer."
             ),
             answer=(
                 "The UML must contain Creator, at least one ConcreteCreator, Product "
@@ -1044,3 +1045,31 @@ def export_analytics(format: Literal["json", "csv"] = "json"):
         r["lo_ids"] = "|".join(map(str, r.get("lo_ids", [])))
         writer.writerow(r)
     return out.getvalue()
+
+@router.get("/llm_ping")
+def llm_ping():
+    """
+    Minimal health check for Gemini from the quiz router.
+
+    - Confirms that gx is imported
+    - Confirms that USE_LLM_FEEDBACK is on
+    - Actually hits the model once and returns the text (or error).
+    """
+    if gx is None:
+        raise HTTPException(500, "Gemini client module (services.gemini) is not available (gx is None).")
+
+    if not USE_LLM_FEEDBACK:
+        raise HTTPException(500, "LLM feedback is disabled (QUIZ_USE_GEMINI_FEEDBACK != '1').")
+
+    try:
+        resp_obj = gx.generate(
+            text="Say hello to COS214 in one short sentence.",
+            json_mode=False,
+            max_output_tokens=32,
+            seed=42424242,
+        )
+        text = _resp_text(resp_obj)
+        return {"ok": True, "response_text": text}
+    except Exception as e:
+        # Surface the reason instead of swallowing it
+        return {"ok": False, "error": str(e)}

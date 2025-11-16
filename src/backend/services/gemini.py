@@ -4,12 +4,18 @@ import base64
 import time
 from typing import List, Optional
 
+from dotenv import load_dotenv 
 from google import genai
 from google.genai import types
+
+load_dotenv()
 
 # ---------------------------------------------------------------------------
 # Defaults (can be overridden via env vars if you really need to)
 # ---------------------------------------------------------------------------
+# Rate limiting: at most 1 Gemini request every N seconds (coarse global throttle)
+_RATE_LIMIT_SECONDS = float(os.getenv("GEMINI_RATE_LIMIT_SECONDS", "15"))
+_last_call_ts: float = 0.0
 
 # Model: by default, always Gemini 2.5 Pro for this project
 _GEMINI_MODEL_DEFAULT = os.getenv("GEMINI_MODEL", "gemini-2.5-pro")
@@ -71,15 +77,24 @@ _DEFAULT_SYSTEM_INSTRUCTION = (
 _client: Optional[genai.Client] = None
 
 
+_client: Optional[genai.Client] = None
+
+
 def get_client() -> genai.Client:
     """
-    Lazily create and cache a single genai.Client using GEMINI_API_KEY.
+    Lazily create and cache a single genai.Client.
+
+    The SDK will read the API key from the environment (e.g. GOOGLE_API_KEY)
+    just like in your standalone Gemini scripts where you call:
+
+        load_dotenv()
+        client = genai.Client()
     """
     global _client
     if _client is None:
-        api_key = os.environ["GEMINI_API_KEY"]  # fail fast if missing
-        _client = genai.Client(api_key=api_key)
+        _client = genai.Client()
     return _client
+
 
 # ---------------------------------------------------------------------------
 # Part helpers
@@ -87,16 +102,31 @@ def get_client() -> genai.Client:
 
 
 def part_text(text: str) -> types.Part:
-    return types.Part.from_text(text)
+    """
+    Create a text Part in a way that works across google-genai versions.
+    """
+    try:
+        # Newer API style
+        return types.Part(text=text)
+    except TypeError:
+        # Older API fallback
+        return types.Part.from_text(text)
 
 
 def part_image_url(url: str, mime_type: str = "image/png") -> types.Part:
-    return types.Part.from_uri(file_uri=url, mime_type=mime_type)
+    try:
+        return types.Part.from_uri(file_uri=url, mime_type=mime_type)
+    except TypeError:
+        # Newer style (if needed) – adjust if your version complains
+        return types.Part(uri=url, mime_type=mime_type)
 
 
 def part_image_b64(b64_str: str, mime_type: str = "image/png") -> types.Part:
     raw = base64.b64decode(b64_str)
-    return types.Part.from_bytes(data=raw, mime_type=mime_type)
+    try:
+        return types.Part.from_bytes(data=raw, mime_type=mime_type)
+    except TypeError:
+        return types.Part(inline_data=types.Blob(mime_type=mime_type, data=raw))
 
 # ---------------------------------------------------------------------------
 # Low-level generate helpers (parts already built)
@@ -116,12 +146,11 @@ def _make_config(
         top_p=top_p,
         max_output_tokens=max_output_tokens,
         response_mime_type="application/json" if json_mode else None,
-        system_instruction=types.Part.from_text(system_instruction)
-        if system_instruction
-        else None,
+        system_instruction=part_text(system_instruction) if system_instruction else None,
         seed=seed,
         # media_resolution="MEDIA_RESOLUTION_HIGH",  # enable if you want
     )
+
 
 
 def generate_once(
@@ -131,7 +160,7 @@ def generate_once(
     json_mode: bool = False,
     temperature: float = _DEFAULT_TEMPERATURE,
     top_p: float = _DEFAULT_TOP_P,
-    max_output_tokens: int = 1024,
+    max_output_tokens: int = 100024,
     seed: Optional[int] = None,
 ):
     """
@@ -153,6 +182,19 @@ def generate_once(
     mdl = model or _GEMINI_MODEL_DEFAULT
     return client.models.generate_content(model=mdl, contents=parts, config=cfg)
 
+def _rate_limit_sleep():
+    """
+    Simple global rate limiter: if the last Gemini call was less than
+    _RATE_LIMIT_SECONDS ago, sleep for the remaining time.
+    Not perfect under heavy concurrency, but sufficient for this prototype.
+    """
+    global _last_call_ts
+    now = time.time()
+    elapsed = now - _last_call_ts
+    if elapsed < _RATE_LIMIT_SECONDS:
+        time.sleep(_RATE_LIMIT_SECONDS - elapsed)
+    _last_call_ts = time.time()
+
 
 def generate_with_retry(
     parts: List[types.Part],
@@ -161,18 +203,22 @@ def generate_with_retry(
     json_mode: bool = False,
     temperature: float = _DEFAULT_TEMPERATURE,
     top_p: float = _DEFAULT_TOP_P,
-    max_output_tokens: int = 1024,
+    max_output_tokens: int = 100024,
     seed: Optional[int] = None,
     max_attempts: int = 6,
     min_wait: int = 3,
     max_wait: int = 90,
 ):
     """
-    Same as generate_once, but with simple exponential backoff on transient 5xx.
+    Same as generate_once, but with simple exponential backoff on transient 5xx,
+    and a coarse global rate limit so we don't spam Gemini.
     """
     wait = min_wait
     for attempt in range(1, max_attempts + 1):
         try:
+            # Enforce "1 request every N seconds" throttle
+            _rate_limit_sleep()
+
             return generate_once(
                 parts=parts,
                 model=model,
@@ -195,6 +241,7 @@ def generate_with_retry(
                 # Non-transient error – bubble up immediately
                 raise
 
+
 # ---------------------------------------------------------------------------
 # High-level generate() – flexible "overloaded" entry point
 # ---------------------------------------------------------------------------
@@ -214,7 +261,7 @@ def generate(
     json_mode: bool = False,
     temperature: Optional[float] = None,
     top_p: Optional[float] = None,
-    max_output_tokens: int = 1024,
+    max_output_tokens: int = 100024,
     seed: Optional[int] = None,
     max_attempts: int = 6,
 ):
