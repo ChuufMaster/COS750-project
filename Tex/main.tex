@@ -1,0 +1,1122 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper,
+  left=1.8cm,right=1.8cm,bottom=1.8cm,top=1.8cm,
+  includehead,headheight=16pt,heightrounded]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear
+% Footer: centered page number
+\fancyfoot[C]{\thepage}
+% (keep the header rule; no footer rule)
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\includegraphics[height=12pt]{up_logo.png}\hspace{0.4em}COS750 • ID Document}
+\fancyhead[R]{\nouppercase{\leftmark}}
+
+\fancypagestyle{landscapenohdr}{%
+  \fancyhf{}% clear everything
+  \fancyfoot[C]{\thepage}% keep centered page number
+  \renewcommand{\headrulewidth}{0pt}% no header rule
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{16pt}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{lmodern}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+
+\usepackage{url}
+\usepackage{colortbl}
+\usepackage[table]{xcolor}
+
+\usepackage{array}
+
+\usepackage{comment}
+\usepackage{stfloats}
+\usepackage{makecell}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage[pass]{geometry}
+
+\usepackage{pdflscape}
+\usepackage{siunitx}
+\usepackage{longtable}
+
+\lstset{basicstyle=\ttfamily\small,breaklines=true}
+\usepackage{ifthen}
+
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\BlackBox}{\rule{1.5ex}{1.5ex}}
+
+\definecolor{blue}{rgb}{0,0,0.8}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% already loaded in your file: xcolor (with [table]), colortbl, tabularx, array
+\definecolor{upTabHeader}{HTML}{000000}
+\definecolor{upRowShade}{HTML}{EFEFEF} % light gray row fill
+
+
+\lstset
+{
+   basicstyle=\ttfamily\footnotesize,
+   language=C++,
+   numbers=right,
+   numberstyle=\color{gray},
+   showtabs=true,
+   breaklines=true,
+   breakatwhitespace=true,
+   captionpos=bottom,
+   keywordstyle=\color{blue},
+   commentstyle=\color{dkgreen},
+   stringstyle=\color{mauve},
+   frame=single
+}
+
+\mdfsetup
+{
+   skipabove=\topskip,
+   skipbelow=\topskip,
+   leftmargin=2em,
+   rightmargin=2em
+}
+
+% --- table niceties
+\setlength{\tabcolsep}{8pt}         % a touch more column padding
+\renewcommand{\arraystretch}{1.25}  % more row breathing room
+\usepackage{booktabs, tabularx, makecell}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+\begin{document}
+
+% --- Cover page (replace your old titlepage + remove \maketitle) ---
+\newcommand{\coverdate}{\today} % change the printed date here if needed
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \vspace*{6mm} % small top breathing room
+
+    \includegraphics[width=0.82\textwidth]{up_logo.png}
+
+    \vspace{16mm}
+    {\Huge \bfseries Instructional Design Document\par}
+
+    \vspace{6mm}
+    {\Large \bfseries COS750 Exam Assignment\\[2pt] Factory Method\par}
+
+    \vspace{12mm}
+    {\Large \bfseries Group 7\par}
+
+    \vspace{5mm}
+    {\large
+      Charl Pieter Pretorius: u22519042\\
+      Ivan Gareth Horak: u21456552\\
+      James Alexander Fawkes Fitzsimons: u21516741
+    \par}
+
+    \vfill % pushes the date to the bottom of the page
+    {\large \coverdate\par}
+  \end{center}
+\end{titlepage}
+% --- End cover page ---
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\tableofcontents
+\clearpage
+
+\section*{Introduction}
+
+% ---------------- Project Information ----------------
+\begin{table}[H]
+  \setlength{\tabcolsep}{10pt}
+  \renewcommand{\arraystretch}{1.35}
+  \rowcolors{2}{upRowShade}{white}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash\bfseries}p{0.30\textwidth}|X|}
+    \hline
+    \rowcolor{upTabHeader}\multicolumn{2}{|l|}{\color{white}\bfseries Project Information}\\ \hline
+    Project Title & COS 214 Factory Method App \\ \hline
+    Project Purpose &
+      Design pattern knowledge supplementation through post-lecture instructional
+      content and assessment. \\ \hline
+  \end{tabularx}
+\end{table}
+
+% ---------------- Roles and Responsibilities ----------------
+\begin{table}[H]
+  \setlength{\tabcolsep}{10pt}
+  \renewcommand{\arraystretch}{1.35}
+  \rowcolors{2}{upRowShade}{white}
+  \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash\bfseries}p{0.30\textwidth}|X|}
+    \hline
+    \rowcolor{upTabHeader}\multicolumn{2}{|l|}{\color{white}\bfseries Roles and Responsibilities}\\ \hline
+    Project Owner & University of Pretoria, COS 750 \\ \hline
+    Project Stakeholder(s) & Prof. Linda Marshall; COS214 Students \\ \hline
+  \end{tabularx}
+\end{table}
+
+\subsection*{Project Overview}
+Our project designs and prototypes an app-based learning experience that helps second-year CS students recognise when to apply the Factory Method Pattern (FM) and how to implement it correctly in C++. Using the Dick \& Carey model, we translate performance goals into aligned content, practice, and assessments. Instruction blends visuals, narrated explanations and hands-on coding tasks to serve VARK preferences. Gagn\'e's Nine Events structure each lesson from attention-grabbing problem scenarios through guided examples, practice with immediate feedback, and summative checks mapped to Bloom's hierarchy.
+
+\medskip
+\noindent \textbf{ADDIE summarises the path:}
+\begin{itemize}
+\item \textbf{Where we are going:} Students can recognise when the Factory Method should be used, know how to implement it in C++ and understand and create its UML class diagram.
+\item \textbf{How we get there:} VARK-friendly lessons scripted by Gagn\'e's events, worked examples, and hands-on code practice that targets second-year Bloom levels.
+\item \textbf{How we know we arrived:} formative assessment during the learning stage, diagnostic assessment throughout the whole program to adapt to the current student base and to note lesson weakness for future improvement and finally summative assessment using Bloom levels to ensure learning outcomes have been sufficiently met.
+\end{itemize}
+
+Note: Should the prototype be implemented it would revise instruction in short review cycles based on diagnostic assessment data, since this is just a prototype it will lack the data to do this.
+\\ \\
+Furthermore: The ID document is designed from the point of view of teaching the entire factory method pattern; from this it is assumed later in the SE document that most teaching elements as stated in the ID document have already been covered in the in person lectures and it will thusly be focused on the more practical elements and micro questions.
+
+\section*{Instructional Design Model (Dick \& Carey)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{DickandCarey.png}
+  \caption{Visual representation of the Dick and Carey model used for most of this ID Document}
+\end{figure}
+
+Note: The prototype lacks the data required to analyse real instruction or entry behavior; when used, assumptions are made based on provided documentation and our own COS214 experiences. All revision stages and actual evaluation will also be skipped but will have hooks in place for easy implementation.
+
+\section{Stage One: Instructional Goals}
+By the end of this unit the instruction will have :\\
+(All coding done in C++; all diagrams are UML Class Diagrams)
+\begin{enumerate}
+\item Introduced the problem of creation variability in OO code and why a creational pattern is needed.
+\item Presented the Factory Method pattern in its canonical form (intent, forces, typical consequences).
+\item Explained the canonical structure \& terminology (Creator/ConcreteCreator, Product/ConcreteProduct) through UML class diagrams.
+\item Explained the canonical structure \& terminology (Creator/ConcreteCreator, Product/ConcreteProduct) through code examples.
+\item Shown common pitfalls \& misconceptions in code (e.g., "wrapper around new", client constructing concrete types, misuse of switch).
+\item Demonstrated correct C++ realisation of FM in small examples (including lifecycle concerns that matter in FM implementations).
+\item Situated FM among related patterns at recognition level (esp. Abstract Factory and Strategy) so learners know when FM is appropriate.
+\item Provided guided C++ practice opportunities that culminate in a small refactor of na\"ive code to FM and a brief transfer discussion.
+\end{enumerate}
+
+\section{Stage Two: Instructional Analysis}
+Purpose. Identify the enabling knowledge, skills, behaviors, and conditions learners need in order to engage with this unit and complete the practice activities in the app.
+
+\subsection{What learners need to take part}
+\paragraph{A. Cognitive prerequisites from prior modules (assumed)}
+\begin{itemize}
+\item Basic C++ syntax and control flow up to COS110 level.
+\item Classes, objects, headers vs implementation files, simple compilation.
+\item Pointers and references at an introductory level.
+\item OO coding and Inheritance at a basic level.
+\item Read simple UML class diagrams at a basic level (class boxes, generalisation, dependency arrows).
+\end{itemize}
+
+\paragraph{B. Digital and tool skills}
+\begin{itemize}
+\item Use a modern web browser with JavaScript enabled.
+\item Type code into an in-browser editor, copy and paste, navigate tabs.
+\item Run unit tests in the app and read console style results.
+\item Upload or download small files if requested (not required for core flow).
+\item Basic keyboard navigation. Mouse or trackpad available.
+\end{itemize}
+
+\paragraph{C. Study and self-management skills}
+\begin{itemize}
+\item Sustain attention for short micro-tasks of 5 to 8 minutes.
+\item Manage retries and review immediate feedback before moving on.
+\item Allocate at least one focused session of 45 to 90 minutes to complete the unit.
+\item Take brief notes from the cheat sheet or narration if helpful.
+\end{itemize}
+
+\paragraph{D. Motivation and attitudes}
+\begin{itemize}
+\item Willingness to use an app for learning and assessment.
+\item Openness to immediate automated feedback and to trying again after a failed attempt.
+\item Curiosity about how and why the pattern is used.
+\end{itemize}
+
+\paragraph{E. Accessibility and learning preferences}
+Ability to choose a preferred modality. The app provides:
+\begin{itemize}
+\item Visual: annotated UML, short animations where helpful.
+\item Auditory: narrated micro-explanations with full captions and transcripts.
+\item Read/Write: concise notes and checklists.
+\item Kinesthetic: hands-on code tasks with instant test feedback.
+\item Keyboard-only navigation supported. High-contrast theme available. Screen reader landmarks and ARIA live regions present on result panels.
+\end{itemize}
+
+\paragraph{F. Environment and equipment}
+\begin{itemize}
+\item Laptop or desktop recommended. Minimum 1366$\times$768 resolution.
+\item Stable internet connection suitable for loading short pages and test runs. The app is light on bandwidth.
+\item Headphones recommended for narrated clips in shared spaces.
+\end{itemize}
+
+\subsection{What learners may not yet have and how we accommodate}
+\begin{itemize}
+\item Confidence with UML reading may vary. The app provides a one-page UML cheat sheet and a labelled example for reference.
+\item C++ lifecycle details may be rusty for some students. The app includes short reminders where these affect the exercises.
+\item Attention span and time availability differ. Lessons are chunked into micro-tasks and can be completed in multiple short sessions.
+\item Bandwidth and noise constraints differ. Captions and transcripts are available, and all essential content has a text-first version.
+\end{itemize}
+
+\subsection{Onboarding self-check (non-blocking)}
+At first launch, the app presents a short self-check to help learners prepare:
+\begin{itemize}
+\item Can you run a sample test and read the pass or fail result.
+\item Can you identify a base and a derived class in a tiny UML diagram.
+\item Do you prefer visual, audio, read/write, or code-first learning. The app labels screens accordingly.
+\end{itemize}
+Learners who answer "no" are shown a brief tip or a link to the prescribed material from prior modules. Progress is not blocked.
+
+\subsection{Risks and mitigations}
+\begin{itemize}
+\item Low confidence in UML
+\begin{itemize}
+  \item Mitigation: labelled examples, cheat sheet, and side-by-side code and diagram views.
+\end{itemize}
+
+\item Limited time
+\begin{itemize}
+  \item Mitigation: micro-tasks that save progress automatically, resume where you left off.
+\end{itemize}
+
+\item Limited bandwidth or noisy environment
+\begin{itemize}
+  \item Mitigation: captions, transcripts, and light pages with minimal media.
+\end{itemize}
+\end{itemize}
+
+Note: This stage does not re-teach content. It specifies the enabling conditions and skills learners bring to the unit and how the app supports varied needs and preferences so that they can participate effectively.
+
+\section{Stage Three: Learner Characteristics}
+\subsection{Prerequisite modules (in order)}
+\begin{itemize}
+\item COS132 Imperative Programming (C++)
+\item WTW114 or equivalent mathematics
+\item COS110 Introduction to Program Design (C++)
+\item COS212 Data Structures and Algorithms (Java)
+\end{itemize}
+
+\subsection{Expected entry knowledge and skills}
+\begin{itemize}
+\item C++ foundations from the above modules.
+\item Understanding of classes, inheritance, and dynamic dispatch.
+\item Ability to read a UML class diagram.
+\end{itemize}
+We assume these have been achieved by all COS214 students. This unit does not re-teach them.
+
+\subsection{Variability and likely gaps}
+\begin{itemize}
+\item Some learners may be utterly useless C++ coders.
+\item UML fluency varies. Some will need reminders on generalisation and simple dependencies.
+\item Confidence and preferred learning modes differ across the cohort.
+\end{itemize}
+
+\subsection{Identification of gaps (onboarding self-check, non-blocking)}
+At first launch the app shows a short self-check:
+\begin{itemize}
+\item Run a sample test and read the pass or fail result.
+\item Identify base vs derived in a tiny UML diagram.
+\item Indicate preferred learning modes through VARK questionnaire.
+\end{itemize}
+Results are used to surface tips and references to previous modules required text. Progress is never blocked.
+
+\subsection{Support if something is missing}
+\begin{itemize}
+\item Direct links to prescribed material from prior modules for refreshers.
+\item Inline micro-reminders where lifecycle rules affect an exercise.
+\item Hints keyed to common errors, available after one or two attempts.
+\item Resume anytime, with autosave.
+\end{itemize}
+
+\subsection{VARK Analysis}
+Students will confidentially answer an up to date VARK survey to help them quantify how they best learn. This will in turn allow them to make use of the appropriately labeled in app features that align with their learning styles. As far as possible all lessons will have a full approach aligned with each preferred learning style.
+
+\newpage
+
+\section{Stage Four: Learning Outcomes (Performance Objectives)}
+Below are the four main learning outcomes and the sub-outcomes that define them.
+\\ \\
+Note: All sub outcomes are paired with the Bloom level at which they will be summatively assessed and all code is in C++ and all diagrams are UML Class diagrams.
+\\ \\
+After this unit the student will be able to:
+
+
+\subsection{Know and Understand the aspects of the Factory Method Pattern}
+\begin{enumerate}
+\item State the name of the Factory Method pattern. (Remember)
+\item State the classification of Factory Method (creational). (Remember)
+\item State the high-level strategy FM uses. (Remember)
+\item State/Explain the intent of Factory Method in a given context. (Remember/Understand)
+\item Describe the canonical UML structure of FM. (Understand)
+\item Explain the programming problem FM solves in plain language. (Understand)
+\item Identify and map participants (Creator, ConcreteCreator, Product, ConcreteProduct) in a short code/UML snippet. (Understand)
+\item List related patterns (e.g., Abstract Factory, Strategy) and explain why they're related. (Remember/Understand)
+\item Given a context, decide whether to apply FM and briefly justify. (Analyse; Evaluate)
+\end{enumerate}
+
+\subsection{Know how to analyse and apply the Factory Method UML class diagram from given code or a given context.}
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item Produce a correct UML diagram from a given C++ FM code snippet, with roles, generalisation, dependencies and multiplicities. (Apply)
+\item Design an appropriate custom FM UML for a given context (choose where the factory method lives, name participants, sketch associations). (Apply/Analyse)
+\item Scan a large UML diagram and identify all FM participants and their roles in context, or conclude that FM is not present. (Analyse)
+\item Within any UML that contains FM where classes have non-standard names, label the factory method operation and each role (Creator/ConcreteCreator/Product/ConcreteProduct). (Analyse)
+\item Given an arbitrary code snippet, classify it as a FM role or non-role and justify (e.g., "this class overrides \texttt{make()} $\rightarrow$ ConcreteCreator"). (Analyse)
+\item Distinguish Factory Method vs Abstract Factory in UML/code with reasons. (Analyse)
+\end{enumerate}
+
+\subsection{Know how to understand, analyse and apply the Factory Method pattern in C++ coding contexts.}
+\begin{enumerate}
+\setcounter{enumi}{15}
+\item Implement FM in C++ for a given problem. (Apply)
+\item Infer code implementation details from a given FM UML (which class instantiates, where creation occurs). (Understand/Analyse)
+\item Trace which factory override executes and name the product for a given call path. (Understand/Analyse)
+\item Review a code snippet and decide whether or not it could possibly be part of a FM. (Analyse)
+\item Apply essential C++ lifecycle rules relevant to FM (member-initialiser lists, base-ctor calls, virtual destructor when deleting via base). (Apply)
+\item Refactor a na\"ive client to FM so the client no longer constructs concretes. (Apply/Analyse)
+\item Extend an existing FM with one new product and matching overriding Creator without changing the client. (Apply)
+\item Translate both ways between code and UML for FM with roles correct. (Understand/Apply)
+\end{enumerate}
+
+\subsection{Know how the Factory Method pattern interacts with other design patterns.}
+\begin{enumerate}
+\setcounter{enumi}{23}
+\item Combine FM with another pattern such as Memento to solve a problem in a given context while motivating choices. (Evaluate)
+\end{enumerate}
+
+\subsection*{Instructional Goal to Learning Outcome Mapping:}
+\begin{table}[H]
+\centering
+\caption{\large Instructional Goal to Learning Outcome Mapping:}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.55\textwidth} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Instructional Goal} & \textbf{Learning Outcomes covered}\\
+\midrule
+G1 Creation variability \& why a creational pattern is needed
+& LO4, LO6\\
+& \\
+G2 Canonical FM \& “client must not construct concretes”
+& LO1, LO2, LO3, LO4, LO9\\
+& \\
+G3 Canonical UML structure \& notation; produce/read/locate FM in diagrams
+& LO5, LO7, LO10, LO11, LO12, LO13, LO17, LO23\\
+& \\
+G4 Canonical code structure \& role cues in code
+& LO7, LO14, LO19\\
+& \\
+G5 Pitfalls \& misconceptions (wrapper around \texttt{new}, type switches, tight coupling)
+& LO14, LO19, LO21\\
+& \\
+G6 Correct C++ realisation \& UML$\leftrightarrow$code conformance (virtual factory returning \textit{Product}, overrides build concretes, virtual dtor, etc.)
+& LO10, LO14, LO16, LO17, LO18, LO20, LO21, LO22, LO23\\
+& \\
+G7 Related patterns at recognition level (Abstract Factory, Simple Factory) \& when FM is appropriate
+& LO8, LO9, LO12, LO15, LO24*\\
+& \\
+G8 Guided hands-on practice culminating in refactor \& brief transfer
+& LO9, LO11, LO16, LO21, LO22\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\section{Stage Five: Formative Assessment}
+Purpose. After every 3 micro-learning tasks, the app delivers a micro-quiz (MQ) targeting the LOs covered by those tasks. MQs are short, adaptive, and give immediate, constructive feedback tied to specific error classes. Learners may optionally over-practice; only the first graded attempt per MQ counts toward the 30-mark cap.
+
+\subsection{Global rules}
+\begin{itemize}
+\item Time \& marks: Total formative $\leq$ 60 minutes, $\leq$ 30 marks.
+\item Difficulty mix per MQ: $\sim$70\% medium/hard, $\sim$30\% quick recall.
+\item Attempts: Unlimited retries for learning; only first graded attempt counts. Variants randomised (names, products, paths).
+\item Feedback: Every miss returns (a) what failed, (b) why, (c) a 1-click remedial link or hint, (d) a follow-up practice item. Hard clears trigger an encouraging message.
+\item Accessibility: Keyboard-first, alt text on UML, captions/transcripts.
+\item Analytics logged: \{user\_or\_anon\_id, mq\_id, item\_id, lo\_ids[], pass\_fail, attempts, time\_ms, error\_class, remedial\_clicked\}.
+\item Error classes (examples): client-still-constructs, wrapper-around-new, type switch present, wrong factory return type, missing virtual dtor, mislabelled UML role, AF vs FM confusion, Simple-Factory confusion.
+\end{itemize}
+
+\newpage
+
+\subsection{Micro-quiz blueprint ($\leq$ 6 MQs)}
+\noindent\textbf{Scoring and timing:} All micro-questions have a maximum of obtainable 5 marks. Each MQ is designed to take roughly 8 to 10 minutes to complete.
+
+% ====== MQ blueprint (A): MQ, Description, Trigger, LOs ======
+\begingroup
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.35}
+
+\begin{table}[H]
+\caption{Micro-quiz blueprint (A). MQ = Micro-Quiz.}
+\centering
+\begin{tabularx}{\textwidth}{
+  @{}
+  L{0.11\textwidth}
+  @{\hspace{3pt}}
+  L{0.27\textwidth}
+  @{\hspace{10pt}}
+  X
+  @{\hspace{16pt}}
+  C{0.20\textwidth}
+  @{}
+}
+\toprule
+\textbf{MQ} & \textbf{Description} & \textbf{Trigger (after these micro-tasks / practices)} & \textbf{LOs targeted}\\
+\midrule
+\textbf{MQ1} &
+Intent and recognition &
+“Why patterns?”, FM intent, “client must not construct” [T1] &
+1 - 4, 6, 9\\[1pt]
+\addlinespace
+\textbf{MQ2} &
+Canonical UML roles &
+UML roles and notation; role labels [T2] &
+5, 7, 13\\
+\addlinespace
+\textbf{MQ3} &
+Code $\Leftrightarrow$ UML &
+Code$\to$UML translation; find FM in larger diagram [T4, T6] &
+10, 12, 23\\
+\addlinespace
+\textbf{MQ4} &
+Code cues and conformance &
+Role cues in code; lifecycle reminders [T5] &
+14, 17 - 20\\
+\addlinespace
+\textbf{MQ5} &
+Refactor &
+Move creation to factory [T5] &
+21\\
+\addlinespace
+\textbf{MQ6} &
+Extend and differentiate &
+Add product/creator; FM vs AF/Simple [T3] &
+12, 15, 22\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ====== MQ blueprint (B): MQ, Item types, # Items ======
+\begin{table}[H]
+\caption{Micro-quiz blueprint (B). MQ = Micro-Quiz.}
+\centering
+\begin{tabularx}{\textwidth}{
+  L{0.12\textwidth}  % MQ
+  X                   % Item types (flex)
+  C{0.14\textwidth}   % # Items
+}
+\toprule
+\textbf{MQ} & \textbf{Item types (examples)} & \textbf{\# Items}\\
+\midrule
+\textbf{MQ1} & MCQ (scenario intent), Short-Just (2 sentences), quick FITB intent phrase & 5\\
+\addlinespace
+\textbf{MQ2} & UML-Label (roles, abstract/return), drag markers, one tiny MCQ on notation & 4\\
+\addlinespace
+\textbf{MQ3} & UML-Build from 40-50 lines; UML-Scan “is FM present?” & 3\\
+\addlinespace
+\textbf{MQ4} & Code-Read classify (role/non-role + reason), trace override$\to$product, Code-Fix lifecycle & 4\\
+\addlinespace
+\textbf{MQ5} & Code-Refactor (no client$\to$Concrete; tests) + one “find the seam” MCQ & 2\\
+\addlinespace
+\textbf{MQ6} & Code-Extend (client unchanged), MCQ triage FM vs AF vs Simple & 3\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\endgroup
+
+\smallskip
+\noindent If a learner takes a different path, the app selects the next MQ matching the last three micro-tasks’ LOs. Extra practice beyond $\sim$60 minutes updates mastery heatmaps only.
+\subsection{Item design snippets (representative examples)}
+\begin{itemize}
+\item \textbf{MQ2 (LO5/7/13) -- UML-Label (2 pts).} Drag Creator/ConcreteCreator/Product/ConcreteProduct onto nodes; tick abstract on Creator; set factory op return Product.\\
+\emph{Feedback (miss):} "Factory returns a concrete type. In FM, the base factory returns Product so clients depend on abstractions. See: `FM notation cheat-sheet'."
+\item \textbf{MQ3 (LO10) -- UML-Build (3 pts).} From given C++ \\ (Creator with \texttt{virtual std::unique\_ptr<Product> make() const = 0;}, two overrides), assemble classes, inheritance, and the factory op signature.\\
+\emph{Feedback (miss):} "Base factory not marked virtual/abstract in UML. Add \{abstract\} on Creator and an operation \texttt{make(): Product}."
+\item \textbf{MQ4 (LO14/20) -- Code-Fix (2 pts).} Add missing \texttt{virtual \textasciitilde Product()} and convert member-initialisers.\\
+\emph{Feedback (hit, hard):} "Great! Catching lifecycle issues prevents UB. You cleared a hard item."
+\item \textbf{MQ5 (LO21) -- Refactor (5 pts).} Replace client \texttt{new} + \texttt{switch} with calls to \texttt{Creator::make()}. Auto-checks: no \texttt{\#include "Concrete*.h"} in client; no \texttt{new Concrete*}; tests green.\\
+\emph{Feedback (miss):} "Client still includes Concrete headers. Move those into ConcreteCreators; keep client dependent on Creator/Product only. See `Refactor guide $\rightarrow$ Step 3'."
+\item \textbf{MQ6 (LO22/15) -- Extend (3 pts) + Triaging (2 pts).} Add \texttt{ConcreteProductB} + \texttt{ConcreteCreatorB} without touching client; then choose FM vs AF vs Simple for a short scenario and cite one cue.\\
+\emph{Feedback (triage miss):} "Scenario mentions families of related products $\rightarrow$ Abstract Factory, not FM. Quick recap: AF creates families, FM creates one product via override."
+\end{itemize}
+
+\subsection{Mastery \& reporting}
+\begin{itemize}
+\item Per-LO mastery bands: Green (mastered), Amber (partial), Red (needs work).
+\item Heatmap per LO and per strand (UML, code, recognition).
+\item Next-step suggestions: When Red/Amber, app surfaces 1--2 targeted micro-tasks and a small practice set (ungraded) for that LO.
+\end{itemize}
+
+\subsection{Encouraging \& constructive feedback templates}
+\paragraph{Constructive (miss):} "You selected a factory that returns a concrete. In FM the base factory returns Product so clients depend on abstractions. Revisit `Factory return types' (2 min), then try a quick practice."
+
+\paragraph{Encouraging (hard hit):} "Nice! Your refactor kept the client free of Concrete includes and all tests passed. That's the core FM invariant. Want to try a tougher variant?"
+
+\subsection{Additional Practical Assignment Used Formatively}
+\textbf{Scenario:} You are building a tiny reporting utility that formats a vector of integers into different textual formats. The client code must not depend on any concrete writer. Learners implement Factory Method in C++ so the client asks a Creator for a Product writer and calls \texttt{render}.
+
+\medskip
+\noindent \textbf{Learning Outcomes hit}\\
+LO10, LO11, LO12, LO13, LO14, LO16, LO17, LO18, LO19, LO20, LO21, LO22, LO23\\
+(Recognition LOs LO8, LO15 are reinforced via one triage item bundled with this practical.)
+
+\medskip
+\noindent \textbf{Time and marks}\\
+Suggested time: 25--30 minutes\\
+Marks: 10
+
+\medskip
+(Students are provided with all code that does not form part of the Factory Method)
+
+\medskip
+\noindent \textbf{Provided Code:}
+\begin{lstlisting}[language=C++]
+include/
+  product.hpp          // interface Writer (to review)
+  creator.hpp          // base Creator (pure virtual make)
+  // students add their concrete headers in src/...
+src/
+  client.cpp           // uses Creator&; must NOT include any Concrete*.h
+  main.cpp             // optional manual run
+tests/
+  test_render_csv.cpp
+  test_render_md.cpp
+  test_client_structure.cpp
+  test_extend_tsv.cpp  // locked until "extend" step
+\end{lstlisting}
+
+\noindent \textbf{product.hpp}
+\begin{lstlisting}
+#pragma once
+#include <string>
+#include <vector>
+struct Product {
+  virtual ~Product() = default;                    // lifecycle correctness
+  virtual std::string render(const std::vector<int>& data) const = 0;
+};
+\end{lstlisting}
+
+\noindent \textbf{creator.hpp}
+\begin{lstlisting}
+#pragma once
+#include <memory>
+#include "product.hpp"
+struct Creator {
+  virtual ~Creator() = default;
+  virtual std::unique_ptr<Product> make() const = 0;  // factory returns Product
+};
+\end{lstlisting}
+
+\noindent \textbf{client.cpp}
+\begin{lstlisting}
+#include "creator.hpp"
+// No includes of any Concrete*.h allowed
+std::string export_report(const Creator& exporter, const std::vector<int>& v) {
+  auto w = exporter.make();       // dynamic dispatch to ConcreteCreator
+  return w->render(v);            // client knows only Product API
+}
+\end{lstlisting}
+
+\subsubsection*{Tasks learners complete}
+\begin{itemize}
+\item Implement products: \texttt{CSVWriter} and \texttt{MarkdownWriter} implement \texttt{Product::render}.
+\item CSV: \texttt{1,2,3\textbackslash n}
+\item Markdown list: \texttt{- 1\textbackslash n- 2\textbackslash n- 3\textbackslash n}
+\item Implement creators: \texttt{CSVExporter::make()} and \texttt{MarkdownExporter::make()}\\ return \texttt{std::unique\_ptr<Product>} to the correct concrete.
+\item Keep the client abstract: Do not include any \texttt{Concrete*.h} in \texttt{client.cpp}. Do not instantiate concrete types in client. No switch on output type in client.
+\item Extension step: Add \texttt{TSVWriter} and \texttt{TSVExporter}. Constraint: do not change \texttt{client.cpp}.
+\item UML check: Produce the minimal UML (in-app drag build) that matches your code: roles, inheritance, factory op signature.
+\end{itemize}
+
+\subsubsection*{Autograder checks and marks (10)}
+% ====== Autograder checks and marks (with clear row separation) ======
+\begingroup
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.35}
+\newcommand{\thickmidrule}{\specialrule{1.1pt}{0pt}{0pt}}
+
+\begin{table}[H]
+\caption{Autograder checks and marks (10)}
+\centering
+\begin{tabularx}{\textwidth}{
+  L{0.20\textwidth}  % Area
+  L{0.64\textwidth}  % Check
+  C{0.10\textwidth}  % Marks
+}
+\toprule
+\textbf{Area} & \textbf{Check} & \textbf{Marks} \\
+\midrule
+Structure & \textit{Creator::make()} is virtual/pure and returns \textit{Product} in base & 1 \\
+\addlinespace
+Structure & \textit{Product} has \texttt{virtual \textasciitilde Product()} & 1 \\
+\addlinespace
+Client independence & No \texttt{\#include "Concrete*.h"} or \texttt{new Concrete*} or type switch in client & 2 \\
+\addlinespace
+Behaviour & CSV rendering exactly matches expected & 2 \\
+\addlinespace
+Behaviour & Markdown rendering exactly matches expected & 2 \\
+\addlinespace
+Extend & Add TSV writer/exporter; client unchanged; tests pass & 2 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\endgroup
+
+
+Static structure checks can be done with simple text scans in the prototype harness: search \texttt{client.cpp} for include of Concrete, \texttt{new} with a known class prefix, or switch (; and confirm base signatures via a reflection header test compiling against students' headers.
+
+\subsubsection*{Feedback map (error class $\rightarrow$ message + next step)}
+\begin{itemize}
+\item \textbf{client-still-constructs}\\
+"Client references a concrete class. In FM the client depends on Creator/Product only. Move construction into \texttt{ConcreteExporter::make()}." $\rightarrow$ link "Refactor guide: moving creation."
+\item \textbf{type-switch-present}\\
+"Type switch found in client. Replace branch with \texttt{Creator::make()} and polymorphic dispatch." $\rightarrow$ link "Why switches are a smell for FM."
+\item \textbf{wrong-return-type}\\
+"Factory returns a concrete in the base. The base factory must return Product so clients stay abstract." $\rightarrow$ link "Factory return types."
+\item \textbf{missing-virtual-dtor}\\
+"Product lacks a virtual destructor. Deleting via base is undefined; mark \texttt{virtual \textasciitilde Product()}." $\rightarrow$ link "C++ lifecycle in FM."
+\item \textbf{uml-roles-mislabelled}\\
+"UML labels do not match code: ensure Creator declares an abstract \texttt{make(): Product} and ConcreteCreator overrides it to construct a ConcreteProduct." $\rightarrow$ link "FM UML cheat sheet."
+\end{itemize}
+
+Hard clears trigger: "Great! Client stayed independent of concretes and all tests passed. That is the core FM invariant."
+
+
+\section{Stage Six: Instructional Strategy}
+
+\textbf{Constraints and principles:}\\
+Time budget for instruction: Theory $\leq$ 120 min and Coding $\leq$ 120 min. Formative + diagnostic assessments (MQ1--MQ6 and the practical) are defined in Stage five and do not consume this budget but are accounted for such that the total time spent on the FM $\leq$ 5 hours student time.
+\\ \\
+Each micro-lesson blends multiple VARK modes where feasible. When a lesson offers two modality variants for the same LO, learners choose one (overlap does not add time). Lessons use worked examples, retrieval prompts, interleaving UML and code, and immediate ungraded feedback in-flow (graded feedback belongs to MQs).
+\\ \\
+\textbf{For Theory Micro-lessons:}
+\\ \\
+Theory subtotal: 90 min (leaves 30 min buffer for pacing, questions, or a second-modality variant where needed).
+
+Optional VARK variants that do not add time if chosen instead of the default mode:
+\begin{itemize}
+\item T2-V (diagram-first) or T2-R (short text checklist).
+\item T4-V (live UML) or T4-K (drag-drop interactive on laptops in class).
+\item T6 group board walk or solo paper highlight set.
+\end{itemize}
+\\
+\textbf{For Coding Micro-Lessons:}
+\\
+
+\noindent Coding subtotal: 95 min (leaves 25 min buffer for pacing or a short enrichment).
+\\ \\
+Optional enrichment (fit in buffer if desired, not required):\\
+C7 (10--15 min): FM with one related pattern at recognition level (e.g., FM + Strategy). Read a tiny code sketch and identify the boundaries. Targets LO24 lightly without adding heavy creation.
+
+
+\newpage
+% ---------- Stage Six: landscape block ----------
+\clearpage
+\begin{landscape}
+\pagestyle{landscapenohdr}
+\subsection{Theory micro-lessons ($\leq$ 120 min total)}
+
+% ---- merged 6.1 (A+B) in one wide table ----
+\begingroup
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.25}
+\normalsize
+\begin{table}[H]
+\caption{Theory micro-lessons — ID, title (+Gagné), outcomes, modes, time, and activities.}
+\centering
+% ID | Title | LOs | VARK | Time | Activities
+\begin{tabularx}{\linewidth}{
+  C{0.06\linewidth}
+  L{0.22\linewidth}
+  C{0.13\linewidth}
+  C{0.08\linewidth}
+  C{0.07\linewidth}
+  X
+}
+\toprule
+\textbf{ID} & \textbf{Title (+ Gagné focus)} & \textbf{Primary LOs} & \textbf{VARK} & \textbf{Time} & \textbf{Activities (what happens)}\\
+\midrule
+T1 & Why patterns, why FM \textit{(Gain attention; state objectives; recall)} & LO4, LO6, LO9 & V,A,R & 10 min &
+2-min problem vignette showing creation variability; quick poll on “what smells wrong”; 3-min mini-lecture on FM intent and the “client does not construct concretes” rule \\
+\addlinespace
+T2 & Canonical UML roles and notation \textit{(Present; guidance)} & LO5, LO7, LO13 & V,R & 15 min &
+Instructor walk-through of Creator/Product roles, abstract markers, return types; labelled example; 2 quick retrieval prompts \\
+\addlinespace
+T3 & FM vs Simple Factory vs Abstract Factory (recognition) \textit{(Present; elicit performance)} & LO8, LO12, LO15 & V,A,R & 12 min &
+Three tiny scenarios; learners pick FM/AF/SF and cite one decisive cue; instructor debrief \\
+\addlinespace
+T4 & Code $\rightarrow$ UML mapping (worked example) \textit{(Present; model; elicit performance)} & LO10, LO23 & V,R,K & 18 min &
+Instructor converts $\sim$50 lines of C++ FM into UML live; pair 2-min practice: students place roles on a half-built diagram \\
+\addlinespace
+T5 & Smell detection and seams \textit{(Present; guidance)} & LO19, LO21 & V,R & 12 min &
+Identify client \texttt{new}, type switches, tight coupling; highlight the “creation seam” to move into the factory \\
+\addlinespace
+T6 & Scan a big UML for FM (or conclude absent) \textit{(Elicit performance; feedback)} & LO12, LO13 & V,K & 15 min &
+Teams highlight FM participants in a larger diagram or justify “absent” with one cue; brief debrief \\
+\addlinespace
+T7 & Retrieval sprint and summary \textit{(Enhance retention; closure)} & LO1–3, LO5, LO7 & A,R & 8 min &
+Six fast prompts (name, class, strategy, intent phrase, role labels, return type rule); recap key rules \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\endgroup
+
+
+
+\subsection{Coding micro-lessons ($\leq$ 120 min total)}
+
+\begingroup
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.25}
+\normalsize
+\begin{table}[H]
+\centering
+% ID | Title | LOs | VARK | Gagne | Activities | Time
+\begin{tabularx}{\linewidth}{
+  C{0.06\linewidth}
+  L{0.18\linewidth}
+  C{0.12\linewidth}
+  C{0.06\linewidth}
+  L{0.12\linewidth}
+  X
+  C{0.07\linewidth}
+}
+\toprule
+\textbf{ID} & \textbf{Title} & \textbf{Primary LOs} & \textbf{VARK} & \textbf{Gagn\'e focus} & \textbf{Activities (what happens)} & \textbf{Time} \\
+\midrule
+C1 & FM contracts in C++ (interfaces and lifecycle) & LO14, LO20 & V,R & Present; guidance &
+Show minimal Product and Creator with virtual destructor and \texttt{make(): Product}; short pitfalls demo & 10 min \\
+C2 & Implement minimal FM from scaffold & LO16 & V,K & Model; guided practice &
+Fill in \texttt{CSVWriter} and \texttt{MarkdownWriter} plus exporters; run local tests; instructor models 1st then learners complete & 20 min \\
+C3 & Trace dynamic dispatch & LO18 & V,K & Elicit performance; feedback &
+Given a call path, predict which override runs and which product is created; verify by running tests & 10 min \\
+\multicolumn{7}{l}{--- MQ3 trigger --- After C1--C3 (Stage five MQ4)}\\
+C4 & Refactor: move creation to factory & LO21, LO19 & K & Guided practice &
+Start with a na\"ive client that constructs concretes; learners move creation into \texttt{Creator::make()}; pass structure checks & 20 min \\
+\multicolumn{7}{l}{--- MQ5 trigger --- After C4 (Stage five MQ5)}\\
+C5 & Extend without touching client & LO22 & K & Guided practice &
+Add a new ConcreteProduct and ConcreteCreator; prove client unchanged; tests pass & 20 min \\
+\multicolumn{7}{l}{--- MQ6 trigger --- After C5 (+ recognition triage) (Stage five MQ6)}\\
+C6 & Round-trip UML $\leftrightarrow$ code conformance & LO17, LO23 & V,K & Elicit performance; feedback; transfer &
+From a UML diagram, write only base and override signatures; from code, mark UML return types and abstract markers & 15 min \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\endgroup
+
+\end{landscape}
+\pagestyle{fancy}
+\clearpage
+% ---------- end Stage Six landscape ----------
+
+
+\subsection{Orchestration timeline (what runs when)}
+\textbf{Theory block (≈ 90 min instruction )}\\
+T1 $\rightarrow$ T2 $\rightarrow$ T3 $\rightarrow$ MQ1 $\rightarrow$ T4 $\rightarrow$ T5 $\rightarrow$ T6 $\rightarrow$ MQ2 $\rightarrow$ T7.\\
+\\
+MQ1 and MQ2 are formative and counted in Stage five time, not here.
+\medskip \\
+\noindent \textbf{Coding block (≈ 95 min instruction )}\\
+C1 $\rightarrow$ C2 $\rightarrow$ MQ3 $\rightarrow$ C3 $\rightarrow$ MQ4 $\rightarrow$ C4 $\rightarrow$ MQ5 $\rightarrow$ C5 (+ recognition triage) $\rightarrow$ MQ6 $\rightarrow$ C6.\\
+\\
+The practical defined in Stage five is separate and optional during the formative window.
+
+\subsection{How each micro-lesson advances the outcomes}
+\begin{itemize}
+\item Theory T1--T3 establishes intent, classification, strategy, and pattern discrimination (LO1--4, LO6, LO8, LO9, LO12, LO15).
+\item Theory T4--T6 builds UML fluency and recognition in larger contexts (LO5, LO7, LO10, LO12, LO13, LO19, LO21, LO23).
+\item Coding C1--C6 realise FM correctly in C++, maintain invariants, refactor and extend safely, and check UML$\leftrightarrow$code conformance (LO14, LO16--LO23).
+\item Optional C7 lightly introduces LO24 without exceeding second-year constraints.
+\end{itemize}
+
+\subsection{Accessibility and VARK within lessons}
+Every micro-lesson includes at least two of: annotated visuals, concise text notes, short narration with captions, and a hands-on element. Keyboard-only paths and high-contrast styles are supported. Where two modality variants are offered for the same LO (for example T2 and T4), learners choose the one that fits their preference; only one counts toward time.
+
+\section{Stage Seven: Instructional Materials}
+
+\begingroup
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.35}
+\newcommand{\thickmidrule}{\specialrule{1.1pt}{0pt}{0pt}}
+
+\begin{table}[H]
+\centering
+\caption{Lesson assets (Stage Seven)}
+\begin{tabularx}{\textwidth}{p{0.22\textwidth} X}
+\toprule
+\textbf{Category} & \textbf{Items} \\
+\thickmidrule
+Core references & COS214 “Tackling Design Patterns” site (Factory Method chapter; UML recap); Gaddis \emph{Starting Out with C++} (latest ed.); links to prescribed textbooks of prerequisite modules. \\
+& \\
+Visual (V) & Annotated UML (SVG/PNG); one short call-flow animation for \texttt{Creator::make()} dispatch. \\
+& \\
+Auditory (A) & 60-90 s narrated clips per micro-lesson with captions and transcripts. \\
+& \\
+Read/Write (R) & One-page notes and cheat-sheets (intent/forces, roles, FM vs AF vs Simple, refactor checklist). \\
+& \\
+Kinesthetic (K) & In-browser code sandboxes with scaffolds (\texttt{product.hpp}, \texttt{creator.hpp}, \texttt{client.cpp}) and fast unit tests; drag-to-build UML canvas. \\
+& \\
+Accessibility baseline & Alt text and long-desc on diagrams; keyboard-only paths; visible focus; ARIA for result panels; high-contrast toggle; scalable fonts. \\
+& \\
+Assessment materials & MQ bank with LO+Bloom tags and feedback templates; formative practical (headers, read-only client, unit tests, autograder checks, remediation messages). \\
+& \\
+Teacher/admin pack & Mini slide deck; run-sheet; traceability CSV; onboarding self-check; analytics stub (LO heatmap, time-on-task, error counts). \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\endgroup
+
+\newpage
+
+\section{Stage Eight: Diagnostic Assessment}
+During all formative and summative assessment student performance will be stored per question; learning outcome and Bloom level. This data is to be used by the lecturing team to adjust the prototype application and lesson plan as needed for this and future cohorts.
+\\ \\
+A survey should also be sent to the students directly to be answered anonymously, this survey would allow the students to provide input on how effective they feel the prototype had been on teaching them the specified learning outcomes and whether they preferred it over classical teaching approaches.
+
+\section{Stage Nine: Summative Assessment \& Evaluation}
+This stage is usually used to reflect back on the teaching from the point of view of the instructor, using the diagnostic assessment's data, here the aspects of the prototype that performed well would be kept but those that underperformed either in student engagement or learning outcome proficiency obtained.
+\\ \\
+Instead we describe a summative assessment plan for this chapter that would be included in the modules semester tests and exam.
+\\ \\
+Summatively assess all students confirming whether or not they were able meet the learning outcomes. (Would be assessed during a practical)
+
+\newpage 
+
+
+\clearpage
+\begin{landscape}
+\pagestyle{landscapenohdr}
+\subsection*{Summative Question-Type Library (aligned LOs \& Bloom)}
+
+\begingroup
+\setlength{\LTcapwidth}{\linewidth}   % caption width = table width (if you add one)
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.22}
+\small
+
+\begin{longtable}{
+  C{0.55cm}   % #
+  L{3.2cm}    % Question type
+  C{2.2cm}    % Bloom
+  C{2.8cm}    % Hits these LOs
+  L{5.4cm}    % What the student does
+  L{5.4cm}    % Example stem
+  L{4.4cm}    % How to score
+}
+\toprule
+\# & \textbf{Question type} & \textbf{Bloom} & \textbf{Hits these LOs} &
+\textbf{What the student does (practical)} & \textbf{Example stem (sketch)} &
+\textbf{How to score (auto/rubric)} \\
+\midrule
+\endfirsthead
+\toprule
+\# & \textbf{Question type} & \textbf{Bloom} & \textbf{Hits these LOs} &
+\textbf{What the student does (practical)} & \textbf{Example stem (sketch)} &
+\textbf{How to score (auto/rubric)} \\
+\midrule
+\endhead
+
+1 & Intent MCQ / FITB & Remember / Understand & 1--4, 6 &
+Choose/complete the canonical name, class (creational), intent phrase, or problem statement. &
+"FM is a \_\_\_\_ pattern used to \_\_\_\_." &
+Auto: exact/acceptable answers list. \\
+\midrule
+2 & Scenario decision + 2-sentence rationale & Analyse (+ tiny Evaluate) & 4, 6, 9, 15 &
+Given a small scenario, choose FM/AF/Simple/Other and justify in $\leq$2 sentences. &
+"Given this plugin loader\ldots choose the best pattern and justify one cue." &
+Auto for choice; 0--2 rubric for rationale (cue cited, correct). \\
+\midrule
+3 & UML-Label (roles \& markers) & Understand & 5, 7, 13 &
+Drag labels (Creator, ConcreteCreator, Product, ConcreteProduct), tick abstract, set factory op return type. &
+"Label the roles and mark the factory \texttt{make(): Product}." &
+Auto: $\geq$90\% labels/markers correct. \\
+\midrule
+4 & UML-Build from code & Apply & 10, 23 &
+From $\sim$50--60 lines of C++, place classes, generalisation, factory op signature/return, dependencies. &
+"Assemble the UML that matches this code." &
+Auto: check role placements, inheritance, op signature. \\
+\midrule
+5 & UML-Scan (find/deny FM) & Analyse & 12, 15 &
+Click/select classes in a big diagram that form an FM; or answer "not present" with a cue. &
+"Highlight the FM participants, or choose `absent' and say why." &
+Auto: set membership; rationale 0--1 if "absent". \\
+\midrule
+6 & Design a custom FM UML (from brief) & Apply / Analyse & 11 &
+Read a short context, sketch where the factory op lives, name roles, add associations. &
+"For the Exporter brief, place the factory and name participants." &
+Rubric (3--4 pts): factory on Creator, returns Product, roles plausible. \\
+\midrule
+7 & Code-Read role classification & Analyse & 7, 14 &
+For 4--5 snippets, select \{Creator, ConcreteCreator, Product, ConcreteProduct, Not FM\} and give one-phrase reason. &
+"This class overrides \texttt{make()} $\rightarrow$ it is \ldots because \ldots" &
+Auto on role; reason 0--1 keyword (override/abstract/return). \\
+\midrule
+8 & Conformance checks (True/False + fix) & Analyse & 14, 17, 20, 23 &
+Mark statements about contracts; optionally edit the wrong line (return type/virtual dtor). &
+"Base factory returns \texttt{ConcreteA*} (T/F). If false, correct the code." &
+Auto: T/F + diff on small patch. \\
+\midrule
+9 & Code-Trace (dispatch $\rightarrow$ product) & Understand / Analyse & 18 &
+Predict which override runs and which concrete is built for a given call path. &
+"Given this call, the product type at runtime is \_\_\_\_." &
+Auto: exact product name expected. \\
+\midrule
+10 & Code-Fix lifecycle & Apply & 20 &
+Add \texttt{virtual \textasciitilde Product()}, correct member-initialiser order, base-ctor call. &
+"Make this compile \& pass the lifecycle tests." &
+Auto: tests/lint flags pass. \\
+\midrule
+11 & Refactor: move creation into factory & Apply / Analyse & 21 &
+Remove client \texttt{new}/\texttt{switch}; call \texttt{Creator::make()}; keep client abstract. &
+"Refactor so client has no concrete includes or \texttt{new}." &
+Auto: structure grep + tests (no \#include "Concrete", no \texttt{new Concrete}, tests green). \\
+\midrule
+12 & Extend: add product \& creator & Apply & 22 &
+Add \texttt{ConcreteProductB} + \texttt{ConcreteCreatorB}; client unchanged. &
+"Add TSV writer and exporter without touching client." &
+Auto: tests; file hash/AST confirms client untouched. \\
+\midrule
+13 & Code-Outline from UML & Apply & 17, 23 &
+Write only the base/override signatures from a UML diagram (no bodies). &
+"Write \texttt{Creator::make()} and the overrides' signatures." &
+Auto: signature match. \\
+\midrule
+14 & Translation duet (code $\Leftrightarrow$ UML) & Understand / Apply & 10, 17, 23 &
+Part A: label UML; Part B: outline code signatures. &
+"Label roles; then write the corresponding method signatures." &
+Auto: both parts $\geq$80\%. \\
+\midrule
+15 & Smell detection + seam pointer & Analyse & 19, 21 &
+Mark the smell (client new, type switch, tight coupling) and say where creation should move. &
+"Select the smell and target seam." &
+Auto: smell class + seam location match key. \\
+\midrule
+16 & Pattern discrimination (FM vs AF vs Simple) & Analyse & 8, 12, 15 &
+Given 3 tiny vignettes, choose pattern and cite one decisive cue. &
+"Family chosen together $\rightarrow$ \_\_\_\_ because \_\_\_\_." &
+Auto choice; 0--1 cue rubric. \\
+\midrule
+17 & Tiny implement-from-scaffold & Apply & 16 &
+Fill in missing bits so all tests for a minimal FM pass (factory override + product method). &
+"Complete the override and product." &
+Auto: unit tests pass. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\normalsize
+\end{landscape}
+\pagestyle{fancy}
+\clearpage
+
+
+\section*{References}
+University of Pretoria 2025 Yearbook - Programme: BSc in Computer Science; available at: \\ https://www.up.ac.za/yearbooks/2025/EBIT-faculty/UD-programmes/view/12134002 
+\\ \\
+Dick and Carey Instructional Model - Educational Technology; available at: \\ https://educationaltechnology.net/dick-and-carey-instructional-model/
+\\ \\
+COS214 Tackling Design Patterns - Linda Marshall and Vreda Pieterse; available at: \\ https://www.cs.up.ac.za/cs/lmarshall/TDP/TDP.html
+
+\newpage
+\appendix
+\section*{Appendix A: ID Questions' Answers}
+\paragraph{What is instructional design?}
+ A systematic way to plan learning: decide where we are going (learning outcomes), 
+ how we get there (methods, media, sequence), and how we know we arrived 
+ (criterion-referenced assessment and analytics). In this unit: teach Factory Method (FM) 
+ well and collect actionable data to improve lessons and all forms of assessment.
+\paragraph{What does an instructional designer do?}
+\begin{itemize}
+  \item Analyses learners, context, constraints (people, tools, organisation).
+  \item Writes outcomes aligned to Bloom (Remember/Understand/Apply/Analyse, tiny Evaluate, no Create).
+  \item Chooses strategies/media that fit outcomes and time.
+  \item Designs criterion-referenced items and feedback that produce evidence and next steps.
+  \item Builds accessible materials with VARK options and WCAG-aware UI.
+  \item Orchestrates short prototype $\rightarrow$ feedback $\rightarrow$ refine cycles (SAM-style cadence).
+\end{itemize}
+
+\paragraph{Why is instructional design important?}
+ It creates alignment (outcomes $\leftrightarrow$ activities $\leftrightarrow$ assessment) and evidence (analytics and error classes) so students learn efficiently and instructors can justify choices and improve iteratively.
+\paragraph{Instructional design theories (toolbox we draw from)}
+\begin{itemize}
+  \item Behaviorism (clear criteria, immediate feedback).
+  \item Cognitivism / Cognitive Load (chunking, worked examples, retrieval).
+  \item Constructivism / Social learning (explanations, peer reasoning).
+  \item Dual Coding (UML + text).
+  \item ARCS motivation (attention, relevance, confidence, satisfaction).
+\end{itemize}
+
+\paragraph{How do Gagn\'e's principles impact our design?}
+ We script lessons with Nine Events:
+ Attention (smell vignette), Objectives (LOs shown), Recall (C++ lifecycle cues), Present (UML + minimal code), Guidance (cheat-sheets, hints), Practice (micro-tasks), Formative (micro-quizzes with rule-based + optional GenAI explanation), Summative (timed practical; no GenAI), and Transfer (where FM applies in real projects).
+
+ \paragraph{What are Merrill's principles?}
+ Problem-centred learning with Activation, Demonstration, Application, Integration. We anchor each micro-lesson to a small, authentic FM problem and cycle A$\rightarrow$D$\rightarrow$A$\rightarrow$I.
+
+ \paragraph{How do Merrill's principles differ from Gagn\'e's?}
+ Gagn\'e provides the lesson sequence; Merrill keeps tasks problem-centred. We use Merrill to choose authentic tasks and Gagn\'e to script each task's flow. They're complementary.
+
+ \paragraph{Models (frameworks/methods) for instructional design:}
+\begin{itemize}
+  \item \textbf{Dick \& Carey (primary):} goals $\rightarrow$ analysis $\rightarrow$ objectives $\rightarrow$ criterion-referenced items $\rightarrow$ strategy $\rightarrow$ materials $\rightarrow$ formative $\rightarrow$ summative.
+  \item \textbf{ADDIE:} we explicitly answer where/how/how we know in the Introduction.
+  \item \textbf{SAM:} used as an iteration cadence for prototyping---not the primary model.
+\end{itemize}
+
+\paragraph{How do learning theories, learning styles and motivation link to ID?}
+\begin{itemize}
+  \item \textbf{Theories drive tactics:} worked examples, retrieval, immediate feedback, micro-quizzes.
+  \item \textbf{We provide VARK choices:} Visual (annotated UML, simple animations), Auditory (60--90 s narrations with captions), Read/Write (concise notes, rule cards), Kinesthetic (in-browser coding with instant tests).
+  \item \textbf{ARCS} is addressed via smell vignettes (Attention), clear course and career relevance (Relevance), graded practice with retries/mastery heatmaps (Confidence), and constructive + encouraging feedback (Satisfaction).
+\end{itemize}
+
+\paragraph{Are SE and ID so different?}
+In short: No. One could view an ID document as the SE document counterpart in teaching.
+\\ \\
+They're distinct yet interlocking in this context. ID defines outcomes, lesson flow, assessment, and analytics; SE builds the product that delivers them. In this assignment they are separate documents, tied by a traceability chain (Instructional Goals $\leftrightarrow$ Learning Outcomes $\leftrightarrow$ Micro-lessons $\leftrightarrow$ Micro-quizzes/practicals $\leftrightarrow$ Analytics \& error classes).
+
+\section*{Appendix B: Generative AI Acknowledgement}
+
+\textbf{Tool(s) used.} We used ChatGPT (GPT-5 Thinking) as a writing assistant for 
+\emph{formatting guidance, LaTeX layout help, and style polish} in this document, and to write most of this very section as it could easily qoute example previous prompts. No model fully generated the
+pedagogical substance, lesson plans, learning outcomes or assessment items.
+All major technical and instructional decisions are our own.
+\medskip
+\textbf{How it was used:} 
+\begin{itemize}
+  \item Refactoring LaTeX headers/footers and page styles (e.g., moving the page number to the footer, removing headers on landscape pages, and fixing table widths and column alignment).
+  \item Converting Google-Doc style tables to \texttt{tabularx}/\texttt{longtable} with \texttt{booktabs} rules, and improving readability (column sizing, row spacing, captions).
+  \item Was asked to provide examples of micro lessons and questions, and the summative question library that could be used in the ID document.
+  \item Wording polish for clarity and consistency (capitalisation of BLOOM/Gagn\'e, hyphen/en-dash ranges, etc.).
+  \item Guidance on creating concrete formative assessment tasks.
+\end{itemize}
+
+\textbf{Representative prompt snippets (verbatim excerpts):}
+\begin{itemize}
+  \item “make the header as I want it… if it's really impossible … simply have the line go under the logo…”
+  \item “Make the latex look more like the google doc version.”
+  \item “extract the marks column and simply say all micro questions have a maximum mark of 5…”
+  \item “is it possible to remove the number of the section just from the header”
+  \item “Carefully review and consider every part of the document we have right now as I believe its in its final state. Do not rewrite the document but point out any errors.
+Further you must also critically compare what I have done in this ID document to what was expected of us in the assignment spec. Us doing more than what was asked is fine but it is unacceptable if we did something wrong or left something out.
+I put the full everything of what we have right now in the latex and I attatch the ID doc and the assignment specs as PDFs.”
+\end{itemize}
+
+\textbf{Authorship and responsibility.} We reviewed, edited, and verified all AI-assisted
+outputs. Any errors or omissions remain our responsibility. The final content, including
+learning outcomes, mappings, assessments, lesson designs, time budgets, and analytics/error
+classes, was authored and validated by the authors of this document.
+
+
+\end{document}

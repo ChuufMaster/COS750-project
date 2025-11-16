@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Purpose \& Scope}{2}{section.1}%
+\contentsline {section}{\numberline {2}Development Approach (SE)}{2}{section.2}%
+\contentsline {paragraph}{Sprint 1 (MVP):}{2}{section*.3}%
+\contentsline {paragraph}{Sprint 2 (Polish):}{2}{section*.4}%
+\contentsline {section}{\numberline {3}Users \& Key Scenarios}{2}{section.3}%
+\contentsline {paragraph}{Student:}{2}{section*.5}%
+\contentsline {paragraph}{COS214 Lecturing Team:}{2}{section*.6}%
+\contentsline {section}{\numberline {4}Functional Requirements}{2}{section.4}%
+\contentsline {section}{\numberline {5}Non-Functional Requirements}{3}{section.5}%
+\contentsline {section}{\numberline {6}Architecture (high level)}{3}{section.6}%
+\contentsline {paragraph}{Front-end (SPA):}{3}{section*.8}%
+\contentsline {paragraph}{API:}{4}{section*.9}%
+\contentsline {paragraph}{Grading Service:}{4}{section*.10}%
+\contentsline {paragraph}{Store:}{4}{section*.11}%
+\contentsline {paragraph}{Auth:}{4}{section*.12}%
+\contentsline {paragraph}{MQ Scheduler*:}{4}{section*.13}%
+\contentsline {section}{\numberline {7}Data Model}{4}{section.7}%
+\contentsline {section}{\numberline {8}Content Authoring \& Pipeline}{5}{section.8}%
+\contentsline {section}{\numberline {9}Item Types (engine support)}{5}{section.9}%
+\contentsline {section}{\numberline {10}Testing Strategy}{5}{section.10}%
+\contentsline {section}{\numberline {11}Risks \& Mitigations}{6}{section.11}%
+\contentsline {section}{\numberline {12}MVP Cutline}{6}{section.12}%
+\contentsline {section}{\numberline {13}Work Plan (example)}{6}{section.13}%
+\contentsline {paragraph}{Sprint 1 (week 1):}{6}{section*.18}%
+\contentsline {paragraph}{Sprint 2 (week 2):}{6}{section*.19}%
+\contentsline {section}{\numberline {14}Assumptions \& Constraints}{9}{section.14}%
+\contentsline {section}{\numberline {15}Deliverables}{9}{section.15}%
