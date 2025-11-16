@@ -1,11 +1,12 @@
-import React from "react";
+import CTD from "../../components/CTD";
+import DTC from "../../components/DTC";
 
 const UML: React.FC = () => {
   return (
-    <div>
-      <h1>UML</h1>
-      <p>UML diagrams go here</p>
-    </div>
+    <main>
+      <CTD />
+      <DTC />
+    </main>
   );
 };
 

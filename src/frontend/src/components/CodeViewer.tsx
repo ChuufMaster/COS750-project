@@ -1,0 +1,45 @@
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+type CodeViewerProps = {
+  code: string;
+  language?: string; // e.g. "cpp", "tsx", "javascript", etc.
+};
+
+const containerStyle: React.CSSProperties = {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+};
+
+const codeBlockStyle: React.CSSProperties = {
+  margin: 0,
+  width: "100%",
+  height: "100%",
+  overflow: "scroll", // <— always show scrollbars (browser permitting)
+  fontSize: "0.9rem",
+  borderRadius: "8px",
+  border: "2px solid #ffffffff",
+  boxSizing: "border-box",
+};
+
+const CodeViewer: React.FC<CodeViewerProps> = ({ code, language = "cpp" }) => {
+  return (
+    <div style={containerStyle}>
+      <SyntaxHighlighter
+        language={language}
+        style={vscDarkPlus}
+        customStyle={codeBlockStyle}
+        wrapLongLines
+        showLineNumbers
+        lineNumberStyle={{ opacity: 0.5 }}
+      >
+        {code.trimEnd()}
+      </SyntaxHighlighter>
+    </div>
+  );
+};
+
+export default CodeViewer;
