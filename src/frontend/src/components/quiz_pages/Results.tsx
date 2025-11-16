@@ -4,11 +4,26 @@
 // insert here the quiz content and logic
 // submit answers for grading and keep track of scores
 // on final submission, send results to backend for storage and progress the stored state on the back end
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getProgressAndResults } from "./helpers/Mock_results_api";
 
-type ResultsProps = {};
+type ResultsProps = {
+  studentId: string;
+};
 
-const Results: React.FC<ResultsProps> = () => {
+const Results: React.FC<ResultsProps> = ({ studentId }) => {
+  const navigate = useNavigate();
+  const [resultsSnapshot, setResultsSnapshot] = React.useState<Record<
+    string,
+    unknown
+  > | null>(null);
+
+  useEffect(() => {
+    const snapshot = getProgressAndResults(studentId);
+    setResultsSnapshot(snapshot);
+  }, [studentId]);
+
   return (
     <main
       className="full-width"
@@ -43,13 +58,15 @@ const Results: React.FC<ResultsProps> = () => {
           }}
         >
           <h1 style={{ margin: 0, fontSize: "1.5rem" }}>
-            Factory Method - Results
+            🏭 Factory Method -Your Results
           </h1>
           {/* enable when results are submitted */}
           <div>
             <button
               type="button"
-              onClick={() => {}}
+              onClick={() => {
+                navigate("/");
+              }}
               style={{
                 padding: "8px 36px",
                 borderRadius: 999,
@@ -82,6 +99,25 @@ const Results: React.FC<ResultsProps> = () => {
         </section>
       </header>
       <div>Results Content and logic</div>
+      <div>
+        <h2>Debug: Progress & Results</h2>
+        {resultsSnapshot ? (
+          <pre
+            style={{
+              background: "#111",
+              padding: "12px",
+              borderRadius: "8px",
+              maxHeight: "300px",
+              overflow: "auto",
+              fontSize: "0.85rem",
+            }}
+          >
+            {JSON.stringify(resultsSnapshot, null, 2)}
+          </pre>
+        ) : (
+          <p>Error.</p>
+        )}
+      </div>
     </main>
   );
 };

@@ -1,5 +1,5 @@
 import { loginStudent } from "./helpers/Login_helpers";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 type LoginPanelProps = {
   onLoggedIn: (info: { studentId: string; sessionId: string }) => void;

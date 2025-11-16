@@ -1,11 +1,33 @@
 import React from "react";
 import CodeViewer from "../CodeViewer";
+import { useNavigate } from "react-router-dom";
+import { submitAndProgress } from "./helpers/Mock_results_api";
 
 type MicroLesson1Props = {
   handleProceed: () => void;
+  studentId: string;
 };
 
-const MicroLesson1: React.FC<MicroLesson1Props> = ({ handleProceed }) => {
+const MicroLesson1: React.FC<MicroLesson1Props> = ({
+  handleProceed,
+  studentId,
+}) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async () => {
+    const results = {
+      completed: true,
+    };
+
+    try {
+      await submitAndProgress(studentId, results); // wait for this
+      handleProceed(); // only run after success
+    } catch (err) {
+      console.error("Failed to submit and progress:", err);
+      // optionally show an error message here
+    }
+  };
+
   return (
     <main
       className="full-width"
@@ -40,24 +62,44 @@ const MicroLesson1: React.FC<MicroLesson1Props> = ({ handleProceed }) => {
           }}
         >
           <h1 style={{ margin: 0, fontSize: "1.5rem" }}>
-            Factory Method - Lesson 1
+            🏭 Factory Method - Lesson 1
           </h1>
           {/* enable when results are submitted */}
-          <button
-            type="button"
-            onClick={handleProceed}
-            style={{
-              padding: "8px 16px",
-              borderRadius: 999,
-              border: "none",
-              background: "#2563eb",
-              color: "#ffffff",
-              fontWeight: 500,
-              cursor: "pointer",
-            }}
-          >
-            Proceed ➜
-          </button>
+          <div>
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/");
+              }}
+              style={{
+                padding: "8px 36px",
+                borderRadius: 999,
+                marginRight: "12px",
+                border: "none",
+                background: "#eb254dff",
+                color: "#ffffff",
+                fontWeight: 500,
+                cursor: "pointer",
+              }}
+            >
+              Exit ➜
+            </button>
+            <button
+              type="button"
+              onClick={handleSubmit}
+              style={{
+                padding: "8px 16px",
+                borderRadius: 999,
+                border: "none",
+                background: "#2563eb",
+                color: "#ffffff",
+                fontWeight: 500,
+                cursor: "pointer",
+              }}
+            >
+              Proceed ➜
+            </button>
+          </div>
         </section>
       </header>
       {/* Main lesson content */}
@@ -73,6 +115,9 @@ const MicroLesson1: React.FC<MicroLesson1Props> = ({ handleProceed }) => {
           gap: 12,
         }}
       >
+        <h2 style={{ margin: 0, fontSize: "1.25rem" }}>
+          Lesson 1 – Factory Method Theory Refresher
+        </h2>
         <p style={{ margin: 0 }}>
           The <strong>Factory Method</strong> pattern provides a way to create
           objects without hard-coding concrete classes in client code. Instead

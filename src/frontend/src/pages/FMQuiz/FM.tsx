@@ -6,6 +6,10 @@ import MicroLesson2 from "../../components/quiz_pages/MicroLesson2";
 import Uml from "../../components/quiz_pages/Uml";
 import Results from "../../components/quiz_pages/Results";
 import Code from "../../components/quiz_pages/Code";
+import {
+  getCurrentState,
+  initAttempt,
+} from "../../components/quiz_pages/helpers/Mock_results_api";
 
 const States = [
   "Login",
@@ -32,7 +36,8 @@ const FM: React.FC = () => {
         studentId: storedStudent,
         sessionId: storedSession,
       });
-      //restore quiz page state if possible from the API
+      const state = getCurrentState(storedStudent);
+      if (state) setCurrentState(state);
     }
   }, []);
 
@@ -43,6 +48,7 @@ const FM: React.FC = () => {
       sessionId: info.sessionId,
     });
     console.log("Logged in:", info);
+    initAttempt(info.studentId);
     handleProceed();
   };
 
@@ -61,27 +67,43 @@ const FM: React.FC = () => {
   }
 
   if (currentState === "Microlesson1") {
-    return <MicroLesson1 handleProceed={handleProceed} />;
+    return (
+      <MicroLesson1
+        handleProceed={handleProceed}
+        studentId={sessionInfo.studentId}
+      />
+    );
   }
 
   if (currentState === "Quiz") {
-    return <Quiz handleProceed={handleProceed} />;
+    return (
+      <Quiz handleProceed={handleProceed} studentId={sessionInfo.studentId} />
+    );
   }
 
   if (currentState === "Microlesson2") {
-    return <MicroLesson2 handleProceed={handleProceed} />;
+    return (
+      <MicroLesson2
+        handleProceed={handleProceed}
+        studentId={sessionInfo.studentId}
+      />
+    );
   }
 
   if (currentState === "Uml") {
-    return <Uml handleProceed={handleProceed} />;
+    return (
+      <Uml handleProceed={handleProceed} studentId={sessionInfo.studentId} />
+    );
   }
 
   if (currentState === "Code") {
-    return <Code handleProceed={handleProceed} />;
+    return (
+      <Code handleProceed={handleProceed} studentId={sessionInfo.studentId} />
+    );
   }
 
   if (currentState === "Results") {
-    return <Results />;
+    return <Results studentId={sessionInfo.studentId} />;
   }
 };
 
