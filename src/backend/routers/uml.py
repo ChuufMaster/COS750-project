@@ -116,6 +116,19 @@ def compare_models(student: dict, rubric: dict):
     Compare a normalized student UML model to the rubric UML model.
     Returns:
         (score, max_score, feedback_dict)
+
+    Both `student` and `rubric` are expected to be in the normalized format:
+
+        {
+          "classes": [
+            { "name": "...", "kind": "...", "methods": [...] },
+            ...
+          ],
+          "relationships": [
+            { "type": "...", "from": "...", "to": "..." },
+            ...
+          ]
+        }
     """
 
     # ---------------------------------------
@@ -124,8 +137,12 @@ def compare_models(student: dict, rubric: dict):
     student_classes = {c["name"]: c for c in student["classes"]}
     rubric_classes = {c["name"]: c for c in rubric["classes"]}
 
-    student_rels = {(r["type"], r["from"], r["to"]) for r in student["relationships"]}
-    rubric_rels = {(r["type"], r["from"], r["to"]) for r in rubric["relationships"]}
+    student_rels_set = {
+        (r["type"], r["from"], r["to"]) for r in student["relationships"]
+    }
+    rubric_rels_set = {
+        (r["type"], r["from"], r["to"]) for r in rubric["relationships"]
+    }
 
     # ---------------------------------------
     # CLASS SCORING
@@ -139,11 +156,21 @@ def compare_models(student: dict, rubric: dict):
     # ---------------------------------------
     # RELATIONSHIP SCORING
     # ---------------------------------------
-    missing_rels = rubric_rels - student_rels
-    extra_rels = student_rels - rubric_rels
+    missing_rels_set = rubric_rels_set - student_rels_set
+    extra_rels_set = student_rels_set - rubric_rels_set
 
-    rel_score = len(rubric_rels) - len(missing_rels)
+    rel_score = len(rubric_rels_set) - len(missing_rels_set)
     rel_score = max(rel_score, 0)
+
+    # Convert relationship sets into structured dicts
+    missing_rels = [
+        {"type": t, "from": f, "to": to}
+        for (t, f, to) in sorted(missing_rels_set)
+    ]
+    extra_rels = [
+        {"type": t, "from": f, "to": to}
+        for (t, f, to) in sorted(extra_rels_set)
+    ]
 
     # ---------------------------------------
     # METHOD SCORING
@@ -159,14 +186,13 @@ def compare_models(student: dict, rubric: dict):
         missing_methods = expected_methods - student_methods
         extra_methods = student_methods - expected_methods
 
-        # Count for totals
         total_expected_methods += len(expected_methods)
         method_score += len(expected_methods) - len(missing_methods)
 
         if missing_methods or extra_methods:
             method_feedback[cls_name] = {
                 "missingMethods": sorted(list(missing_methods)),
-                "extraMethods": sorted(list(extra_methods))
+                "extraMethods": sorted(list(extra_methods)),
             }
 
     method_score = max(method_score, 0)
@@ -174,16 +200,12 @@ def compare_models(student: dict, rubric: dict):
     # ---------------------------------------
     # TOTAL SCORING
     # ---------------------------------------
-    total_score = (
-        class_score +
-        2 * rel_score +
-        method_score
-    )
+    total_score = class_score + 2 * rel_score + method_score
 
     max_score = (
-        len(rubric_classes) +
-        2 * len(rubric_rels) +
-        total_expected_methods
+        len(rubric_classes)
+        + 2 * len(rubric_rels_set)
+        + total_expected_methods
     )
 
     # ---------------------------------------
@@ -192,16 +214,16 @@ def compare_models(student: dict, rubric: dict):
     feedback = {
         "missingClasses": sorted(list(missing_classes)),
         "extraClasses": sorted(list(extra_classes)),
-        "missingRelationships": sorted(list(missing_rels)),
-        "extraRelationships": sorted(list(extra_rels)),
+        "missingRelationships": missing_rels,
+        "extraRelationships": extra_rels,
         "methodFeedback": method_feedback,
         "scoreBreakdown": {
             "classScore": class_score,
             "relationshipScore": rel_score,
             "methodScore": method_score,
             "totalExpectedMethods": total_expected_methods,
-            "maxScore": max_score
-        }
+            "maxScore": max_score,
+        },
     }
 
     return total_score, max_score, feedback
