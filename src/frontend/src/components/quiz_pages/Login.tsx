@@ -22,12 +22,12 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ onLoggedIn }) => {
 
   return (
     <main className="semi-width">
-      <section>Title</section>
+      <section>Factory Method</section>
 
-      <section>Content</section>
+      <section>Learning Outcomes</section>
 
       <section>
-        <div>More content</div>
+        <div>Time estimations</div>
         <div>
           <input
             type="text"

@@ -7,6 +7,7 @@ import Quiz from "./pages/Quiz/Quiz";
 import UML from "./pages/UML/UML";
 import Home from "./pages/Home/Home";
 import FM from "./pages/FMQuiz/FM";
+import Admin from "./pages/Admin/Admin";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/factorymethod" element={<FM />} />
+        <Route path="/admin" element={<Admin />} />
         {/* will be removed */}
         <Route path="/playground" element={<Playground />} />
         <Route path="/quiz" element={<Quiz />} />
