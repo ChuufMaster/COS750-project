@@ -7,6 +7,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { submitAndProgress } from "./helpers/Mock_results_api";
+import CTD from "../CTD";
+import DTC from "../DTC";
 
 type UmlProps = {
   handleProceed: () => void;
@@ -106,7 +108,8 @@ const Uml: React.FC<UmlProps> = ({ handleProceed, studentId }) => {
         </section>
       </header>
       {/* YOUR CONTENT HERE */}
-      <div>UML Content and logic</div>
+      <CTD />
+      <DTC />
     </main>
   );
 };
