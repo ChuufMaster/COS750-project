@@ -17,9 +17,6 @@ from pydantic import BaseModel, Field
 
 # Set QUIZ_USE_GEMINI_FEEDBACK=0 to disable all LLM calls from this module.
 USE_LLM_FEEDBACK = os.getenv("QUIZ_USE_GEMINI_FEEDBACK", "1") == "1"
-ITEM_BANK: Dict[str, MicroQuiz] = {}
-ANALYTICS: List[Dict[str, Any]] = []
-FIRST_GRADED_REC: Dict[tuple, bool] = {}
 
 ANALYTICS_JSONL_PATH = os.getenv("QUIZ_ANALYTICS_JSONL", "data/quiz_analytics.jsonl")
 ANALYTICS_CSV_PATH   = os.getenv("QUIZ_ANALYTICS_CSV",   "data/quiz_analytics.csv")
@@ -1018,26 +1015,29 @@ def next_mq(
 def export_analytics(format: Literal["json", "csv"] = "json"):
     """
     Dump analytics for quick lecturer review (prototype only).
-    NOTE: all data is kept in-memory only for this COS750 prototype.
+    Data is collected per item and includes student_id, LO tags,
+    pass/fail, and marks.
     """
     if format == "json":
         return ANALYTICS
+
     out = io.StringIO()
-    writer = csv.DictWriter(
-        out,
-        fieldnames=[
-            "ts",
-            "session_id",
-            "mq_id",
-            "item_id",
-            "lo_ids",
-            "pass_fail",
-            "attempts",
-            "time_ms",
-            "error_class",
-            "remedial_clicked",
-        ],
-    )
+    fieldnames = [
+        "ts",
+        "student_id",
+        "session_id",
+        "mq_id",
+        "item_id",
+        "lo_ids",
+        "pass_fail",
+        "attempts",
+        "time_ms",
+        "error_class",
+        "remedial_clicked",
+        "marks_awarded",
+        "marks_possible",
+    ]
+    writer = csv.DictWriter(out, fieldnames=fieldnames)
     writer.writeheader()
     for row in ANALYTICS:
         r = dict(row)
