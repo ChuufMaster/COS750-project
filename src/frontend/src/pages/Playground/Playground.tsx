@@ -7,7 +7,7 @@ import axios from "axios";
 const Playground: React.FC = () => {
   const [code, setCode] = useState({});
   const [output, setOutput] = useState<{
-    compile_errors?: string;
+    compile_errors?: [Record<string, string>];
     runtime_output?: string;
     test_results?: string;
   } | null>(null);
@@ -38,6 +38,24 @@ const Playground: React.FC = () => {
     saveAs(blob, "project.zip");
   };
 
+  const ErrorList = ({ errors }) =>
+    errors.map((error) => (
+      <div
+        style={{
+          marginTop: "1rem",
+          whiteSpace: "pre-wrap",
+          background: "#bf4537",
+          color: "#d4d4d4",
+          padding: "1rem",
+          borderRadius: "4px",
+        }}
+      >
+        <strong>Error in: {error.file}</strong>
+        <br />
+        {error.error}
+      </div>
+    ));
+
   return (
     <div>
       <h1>Playground</h1>
@@ -65,8 +83,8 @@ const Playground: React.FC = () => {
           {output.compile_errors && (
             <div>
               <strong>Compile Errors:</strong>
-              {output.compile_errors}
               <br />
+              <ErrorList errors={output.compile_errors} />
             </div>
           )}
           {output.runtime_output && (
