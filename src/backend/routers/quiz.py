@@ -43,7 +43,7 @@ ItemType = Literal[
     "mcq_multi",    # multiple option keys
     "fitb",         # short phrase / term
     "short_text",   # 1–3 sentence justification / explanation
-    "code_text",    # short C++ snippet or pseudo-code
+    "code_text",    # C++ snippet or pseudo-code
     "uml_json",     # UML workspace JSON string
 ]
 
