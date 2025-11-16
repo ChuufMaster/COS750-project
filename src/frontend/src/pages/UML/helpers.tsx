@@ -55,3 +55,25 @@ export async function submitCTD(umlModel: any, userId?: string) {
 
   return res.json();
 }
+
+export async function submitDTC(code: string, userId: string) {
+  const res = await fetch(`${API_BASE_URL}/uml/SubmitDTC`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userId,
+      code,
+    }),
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(
+      `Failed to submit DTC: ${res.status} ${res.statusText} ${text}`
+    );
+  }
+
+  return res.json();
+}
