@@ -1,4 +1,4 @@
-import { loginStudent } from "./helpers";
+import { loginStudent } from "./helpers/Login_helpers";
 import React, { useState, useEffect } from "react";
 
 type LoginPanelProps = {

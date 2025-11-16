@@ -1,5 +1,7 @@
 // ./helpers.ts
 
+//Mock state API
+
 // Login
 function generateSessionId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
