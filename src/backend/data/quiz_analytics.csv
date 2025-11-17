@@ -41,3 +41,8 @@ ts,student_id,session_id,mq_id,item_id,lo_ids,pass_fail,attempts,time_ms,error_c
 1763312673364,mock-student-001,sess-mock-full-001,mq6,mq6_q1,12|22,1,1,10000,,False,2,2
 1763312673365,mock-student-001,sess-mock-full-001,mq6,mq6_q2,12|15,1,1,10000,,False,2,2
 1763312686745,mock-student-001,sess-mock-full-001,mq6,mq6_q3,15|22,1,1,10000,,False,3,3
+1763385216060,u22519042,ed29e739-81ef-4ac4-8202-392660e28c2f,mq1,mq1_q1,1|2|3|4,0,1,0,intent-or-classification-misunderstood,False,0,2
+1763385226563,u22519042,ed29e739-81ef-4ac4-8202-392660e28c2f,mq1,mq1_q2,4|6|9,0,1,0,client-still-constructs,False,0,2
+1763385226563,u22519042,ed29e739-81ef-4ac4-8202-392660e28c2f,mq1,mq1_q3,4|6|9,0,1,0,pattern-intent-misapplied,False,0,3
+1763385238644,u22519042,ed29e739-81ef-4ac4-8202-392660e28c2f,mq1,mq1_q4,3|4,1,1,0,,False,1,1
+1763385238645,u22519042,ed29e739-81ef-4ac4-8202-392660e28c2f,mq1,mq1_q5,1,1,1,0,,False,1,1

@@ -81,7 +81,7 @@ const Home: React.FC = () => {
             </Link>
 
             <Link to="/quiz" className="home-card">
-              <h3 className="home-card-title">Quick micro-quiz</h3>
+              <h3 className="home-card-title">Quick Micro-quiz</h3>
               <p className="home-card-text">
                 Answer a short Factory Method quiz and receive AI feedback on
                 open-ended answers.
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
             </Link>
 
             <Link to="/uml" className="home-card">
-              <h3 className="home-card-title">UML workspace</h3>
+              <h3 className="home-card-title">UML Workspace</h3>
               <p className="home-card-text">
                 Work with Factory Method UML diagrams: build or inspect
                 diagrams and check whether the pattern is present.
@@ -97,7 +97,7 @@ const Home: React.FC = () => {
             </Link>
 
             <Link to="/playground" className="home-card">
-              <h3 className="home-card-title">Code playground</h3>
+              <h3 className="home-card-title">Code Playground</h3>
               <p className="home-card-text">
                 Experiment with the C++ skeleton code used in the lessons and
                 see how the Factory Method roles map to code.
