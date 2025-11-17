@@ -305,12 +305,12 @@ const MicroQuizRunner: React.FC = () => {
                       <p className="mq-placeholder-label">Code example</p>
                       <div
                         className="mq-code-example-viewer"
-                        style={{ minHeight: 100 }}
+                        style={{ minHeight: 120, marginBottom: 10 }}
                       >
                         <CodeViewer
                           code={item.code_example}
                           language="cpp"
-                          height={180}
+                          height={200}
                         />
                       </div>
                     </div>
@@ -328,7 +328,7 @@ const MicroQuizRunner: React.FC = () => {
                         className="mq-item-image"
                         style={{
                           width: "100%",
-                          maxWidth: "480px",
+                          maxWidth: "750px",
                           borderRadius: "8px",
                           border: "1px solid #d1d5db",
                           margin: "3px auto 10px auto",

@@ -559,6 +559,46 @@ def _ensure_item_bank_seeded() -> None:
                 "correct Factory Method UML in the UML workspace. Submit the final drawn UML "
                 "as your answer."
             ),
+            code_example=("""
+#pragma once
+#include <iostream>
+
+class Product {
+public:
+    virtual ~Product() = default;
+    virtual void use() = 0;
+};
+
+class ConcreteProductA : public Product {
+public:
+    void use() override { std::cout << "A\n"; }
+};
+
+class ConcreteProductB : public Product {
+public:
+    void use() override { std::cout << "B\n"; }
+};
+
+class Creator {
+public:
+    virtual ~Creator() = default;
+    virtual Product* create() = 0;
+};
+
+class ConcreteCreatorA : public Creator {
+public:
+    Product* create() override {
+        return new ConcreteProductA();
+    }
+};
+
+class ConcreteCreatorB : public Creator {
+public:
+    Product* create() override {
+        return new ConcreteProductB();
+    }
+};
+"""),
             answer=(
                 "The UML must contain Creator, at least one ConcreteCreator, Product "
                 "and ConcreteProduct classes, with generalisation arrows from "
@@ -579,6 +619,7 @@ def _ensure_item_bank_seeded() -> None:
                 "If it is, name the Creator and Product roles; if not, briefly justify "
                 "why FM is not present."
             ),
+            image_url="http://localhost:8000/api/static/UML/3_2.png",
             answer=(
                 "A correct answer either (1) identifies a consistent set of Creator, "
                 "ConcreteCreator, Product, and ConcreteProduct classes with a factory "
@@ -594,9 +635,10 @@ def _ensure_item_bank_seeded() -> None:
             id="mq3_q3",
             type="mcq_single",
             prompt=(
-                "[IMAGE REQUIRED: uml_mq3_q3.png] Which diagram correctly shows the "
+                "Which diagram correctly shows the "
                 "factory operation on Creator returning Product (not a concrete type)?"
             ),
+            image_url="http://localhost:8000/api/static/UML/3_3.png",
             options=[
                 ItemOption(key="A", text="Diagram A"),
                 ItemOption(key="B", text="Diagram B"),
@@ -662,9 +704,46 @@ def _ensure_item_bank_seeded() -> None:
             id="mq4_q3",
             type="mcq_single",
             prompt=(
-                "[IMAGE REQUIRED: code_mq4_q3.png] Which snippet will cause undefined "
+                "Which snippet will cause undefined "
                 "behaviour when deleting via Product*?"
             ),
+            code_example=("""
+// Snippet A
+class Product {
+public:
+    virtual ~Product() { }   // virtual destructor
+};
+
+class ConcreteProduct : public Product { };
+
+int main() {
+    Product* p = new ConcreteProduct();
+    delete p;  // OK: virtual destructor
+}
+// Snippet B
+class Product {
+public:
+    ~Product() { }   // NOT virtual
+};
+
+class ConcreteProduct : public Product { };
+
+int main() {
+    Product* p = new ConcreteProduct();
+    delete p;  // UB: deleting via base pointer without virtual destructor
+}
+// Snippet C
+class Product {
+public:
+    virtual ~Product() = default;  // virtual, defaulted
+};
+
+class ConcreteProduct : public Product { };
+
+int main() {
+    Product* p = new ConcreteProduct();
+    delete p;  // OK: virtual destructor
+}"""),
             options=[
                 ItemOption(
                     key="A",
