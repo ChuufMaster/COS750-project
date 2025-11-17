@@ -1,7 +1,11 @@
 // src/pages/Quiz/MicroQuizRunner.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import CodeViewer from "../../components/CodeViewer";
+import ApollonUmlEditor, {
+  type ApollonUmlEditorHandle,
+} from "../../components/ApollonUmlEditor";
 
 type ItemType =
   | "mcq_single"
@@ -22,6 +26,8 @@ type Item = {
   prompt: string;
   options?: ItemOption[];
   marks: number;
+  code_example?: string;
+  image_url?: string;
 };
 
 type MicroQuiz = {
@@ -89,6 +95,7 @@ const MicroQuizRunner: React.FC = () => {
   const { mqId } = useParams<{ mqId: string }>();
   const [mq, setMq] = useState<MicroQuiz | null>(null);
   const [answers, setAnswers] = useState<Record<string, any>>({});
+  const umlRefs = useRef<Record<string, ApollonUmlEditorHandle | null>>({});
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -134,7 +141,11 @@ const MicroQuizRunner: React.FC = () => {
     setAnswers((prev) => ({ ...prev, [itemId]: value }));
   };
 
-  const handleMultiChange = (itemId: string, optionKey: string, checked: boolean) => {
+  const handleMultiChange = (
+    itemId: string,
+    optionKey: string,
+    checked: boolean
+  ) => {
     setAnswers((prev) => {
       const current: string[] = Array.isArray(prev[itemId]) ? prev[itemId] : [];
       let next: string[];
@@ -149,6 +160,15 @@ const MicroQuizRunner: React.FC = () => {
 
   const handleTextChange = (itemId: string, value: string) => {
     setAnswers((prev) => ({ ...prev, [itemId]: value }));
+  };
+
+  const getResponseForItem = (item: Item) => {
+    if (item.type === "uml_json") {
+      const diagram = umlRefs.current[item.id]?.getModel();
+      return diagram ?? null;
+    }
+    const value = answers[item.id];
+    return value !== undefined && value !== "" ? value : null;
   };
 
   const handleSubmit = async () => {
@@ -177,10 +197,7 @@ const MicroQuizRunner: React.FC = () => {
         attempt_number: attemptNumber,
         attempts: mq.items.map((item) => ({
           item_id: item.id,
-          response:
-            answers[item.id] !== undefined && answers[item.id] !== ""
-              ? answers[item.id]
-              : null,
+          response: getResponseForItem(item),
           time_ms: 0,
         })),
       };
@@ -241,9 +258,9 @@ const MicroQuizRunner: React.FC = () => {
                 marks
               </h2>
               <p>
-                You can review feedback below and optionally try again. Only your
-                first graded attempt is used for lecturer analytics; later attempts
-                are for your own practice.
+                You can review feedback below and optionally try again. Only
+                your first graded attempt is used for lecturer analytics; later
+                attempts are for your own practice.
               </p>
             </section>
           )}
@@ -279,6 +296,43 @@ const MicroQuizRunner: React.FC = () => {
                   </header>
 
                   <p className="mq-item-prompt">{item.prompt}</p>
+
+                  {item.code_example && (
+                    <div className="mq-placeholder-block">
+                      <p className="mq-placeholder-label">Code example</p>
+                      <div
+                        className="mq-code-example-viewer"
+                        style={{ minHeight: 100 }}
+                      >
+                        <CodeViewer
+                          code={item.code_example}
+                          language="cpp"
+                          height={180}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {item.image_url && (
+                    <div
+                      className="mq-placeholder-block"
+                      style={{ textAlign: "center" }}
+                    >
+                      <p className="mq-placeholder-label">Reference Image</p>
+                      <img
+                        src={item.image_url}
+                        alt="Question reference"
+                        className="mq-item-image"
+                        style={{
+                          width: "100%",
+                          maxWidth: "480px",
+                          borderRadius: "8px",
+                          border: "1px solid #d1d5db",
+                          margin: "3px auto",
+                        }}
+                      />
+                    </div>
+                  )}
 
                   <div className="mq-item-input">
                     {item.type === "mcq_single" && item.options && (
@@ -352,8 +406,9 @@ const MicroQuizRunner: React.FC = () => {
                           Code answer (C++ snippet)
                         </p>
                         <p className="mq-placeholder-caption">
-                          For the prototype this is a plain text area. Your group
-                          can later swap this for the full code editor component.
+                          For the prototype this is a plain text area. Your
+                          group can later swap this for the full code editor
+                          component.
                         </p>
                         <textarea
                           className="mq-textarea mq-code-textarea"
@@ -369,22 +424,19 @@ const MicroQuizRunner: React.FC = () => {
 
                     {item.type === "uml_json" && (
                       <div className="mq-placeholder-block">
-                        <p className="mq-placeholder-label">UML workspace</p>
                         <p className="mq-placeholder-caption">
-                          Placeholder for the Apollon UML editor. For now we
-                          capture a short textual description or paste of JSON.
-                          Later you can wire this to your UML canvas and store
-                          its JSON here.
+                          Create your Factory Method diagram.
                         </p>
-                        <textarea
-                          className="mq-textarea mq-uml-textarea"
-                          rows={6}
-                          value={currentAnswer ?? ""}
-                          onChange={(e) =>
-                            handleTextChange(item.id, e.target.value)
-                          }
-                          placeholder="Describe or paste your UML solution here for now…"
-                        />
+                        <div
+                          className="mq-uml-editor-shell"
+                          style={{ minHeight: 360 }}
+                        >
+                          <ApollonUmlEditor
+                            ref={(instance) => {
+                              umlRefs.current[item.id] = instance ?? null;
+                            }}
+                          />
+                        </div>
                       </div>
                     )}
                   </div>
