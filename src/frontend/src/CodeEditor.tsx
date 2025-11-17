@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
+import { API_URL } from "./config";
 
 type CodeEditorProps = {
   code: Record<string, any>;
   setCode: (code: Record<string, any>) => void;
 };
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ code, setCode }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ setCode }) => {
   const [fileName, setFileName] = useState("");
 
   const [file, setFile] = useState("");
@@ -18,9 +19,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, setCode }) => {
   useEffect(() => {
     const load = async () => {
       try {
-        const response = await axios.get(
-          "http://127.0.0.1:8000/playground/files",
-        );
+        const response = await axios.get(API_URL + "/playground/files");
         const loadedFiles = response.data;
         const firstFileName = Object.keys(loadedFiles)[0];
         setFiles(loadedFiles);

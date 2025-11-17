@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CodeEditor from "./CodeEditor";
 import { fetchDTCTask, submitDTC } from "../pages/UML/helpers";
+import { API_URL } from "../config";
 
 type DTCTask = {
   id?: string;
@@ -17,7 +18,8 @@ type DTCTask = {
   [key: string]: any;
 };
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
+// const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
+const API_BASE = API_URL;
 
 function buildImageUrl(task?: DTCTask | null): string | undefined {
   const rel = task?.prompt?.url;
@@ -79,7 +81,7 @@ const DTC: React.FC = () => {
     };
   }, []);
 
-  const language = task?.language || "cpp";
+  // const language = task?.language || "cpp";
   const imageUrl = buildImageUrl(task);
 
   // -----------------------------
@@ -146,7 +148,7 @@ const DTC: React.FC = () => {
                 (r: any) =>
                   `${r.from ?? "?"} → ${r.to ?? "?"}${
                     r.type ? ` (${r.type})` : ""
-                  }`
+                  }`,
               )
               .join("; ")}
           </div>
@@ -159,7 +161,7 @@ const DTC: React.FC = () => {
                 (r: any) =>
                   `${r.from ?? "?"} → ${r.to ?? "?"}${
                     r.type ? ` (${r.type})` : ""
-                  }`
+                  }`,
               )
               .join("; ")}
           </div>
@@ -185,7 +187,7 @@ const DTC: React.FC = () => {
                         .join(" • ")}
                     </li>
                   );
-                }
+                },
               )}
             </ul>
           </div>

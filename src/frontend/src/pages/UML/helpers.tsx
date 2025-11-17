@@ -1,7 +1,9 @@
 // helpers.ts
 // Simple helpers for talking to the UML backend
 
-const API_BASE_URL = "http://localhost:8000";
+import { API_URL } from "../../config";
+
+const API_BASE_URL = API_URL;
 
 export async function fetchCTDTask() {
   const res = await fetch(`${API_BASE_URL}/uml/CTD`, {
@@ -71,7 +73,7 @@ export async function submitDTC(code: string, userId: string) {
   if (!res.ok) {
     const text = await res.text().catch(() => "");
     throw new Error(
-      `Failed to submit DTC: ${res.status} ${res.statusText} ${text}`
+      `Failed to submit DTC: ${res.status} ${res.statusText} ${text}`,
     );
   }
 

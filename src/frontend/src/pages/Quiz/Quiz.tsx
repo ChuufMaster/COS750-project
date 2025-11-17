@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../../config";
 
 type MQMeta = {
   id: string;
@@ -21,9 +22,7 @@ const Quiz: React.FC = () => {
       try {
         setLoading(true);
         setError(null);
-        const resp = await axios.get<MQMeta[]>(
-          "http://127.0.0.1:8000/quiz/mqs"
-        );
+        const resp = await axios.get<MQMeta[]>(API_URL + "/quiz/mqs");
         // backend already returns mq1..mq6 sorted by id, but be safe:
         const sorted = [...resp.data].sort((a, b) => a.id.localeCompare(b.id));
         setMqs(sorted);
@@ -45,8 +44,8 @@ const Quiz: React.FC = () => {
           <h1 className="mq-title">Micro-Quizzes</h1>
         </div>
         <p className="mq-subtitle">
-          Each micro-quiz focuses on a small cluster of learning outcomes from the
-          ID document. You can attempt them in any order; your first graded
+          Each micro-quiz focuses on a small cluster of learning outcomes from
+          the ID document. You can attempt them in any order; your first graded
           attempt is what matters for analytics, but you are free to retry.
         </p>
         <div className="mq-header-actions">
@@ -94,3 +93,4 @@ const Quiz: React.FC = () => {
 };
 
 export default Quiz;
+

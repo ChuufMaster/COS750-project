@@ -11,6 +11,7 @@ function generateSessionId(): string {
 }
 
 export function validateLogin(studentId: string): void {
+  console.log(studentId);
   // TODO: implement real validation logic (e.g., backend check)
 }
 
@@ -25,7 +26,7 @@ export function loginStudent(studentId: string): {
   validateLogin(trimmed);
   const maxAgeSeconds = 60 * 60 * 24 * 7; // 7 days
   document.cookie = `student_id=${encodeURIComponent(
-    trimmed
+    trimmed,
   )}; path=/; max-age=${maxAgeSeconds}; SameSite=Lax`;
 
   let sessionId = sessionStorage.getItem("session_id");

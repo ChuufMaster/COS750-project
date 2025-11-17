@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import { randomUUID } from "crypto";
+import { API_URL } from "../../config";
 
 type ItemType =
   | "mcq_single"
@@ -59,7 +61,7 @@ function getOrCreateSessionId(): string {
     let id = window.localStorage.getItem(SESSION_KEY);
     if (!id) {
       if ("randomUUID" in crypto) {
-        id = (crypto as any).randomUUID();
+        id = randomUUID();
       } else {
         id = `session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
       }
@@ -104,7 +106,7 @@ const MicroQuizRunner: React.FC = () => {
         setResult(null);
         setAnswers({});
         const resp = await axios.get<MicroQuiz>(
-          `http://127.0.0.1:8000/quiz/mq/${mqId}?shuffle=true`
+          `${API_URL}/quiz/mq/${mqId}?shuffle=true`,
         );
         setMq(resp.data);
       } catch (e: any) {
@@ -122,14 +124,16 @@ const MicroQuizRunner: React.FC = () => {
     setAnswers((prev) => ({ ...prev, [itemId]: value }));
   };
 
-  const handleMultiChange = (itemId: string, optionKey: string, checked: boolean) => {
+  const handleMultiChange = (
+    itemId: string,
+    optionKey: string,
+    checked: boolean,
+  ) => {
     setAnswers((prev) => {
       const current: string[] = Array.isArray(prev[itemId]) ? prev[itemId] : [];
       let next: string[];
       if (checked) {
-        next = current.includes(optionKey)
-          ? current
-          : [...current, optionKey];
+        next = current.includes(optionKey) ? current : [...current, optionKey];
       } else {
         next = current.filter((k) => k !== optionKey);
       }
@@ -166,8 +170,8 @@ const MicroQuizRunner: React.FC = () => {
       };
 
       const resp = await axios.post<SubmitResult>(
-        "http://127.0.0.1:8000/quiz/submit",
-        payload
+        `${API_URL}/quiz/submit`,
+        payload,
       );
       setResult(resp.data);
       // Optional: scroll to top so they see the summary
@@ -218,9 +222,9 @@ const MicroQuizRunner: React.FC = () => {
                 marks
               </h2>
               <p>
-                You can review feedback below and optionally try again. Only your
-                first graded attempt is used for lecturer analytics; later attempts
-                are for your own practice.
+                You can review feedback below and optionally try again. Only
+                your first graded attempt is used for lecturer analytics; later
+                attempts are for your own practice.
               </p>
             </section>
           )}
@@ -230,7 +234,7 @@ const MicroQuizRunner: React.FC = () => {
             {mq.items.map((item, index) => {
               const currentAnswer = answers[item.id];
               const itemResult = result?.results.find(
-                (r) => r.item_id === item.id
+                (r) => r.item_id === item.id,
               );
 
               return (
@@ -245,14 +249,14 @@ const MicroQuizRunner: React.FC = () => {
                       {item.type === "mcq_single"
                         ? "Single-answer MCQ"
                         : item.type === "mcq_multi"
-                        ? "Multi-select MCQ"
-                        : item.type === "fitb"
-                        ? "Fill-in-the-blank"
-                        : item.type === "short_text"
-                        ? "Short text"
-                        : item.type === "code_text"
-                        ? "Code (C++)"
-                        : "UML workspace"}
+                          ? "Multi-select MCQ"
+                          : item.type === "fitb"
+                            ? "Fill-in-the-blank"
+                            : item.type === "short_text"
+                              ? "Short text"
+                              : item.type === "code_text"
+                                ? "Code (C++)"
+                                : "UML workspace"}
                     </p>
                   </header>
 
@@ -297,7 +301,7 @@ const MicroQuizRunner: React.FC = () => {
                                   handleMultiChange(
                                     item.id,
                                     opt.key,
-                                    e.target.checked
+                                    e.target.checked,
                                   )
                                 }
                               />
@@ -331,8 +335,9 @@ const MicroQuizRunner: React.FC = () => {
                           Code answer (C++ snippet)
                         </p>
                         <p className="mq-placeholder-caption">
-                          For the prototype this is a plain text area. Your group
-                          can later swap this for the full code editor component.
+                          For the prototype this is a plain text area. Your
+                          group can later swap this for the full code editor
+                          component.
                         </p>
                         <textarea
                           className="mq-textarea mq-code-textarea"
@@ -433,3 +438,4 @@ const MicroQuizRunner: React.FC = () => {
 };
 
 export default MicroQuizRunner;
+
