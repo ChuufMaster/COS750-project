@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Admin.css";
+import { API_URL } from "../../config";
 
 type AttemptRow = {
   ts: number;
@@ -49,7 +50,7 @@ const Admin: React.FC = () => {
         setLoading(true);
         setError(null);
         const resp = await axios.get<AttemptRow[]>(
-          "http://127.0.0.1:8000/quiz/analytics/attempts?format=json"
+          `${API_URL}/quiz/analytics/attempts?format=json`
         );
         setData(resp.data || []);
       } catch (e) {

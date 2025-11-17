@@ -61,3 +61,6 @@ ts,student_id,session_id,mq_id,item_id,lo_ids,pass_fail,attempts,time_ms,error_c
 1763396631702,u21516741,47814d29-9307-464b-815e-504507e76afa,mq3,mq3_q1,10|11|23,0,2,0,uml-structure-incomplete,False,0,3
 1763396646706,u21516741,47814d29-9307-464b-815e-504507e76afa,mq3,mq3_q2,12|23,0,2,0,fm-not-detected-in-uml,False,0,2
 1763396646709,u21516741,47814d29-9307-464b-815e-504507e76afa,mq3,mq3_q3,10|12|23,1,2,0,,False,2,2
+1763401253248,u22519040,ed29e739-81ef-4ac4-8202-392660e28c2f,mq3,mq3_q1,10|11|23,0,1,0,uml-structure-incomplete,False,0,3
+1763401266515,u22519040,ed29e739-81ef-4ac4-8202-392660e28c2f,mq3,mq3_q2,12|23,0,1,0,fm-not-detected-in-uml,False,0,2
+1763401266515,u22519040,ed29e739-81ef-4ac4-8202-392660e28c2f,mq3,mq3_q3,10|12|23,0,1,0,factory-signature-wrong,False,0,2

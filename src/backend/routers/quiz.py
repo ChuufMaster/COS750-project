@@ -559,45 +559,6 @@ def _ensure_item_bank_seeded() -> None:
                 "correct Factory Method UML in the UML workspace. Submit the final drawn UML "
                 "as your answer."
             ),
-            code_example=("""#pragma once
-#include <iostream>
-
-class Product {
-public:
-    virtual ~Product() = default;
-    virtual void use() = 0;
-};
-
-class ConcreteProductA : public Product {
-public:
-    void use() override { std::cout << "A\n"; }
-};
-
-class ConcreteProductB : public Product {
-public:
-    void use() override { std::cout << "B\n"; }
-};
-
-class Creator {
-public:
-    virtual ~Creator() = default;
-    virtual Product* create() = 0;
-};
-
-class ConcreteCreatorA : public Creator {
-public:
-    Product* create() override {
-        return new ConcreteProductA();
-    }
-};
-
-class ConcreteCreatorB : public Creator {
-public:
-    Product* create() override {
-        return new ConcreteProductB();
-    }
-};
-"""),
             answer=(
                 "The UML must contain Creator, at least one ConcreteCreator, Product "
                 "and ConcreteProduct classes, with generalisation arrows from "
@@ -618,7 +579,6 @@ public:
                 "If it is, name the Creator and Product roles; if not, briefly justify "
                 "why FM is not present."
             ),
-            image_url="http://localhost:8000/api/static/UML/DTC/prompt.png",
             answer=(
                 "A correct answer either (1) identifies a consistent set of Creator, "
                 "ConcreteCreator, Product, and ConcreteProduct classes with a factory "
@@ -633,9 +593,8 @@ public:
         Item(
             id="mq3_q3",
             type="mcq_single",
-            image_url="http://localhost:8000/api/static/UML/DTC/prompt.png",
             prompt=(
-                "Which diagram correctly shows the "
+                "[IMAGE REQUIRED: uml_mq3_q3.png] Which diagram correctly shows the "
                 "factory operation on Creator returning Product (not a concrete type)?"
             ),
             options=[
@@ -703,10 +662,9 @@ public:
             id="mq4_q3",
             type="mcq_single",
             prompt=(
-                "Which snippet will cause undefined "
+                "[IMAGE REQUIRED: code_mq4_q3.png] Which snippet will cause undefined "
                 "behaviour when deleting via Product*?"
             ),
-            image_url="http://localhost:8000/api/static/UML/DTC/prompt.png",
             options=[
                 ItemOption(
                     key="A",
@@ -1059,13 +1017,18 @@ def next_mq(
 @router.get("/analytics/attempts")
 def export_analytics(format: Literal["json", "csv"] = "json"):
     """
-    Dump analytics for quick lecturer review (prototype only).
-    Data is collected per item and includes student_id, LO tags,
-    pass/fail, and marks.
-    """
-    if format == "json":
-        return ANALYTICS
+    Dump analytics for lecturer review.
 
+    Now loads from the JSONL file on disk so that all historical attempts are
+    visible, not only the current-process ANALYTICS list.
+    """
+    rows = _load_analytics_from_jsonl()
+
+    # JSON: just return the list of dicts (this is what your React Admin page uses)
+    if format == "json":
+        return rows
+
+    # CSV view built from the same rows (keeps old behaviour)
     out = io.StringIO()
     fieldnames = [
         "ts",
@@ -1084,11 +1047,39 @@ def export_analytics(format: Literal["json", "csv"] = "json"):
     ]
     writer = csv.DictWriter(out, fieldnames=fieldnames)
     writer.writeheader()
-    for row in ANALYTICS:
+
+    for row in rows:
         r = dict(row)
-        r["lo_ids"] = "|".join(map(str, r.get("lo_ids", [])))
+        # ensure lo_ids is pipe-separated in the CSV, like before
+        if isinstance(r.get("lo_ids"), list):
+            r["lo_ids"] = "|".join(map(str, r["lo_ids"]))
         writer.writerow(r)
+
     return out.getvalue()
+
+
+def _load_analytics_from_jsonl() -> List[Dict[str, Any]]:
+    """
+    Load all analytics rows from the JSONL file on disk.
+    Falls back to the in-memory ANALYTICS list if the file does not exist.
+    """
+    rows: List[Dict[str, Any]] = []
+
+    if os.path.isfile(ANALYTICS_JSONL_PATH):
+        with open(ANALYTICS_JSONL_PATH, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rows.append(json.loads(line))
+                except Exception:
+                    # If a line is corrupt, skip it instead of killing the endpoint
+                    continue
+        return rows
+
+    # Fallback: old behaviour (current-session only)
+    return list(ANALYTICS)
 
 @router.get("/llm_ping")
 def llm_ping():
