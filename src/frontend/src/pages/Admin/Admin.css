@@ -1,0 +1,400 @@
+/* src/pages/Admin/Admin.css */
+
+/* Page container: keep padding, but no light background here,
+   since your global background is already dark. */
+.admin-page {
+  padding: 32px 16px 48px;
+  margin: 0 auto;
+}
+
+/* Header - use light colours for dark background */
+.admin-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9ca3af;        /* lighter grey */
+  margin: 0 0 4px;
+}
+
+.admin-title {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 650;
+  color: #f9fafb;        /* almost white */
+}
+
+.admin-subtitle {
+  margin: 6px 0 0;
+  max-width: 640px;
+  font-size: 0.95rem;
+  color: #e5e7eb;        /* light grey */
+}
+
+.admin-updated {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  align-self: flex-end;
+}
+
+.admin-updated span {
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.admin-error {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.95rem;
+}
+
+.admin-empty {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Summary cards */
+
+.admin-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.admin-summary-card {
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.admin-summary-card h2 {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.admin-summary-number {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 650;
+  color: #111827;
+}
+
+.admin-summary-caption {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Sections */
+
+.admin-section {
+  margin-top: 24px;
+}
+
+.admin-section-header h2 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a7c3ff;
+}
+
+.admin-section-header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #d7e8ff;
+}
+
+/* Tables */
+
+.admin-table-wrapper {
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.admin-table-wrapper--compact {
+  margin-top: 12px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-table thead {
+  background: #f3f4f6;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.admin-table th {
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.admin-table--compact th,
+.admin-table--compact td {
+  padding: 6px 8px;
+  font-size: 0.8rem;
+}
+
+/* LO pill */
+
+.admin-lo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1f2937;
+  background: #e5e7eb;
+}
+
+/* Bar cells */
+
+.admin-bar-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-bar-track {
+  position: relative;
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.admin-bar-fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  border-radius: inherit;
+  background: #2563eb;
+  transition: width 0.25s ease-out;
+}
+
+.admin-bar-fill--pass {
+  background: #10b981; /* green for pass rate */
+}
+
+.admin-bar-label {
+  font-size: 0.8rem;
+  color: #374151;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* Error tags */
+
+.admin-error-cell {
+  max-width: 260px;
+}
+
+.admin-error-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.78rem;
+}
+
+.admin-error-tag--none {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+/* Pass/fail pills in raw table */
+
+.admin-pass-pill,
+.admin-fail-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.admin-pass-pill {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.admin-fail-pill {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.admin-header-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Back to home link */
+.admin-back-link {
+  font-size: 0.9rem;
+  color: #93c5fd;         /* light blue */
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.admin-back-link:hover {
+  color: #bfdbfe;
+  text-decoration: underline;
+}
+
+/* --- Fix compact recent attempts table --- */
+
+.admin-table-wrapper--compact {
+  margin-top: 1rem;
+  background-color: #020617;        /* dark card background */
+  border-radius: 12px;
+  padding: 0.75rem 0.75rem 0.25rem;
+}
+
+.admin-table.admin-table--compact {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Make header and body text properly visible */
+.admin-table--compact th,
+.admin-table--compact td {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.85rem;
+  color: #7ff4de;                   /* light gray text */
+}
+
+/* Row striping so lines are actually readable */
+.admin-table--compact tbody tr:nth-child(odd) {
+  background-color: #020617;
+}
+
+.admin-table--compact tbody tr:nth-child(even) {
+  background-color: #0b1120;
+}
+
+/* Optional: subtle hover so you can follow a row with your eye */
+.admin-table--compact tbody tr:hover {
+  background-color: #111827;
+}
+
+.admin-table--compact thead th {
+  background-color: #020617;        /* same as card background */
+  border-bottom: 1px solid #1f2937; /* subtle separator */
+  color: #f9fafb;                   /* bright text */
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  letter-spacing: 0.03em;
+}
+/* Header right-side (timestamp + back link) */
+.admin-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.admin-back-link {
+  font-size: 0.9rem;
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.admin-back-link:hover {
+  text-decoration: underline;
+}
+
+/* LO pill base */
+.admin-lo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* Gentle band colours (very light) */
+.admin-lo-pill--band1 {
+  background: rgba(59, 131, 246, 0.55);      /* blue */
+  color: #192e48;
+}
+
+.admin-lo-pill--band2 {
+  background: rgba(138, 92, 246, 0.493);     /* violet */
+  color: #192e48;
+}
+
+.admin-lo-pill--band3 {
+  background: rgba(16, 185, 129, 0.463);     /* teal/green */
+  color: #192e48;
+}
+
+.admin-lo-pill--band4 {
+  background: rgba(249, 116, 22, 0.502);     /* orange for LO24 */
+  color: #192e48;
+}
+
+/* Legend layout */
+.admin-lo-band-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.admin-lo-band-label {
+  opacity: 0.7;
+}
