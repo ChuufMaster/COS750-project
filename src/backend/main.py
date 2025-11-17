@@ -12,6 +12,8 @@ app = FastAPI()
 origins = [
     "http://localhost:5173",  # your frontend URL
     "http://127.0.0.1:5173",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1",
 ]
 
 app.add_middleware(
@@ -22,13 +24,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(playground.router, prefix="/playground")
-app.include_router(quiz.router, prefix="/quiz")
+app.include_router(playground.router, prefix="/api/playground")
+app.include_router(quiz.router, prefix="/api/quiz")
 # New: AI routes shared by quiz/UML/coding playground
-app.include_router(ai.router, prefix="/ai")
+app.include_router(ai.router, prefix="/api/ai")
 
 
-app.mount("/static", StaticFiles(directory="../../examples"), name="static")
+app.mount("/api/static", StaticFiles(directory="./example"), name="static")
 
 
 @app.get("/")

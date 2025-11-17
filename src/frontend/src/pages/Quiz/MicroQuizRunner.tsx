@@ -6,6 +6,9 @@ import CodeViewer from "../../components/CodeViewer";
 import ApollonUmlEditor, {
   type ApollonUmlEditorHandle,
 } from "../../components/ApollonUmlEditor";
+import { v4 as uuidv4 } from "uuid";
+import { API_URL } from "../../config";
+import { Editor } from "@monaco-editor/react";
 
 type ItemType =
   | "mcq_single"
@@ -66,7 +69,7 @@ function getOrCreateSessionId(): string {
     let id = window.localStorage.getItem(SESSION_KEY);
     if (!id) {
       if ("randomUUID" in crypto) {
-        id = (crypto as any).randomUUID();
+        id = uuidv4();
       } else {
         id = `session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
       }
@@ -123,7 +126,7 @@ const MicroQuizRunner: React.FC = () => {
         setResult(null);
         setAnswers({});
         const resp = await axios.get<MicroQuiz>(
-          `http://127.0.0.1:8000/quiz/mq/${mqId}?shuffle=false`
+          `${API_URL}/quiz/mq/${mqId}?shuffle=false`
         );
         setMq(resp.data);
       } catch (e: any) {
@@ -203,7 +206,7 @@ const MicroQuizRunner: React.FC = () => {
       };
 
       const resp = await axios.post<SubmitResult>(
-        "http://127.0.0.1:8000/quiz/submit",
+        `${API_URL}/quiz/submit`,
         payload
       );
       setResult(resp.data);
@@ -328,7 +331,7 @@ const MicroQuizRunner: React.FC = () => {
                           maxWidth: "480px",
                           borderRadius: "8px",
                           border: "1px solid #d1d5db",
-                          margin: "3px auto",
+                          margin: "3px auto 10px auto",
                         }}
                       />
                     </div>
@@ -405,19 +408,26 @@ const MicroQuizRunner: React.FC = () => {
                         <p className="mq-placeholder-label">
                           Code answer (C++ snippet)
                         </p>
-                        <p className="mq-placeholder-caption">
-                          For the prototype this is a plain text area. Your
-                          group can later swap this for the full code editor
-                          component.
-                        </p>
-                        <textarea
-                          className="mq-textarea mq-code-textarea"
-                          rows={8}
-                          value={currentAnswer ?? ""}
-                          onChange={(e) =>
-                            handleTextChange(item.id, e.target.value)
+
+                        <Editor
+                          height="400px"
+                          defaultLanguage="cpp"
+                          theme="vs-dark"
+                          onChange={(value) => {
+                            handleTextChange(item.id, value ?? "");
+                          }}
+                          value={
+                            currentAnswer ??
+                            `
+// Write the relevant C++ snippet here
+// (e.g., the refactored client using Creator::make()).
+`
                           }
-                          placeholder={`// Write the relevant C++ snippet here\n// (e.g., the refactored client using Creator::make()).`}
+                          options={{
+                            fontSize: 14,
+                            minimap: { enabled: false },
+                            automaticLayout: true,
+                          }}
                         />
                       </div>
                     )}

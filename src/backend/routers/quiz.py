@@ -703,9 +703,10 @@ public:
             id="mq4_q3",
             type="mcq_single",
             prompt=(
-                "[IMAGE REQUIRED: code_mq4_q3.png] Which snippet will cause undefined "
+                "Which snippet will cause undefined "
                 "behaviour when deleting via Product*?"
             ),
+            image_url="http://localhost:8000/static/UML/DTC/prompt.png",
             options=[
                 ItemOption(
                     key="A",

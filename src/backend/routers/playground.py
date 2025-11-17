@@ -4,6 +4,7 @@ import tempfile
 import subprocess
 import os
 from pydantic import BaseModel
+from services import gemini
 
 router = APIRouter()
 
@@ -34,10 +35,36 @@ def compile_and_run(
             problem_file_name = (
                 compile_result.stderr.split(tmpdir)[-1].split(":")[0].strip("/")
             )
-            with open(f"../../examples/{problem_file_name}") as problem_file:
+            with open(f"./example/{problem_file_name}") as problem_file:
                 code[problem_file_name] = problem_file.read()
+
+            instruction = """
+                "You are a strict but fair university teaching assistant for COS214, an
+                "Object-Oriented Programming and Software Engineering module that uses C++, UML,
+                "and Gang of Four design patterns, with a special focus on the Factory Method pattern.
+                You will be given code errors from a C++ playground where a student will be experimenting
+                with implementing the Factory method design pattern, you will give constructive
+                feedback on why they are getting the error and how to fix it.
+                Be as consice and short as possible don't add any extra uneccesary details, only give information
+                regarding the Error. Limit it to a couple lines of output, just enought to 
+                teach a student where they are going wrong.
+                """
+            parts = [
+                gemini.part_text(
+                    f"""
+                    {compile_result.stderr}
+                    """
+                )
+            ]
+            resp = gemini.generate_with_retry(
+                parts=parts, system_instruction=instruction
+            )
             compile_errors.append(
-                {"file": problem_file_name, "error": compile_result.stderr}
+                {
+                    "file": problem_file_name,
+                    "error": compile_result.stderr,
+                    "feedback": resp.text,
+                }
             )
             output = compile_and_run(code, compile_errors)
             return output
@@ -56,17 +83,16 @@ def compile_and_run(
 @router.post("/run")
 async def run_cpp(code: Dict[str, str]):
     output = compile_and_run(code, [])
-    print(output)
     return output
 
 
 @router.get("/files")
 async def get_files():
-    file_names = os.listdir("../../examples")
+    file_names = os.listdir("./example")
 
     files = {}
     for file_name in file_names:
         if "pp" in file_name:
-            with open(f"../../examples/{file_name}") as file:
+            with open(f"./example/{file_name}") as file:
                 files[f"{file_name}"] = file.read()
     return files

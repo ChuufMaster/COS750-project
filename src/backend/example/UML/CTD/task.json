@@ -1,0 +1,7 @@
+{
+  "id": "CTD",
+  "type": "code-to-diagram",
+  "title": "Factory Method – UML from Code",
+  "description": "Read the C++ implementation and draw the UML class diagram.",
+  "language": "cpp"
+}
