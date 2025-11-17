@@ -5,13 +5,10 @@ from fastapi import APIRouter, HTTPException
 import re
 
 router = APIRouter()
-BASE = Path(__file__).resolve().parent.parent.parent.parent / "examples" / "UML"
-CLASS_REGEX = re.compile(
-    r"class\s+(\w+)\s*(?::\s*public\s+(\w+))?\s*\{"
-)
-METHOD_REGEX = re.compile(
-    r"\b(\w+)\s*\([^)]*\)\s*(?:override)?\s*\{"
-)
+BASE = Path(__file__).cwd() / "example" / "UML"
+CLASS_REGEX = re.compile(r"class\s+(\w+)\s*(?::\s*public\s+(\w+))?\s*\{")
+METHOD_REGEX = re.compile(r"\b(\w+)\s*\([^)]*\)\s*(?:override)?\s*\{")
+
 
 # helpers
 def read_json(path: Path):
@@ -21,7 +18,8 @@ def read_json(path: Path):
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Invalid JSON in {path.name}: {e}")
-    
+
+
 def normalize_apollon_model(model: dict):
     """
     Convert a raw Apollon export into a minimal, semantic UML representation.
@@ -61,11 +59,13 @@ def normalize_apollon_model(model: dict):
             if m_name:
                 method_names.append(m_name)
 
-        classes.append({
-            "name": name,
-            "kind": "abstract" if type_ == "AbstractClass" else "class",
-            "methods": sorted(method_names)
-        })
+        classes.append(
+            {
+                "name": name,
+                "kind": "abstract" if type_ == "AbstractClass" else "class",
+                "methods": sorted(method_names),
+            }
+        )
 
     # ---------------------------------------
     # RELATIONSHIPS EXTRACTION
@@ -94,11 +94,7 @@ def normalize_apollon_model(model: dict):
         else:
             rel_type = "Dependency"
 
-        rels.append({
-            "type": rel_type,
-            "from": src_name,
-            "to": tgt_name
-        })
+        rels.append({"type": rel_type, "from": src_name, "to": tgt_name})
 
     # ---------------------------------------
     # STABLE SORTING FOR COMPARISON
@@ -106,10 +102,8 @@ def normalize_apollon_model(model: dict):
     classes = sorted(classes, key=lambda c: c["name"])
     rels = sorted(rels, key=lambda r: (r["type"], r["from"], r["to"]))
 
-    return {
-        "classes": classes,
-        "relationships": rels
-    }
+    return {"classes": classes, "relationships": rels}
+
 
 def compare_models(student: dict, rubric: dict):
     """
@@ -140,9 +134,7 @@ def compare_models(student: dict, rubric: dict):
     student_rels_set = {
         (r["type"], r["from"], r["to"]) for r in student["relationships"]
     }
-    rubric_rels_set = {
-        (r["type"], r["from"], r["to"]) for r in rubric["relationships"]
-    }
+    rubric_rels_set = {(r["type"], r["from"], r["to"]) for r in rubric["relationships"]}
 
     # ---------------------------------------
     # CLASS SCORING
@@ -164,12 +156,10 @@ def compare_models(student: dict, rubric: dict):
 
     # Convert relationship sets into structured dicts
     missing_rels = [
-        {"type": t, "from": f, "to": to}
-        for (t, f, to) in sorted(missing_rels_set)
+        {"type": t, "from": f, "to": to} for (t, f, to) in sorted(missing_rels_set)
     ]
     extra_rels = [
-        {"type": t, "from": f, "to": to}
-        for (t, f, to) in sorted(extra_rels_set)
+        {"type": t, "from": f, "to": to} for (t, f, to) in sorted(extra_rels_set)
     ]
 
     # ---------------------------------------
@@ -202,11 +192,7 @@ def compare_models(student: dict, rubric: dict):
     # ---------------------------------------
     total_score = class_score + 2 * rel_score + method_score
 
-    max_score = (
-        len(rubric_classes)
-        + 2 * len(rubric_rels_set)
-        + total_expected_methods
-    )
+    max_score = len(rubric_classes) + 2 * len(rubric_rels_set) + total_expected_methods
 
     # ---------------------------------------
     # FEEDBACK
@@ -228,6 +214,7 @@ def compare_models(student: dict, rubric: dict):
 
     return total_score, max_score, feedback
 
+
 def normalize_cpp(code: str):
     """
     Extracts class names, inheritance, and method names.
@@ -244,11 +231,7 @@ def normalize_cpp(code: str):
         classes.append(cls)
 
         if base:
-            relationships.append({
-                "type": "Inheritance",
-                "from": cls,
-                "to": base
-            })
+            relationships.append({"type": "Inheritance", "from": cls, "to": base})
 
     # Extract methods per class
     class_method_map = {c: [] for c in classes}
@@ -269,10 +252,8 @@ def normalize_cpp(code: str):
             if name != cls:  # skip constructor
                 class_method_map[cls].append(name)
 
-    return {
-        "classes": class_method_map,
-        "relationships": relationships
-    }
+    return {"classes": class_method_map, "relationships": relationships}
+
 
 def compare_cpp_to_rubric(student, rubric):
     """
@@ -309,12 +290,10 @@ def compare_cpp_to_rubric(student, rubric):
 
     # For nicer feedback, keep maps from (from, to) -> type
     rubric_rel_type_map = {
-        (r["from"], r["to"]): r.get("type", "Unknown")
-        for r in rubric["relationships"]
+        (r["from"], r["to"]): r.get("type", "Unknown") for r in rubric["relationships"]
     }
     student_rel_type_map = {
-        (r["from"], r["to"]): r.get("type", "Unknown")
-        for r in student["relationships"]
+        (r["from"], r["to"]): r.get("type", "Unknown") for r in student["relationships"]
     }
 
     # ---------------------------
@@ -401,6 +380,7 @@ def compare_cpp_to_rubric(student, rubric):
 
     return total_score, max_score, feedback
 
+
 # -------------------------------------------------
 # GET: Code To Diagram (CTD)
 # -------------------------------------------------
@@ -418,17 +398,14 @@ def get_code_to_diagram_task():
         "title": task["title"],
         "description": task.get("description", ""),
         "language": "cpp",
-        "prompt": {
-            "kind": "code",
-            "code": code
-        },
-        "rubric": rubric  # included for now (frontend may not display it)
+        "prompt": {"kind": "code", "code": code},
+        "rubric": rubric,  # included for now (frontend may not display it)
     }
+
 
 # -------------------------------------------------
 # POST: Submit CTD (student UML JSON)
 # -------------------------------------------------
-@router.post("/SubmitCTD")
 @router.post("/SubmitCTD")
 def submit_code_to_diagram_task(submission: dict):
     """
@@ -448,10 +425,7 @@ def submit_code_to_diagram_task(submission: dict):
     rubric = read_json(rubric_path)
 
     student = normalize_apollon_model(student_raw)
-    rub = {
-        "classes": rubric["classes"],
-        "relationships": rubric["relationships"]
-    }
+    rub = {"classes": rubric["classes"], "relationships": rubric["relationships"]}
 
     score, max_score, feedback = compare_models(student, rub)
 
@@ -488,13 +462,11 @@ def get_diagram_to_code_task():
         "title": task["title"],
         "description": task.get("description", ""),
         "language": "cpp",
-        "prompt": {
-            "kind": "image",
-            "url": img_url
-        },
+        "prompt": {"kind": "image", "url": img_url},
         "rubric": rubric,
-        "testSuite": "test.cpp"
+        "testSuite": "test.cpp",
     }
+
 
 # -------------------------------------------------
 # POST: Submit DTC (student C++ code)
@@ -527,4 +499,3 @@ def submit_diagram_to_code_task(payload: dict):
         "normalizedStudent": student,
         "userId": user_id,
     }
-
