@@ -1,4 +1,5 @@
 FROM node:24 AS Build
+ENV API_URL="http://127.0.0.1/api"
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install

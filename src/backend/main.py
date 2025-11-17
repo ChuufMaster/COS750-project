@@ -31,7 +31,7 @@ app.include_router(uml.router, prefix="/api/uml")
 app.include_router(ai.router, prefix="/api/ai")
 
 
-app.mount("/static", StaticFiles(directory="./example"), name="static")
+app.mount("/api/static", StaticFiles(directory="./example"), name="static")
 
 
 @app.get("/")

@@ -1,0 +1,19 @@
+{
+  "type": "ClassDiagram",
+  "classes": [
+    { "name": "Product", "kind": "abstract", "methods": ["+ use()"] },
+    { "name": "ConcreteProductA", "methods": ["+ use()"] },
+    { "name": "ConcreteProductB", "methods": ["+ use()"] },
+    { "name": "Creator", "kind": "abstract", "methods": ["+ create()"] },
+    { "name": "ConcreteCreatorA", "methods": ["+ create()"] },
+    { "name": "ConcreteCreatorB", "methods": ["+ create()"] }
+  ],
+  "relationships": [
+    { "type": "Inheritance", "from": "ConcreteProductA", "to": "Product" },
+    { "type": "Inheritance", "from": "ConcreteProductB", "to": "Product" },
+    { "type": "Inheritance", "from": "ConcreteCreatorA", "to": "Creator" },
+    { "type": "Inheritance", "from": "ConcreteCreatorB", "to": "Creator" },
+    { "type": "Dependency", "from": "ConcreteCreatorA", "to": "Product" },
+    { "type": "Dependency", "from": "ConcreteCreatorB", "to": "Product" }
+  ]
+}

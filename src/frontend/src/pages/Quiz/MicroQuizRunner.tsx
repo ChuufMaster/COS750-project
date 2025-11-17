@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { randomUUID } from "crypto";
+import { v4 as uuidv4 } from "uuid";
 import { API_URL } from "../../config";
+import { Editor } from "@monaco-editor/react";
 
 type ItemType =
   | "mcq_single"
@@ -62,7 +63,7 @@ function getOrCreateSessionId(): string {
     let id = window.localStorage.getItem(SESSION_KEY);
     if (!id) {
       if ("randomUUID" in crypto) {
-        id = randomUUID();
+        id = uuidv4();
       } else {
         id = `session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
       }
@@ -119,7 +120,6 @@ const MicroQuizRunner: React.FC = () => {
         setAnswers({});
         const resp = await axios.get<MicroQuiz>(
           `${API_URL}/quiz/mq/${mqId}?shuffle=false`,
-
         );
         setMq(resp.data);
       } catch (e: any) {
@@ -358,19 +358,26 @@ const MicroQuizRunner: React.FC = () => {
                         <p className="mq-placeholder-label">
                           Code answer (C++ snippet)
                         </p>
-                        <p className="mq-placeholder-caption">
-                          For the prototype this is a plain text area. Your
-                          group can later swap this for the full code editor
-                          component.
-                        </p>
-                        <textarea
-                          className="mq-textarea mq-code-textarea"
-                          rows={8}
-                          value={currentAnswer ?? ""}
-                          onChange={(e) =>
-                            handleTextChange(item.id, e.target.value)
+
+                        <Editor
+                          height="400px"
+                          defaultLanguage="cpp"
+                          theme="vs-dark"
+                          onChange={(value) => {
+                            handleTextChange(item.id, value ?? "");
+                          }}
+                          value={
+                            currentAnswer ??
+                            `
+// Write the relevant C++ snippet here
+// (e.g., the refactored client using Creator::make()).
+`
                           }
-                          placeholder={`// Write the relevant C++ snippet here\n// (e.g., the refactored client using Creator::make()).`}
+                          options={{
+                            fontSize: 14,
+                            minimap: { enabled: false },
+                            automaticLayout: true,
+                          }}
                         />
                       </div>
                     )}
@@ -460,4 +467,3 @@ const MicroQuizRunner: React.FC = () => {
 };
 
 export default MicroQuizRunner;
-

@@ -1,0 +1,7 @@
+{
+  "id": "DTC",
+  "type": "diagram-to-code",
+  "title": "Factory Method – Code from UML Diagram",
+  "description": "Study the UML diagram image and write the corresponding C++ classes.",
+  "language": "cpp"
+}
