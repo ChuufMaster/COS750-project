@@ -5,7 +5,7 @@ import Playground from "./pages/Playground/Playground";
 import Quiz from "./pages/Quiz/Quiz";
 import UML from "./pages/UML/UML";
 import Home from "./pages/Home/Home";
-import FM from "./pages/FMQuiz/FM";
+import FM from "./pages/FMWalkthrough/FM";
 import Admin from "./pages/Admin/Admin";
 import MicroQuizRunner from "./pages/Quiz/MicroQuizRunner"; // <-- NEW
 
