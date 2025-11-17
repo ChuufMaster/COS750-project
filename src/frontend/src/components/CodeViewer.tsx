@@ -5,16 +5,16 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 type CodeViewerProps = {
   code: string;
   language?: string; // e.g. "cpp", "tsx", "javascript", etc.
+  height?: number | string;
 };
 
-const containerStyle: React.CSSProperties = {
+const baseContainerStyle: React.CSSProperties = {
   width: "100%",
-  height: "100%",
   display: "flex",
   flexDirection: "column",
 };
 
-const codeBlockStyle: React.CSSProperties = {
+const baseCodeBlockStyle: React.CSSProperties = {
   margin: 0,
   width: "100%",
   height: "100%",
@@ -25,13 +25,19 @@ const codeBlockStyle: React.CSSProperties = {
   boxSizing: "border-box",
 };
 
-const CodeViewer: React.FC<CodeViewerProps> = ({ code, language = "cpp" }) => {
+const CodeViewer: React.FC<CodeViewerProps> = ({
+  code,
+  language = "cpp",
+  height,
+}) => {
+  const resolvedHeight =
+    typeof height === "number" ? `${height}px` : height ?? "100%";
   return (
-    <div style={containerStyle}>
+    <div style={{ ...baseContainerStyle, height: resolvedHeight }}>
       <SyntaxHighlighter
         language={language}
         style={vscDarkPlus}
-        customStyle={codeBlockStyle}
+        customStyle={{ ...baseCodeBlockStyle, height: "100%" }}
         wrapLongLines
         showLineNumbers
         lineNumberStyle={{ opacity: 0.5 }}

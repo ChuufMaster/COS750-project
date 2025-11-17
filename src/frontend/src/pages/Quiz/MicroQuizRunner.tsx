@@ -1,7 +1,11 @@
 // src/pages/Quiz/MicroQuizRunner.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import CodeViewer from "../../components/CodeViewer";
+import ApollonUmlEditor, {
+  type ApollonUmlEditorHandle,
+} from "../../components/ApollonUmlEditor";
 import { v4 as uuidv4 } from "uuid";
 import { API_URL } from "../../config";
 import { Editor } from "@monaco-editor/react";
@@ -25,6 +29,8 @@ type Item = {
   prompt: string;
   options?: ItemOption[];
   marks: number;
+  code_example?: string;
+  image_url?: string;
 };
 
 type MicroQuiz = {
@@ -92,6 +98,7 @@ const MicroQuizRunner: React.FC = () => {
   const { mqId } = useParams<{ mqId: string }>();
   const [mq, setMq] = useState<MicroQuiz | null>(null);
   const [answers, setAnswers] = useState<Record<string, any>>({});
+  const umlRefs = useRef<Record<string, ApollonUmlEditorHandle | null>>({});
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -119,7 +126,7 @@ const MicroQuizRunner: React.FC = () => {
         setResult(null);
         setAnswers({});
         const resp = await axios.get<MicroQuiz>(
-          `${API_URL}/quiz/mq/${mqId}?shuffle=false`,
+          `${API_URL}/quiz/mq/${mqId}?shuffle=false`
         );
         setMq(resp.data);
       } catch (e: any) {
@@ -140,7 +147,7 @@ const MicroQuizRunner: React.FC = () => {
   const handleMultiChange = (
     itemId: string,
     optionKey: string,
-    checked: boolean,
+    checked: boolean
   ) => {
     setAnswers((prev) => {
       const current: string[] = Array.isArray(prev[itemId]) ? prev[itemId] : [];
@@ -156,6 +163,15 @@ const MicroQuizRunner: React.FC = () => {
 
   const handleTextChange = (itemId: string, value: string) => {
     setAnswers((prev) => ({ ...prev, [itemId]: value }));
+  };
+
+  const getResponseForItem = (item: Item) => {
+    if (item.type === "uml_json") {
+      const diagram = umlRefs.current[item.id]?.getModel();
+      return diagram ?? null;
+    }
+    const value = answers[item.id];
+    return value !== undefined && value !== "" ? value : null;
   };
 
   const handleSubmit = async () => {
@@ -184,17 +200,14 @@ const MicroQuizRunner: React.FC = () => {
         attempt_number: attemptNumber,
         attempts: mq.items.map((item) => ({
           item_id: item.id,
-          response:
-            answers[item.id] !== undefined && answers[item.id] !== ""
-              ? answers[item.id]
-              : null,
+          response: getResponseForItem(item),
           time_ms: 0,
         })),
       };
 
       const resp = await axios.post<SubmitResult>(
         `${API_URL}/quiz/submit`,
-        payload,
+        payload
       );
       setResult(resp.data);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -259,7 +272,7 @@ const MicroQuizRunner: React.FC = () => {
             {mq.items.map((item, index) => {
               const currentAnswer = answers[item.id];
               const itemResult = result?.results.find(
-                (r) => r.item_id === item.id,
+                (r) => r.item_id === item.id
               );
 
               return (
@@ -274,18 +287,55 @@ const MicroQuizRunner: React.FC = () => {
                       {item.type === "mcq_single"
                         ? "Single-answer MCQ"
                         : item.type === "mcq_multi"
-                          ? "Multi-select MCQ"
-                          : item.type === "fitb"
-                            ? "Fill-in-the-blank"
-                            : item.type === "short_text"
-                              ? "Short text"
-                              : item.type === "code_text"
-                                ? "Code (C++)"
-                                : "UML workspace"}
+                        ? "Multi-select MCQ"
+                        : item.type === "fitb"
+                        ? "Fill-in-the-blank"
+                        : item.type === "short_text"
+                        ? "Short text"
+                        : item.type === "code_text"
+                        ? "Code (C++)"
+                        : "UML workspace"}
                     </p>
                   </header>
 
                   <p className="mq-item-prompt">{item.prompt}</p>
+
+                  {item.code_example && (
+                    <div className="mq-placeholder-block">
+                      <p className="mq-placeholder-label">Code example</p>
+                      <div
+                        className="mq-code-example-viewer"
+                        style={{ minHeight: 100 }}
+                      >
+                        <CodeViewer
+                          code={item.code_example}
+                          language="cpp"
+                          height={180}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {item.image_url && (
+                    <div
+                      className="mq-placeholder-block"
+                      style={{ textAlign: "center" }}
+                    >
+                      <p className="mq-placeholder-label">Reference Image</p>
+                      <img
+                        src={item.image_url}
+                        alt="Question reference"
+                        className="mq-item-image"
+                        style={{
+                          width: "100%",
+                          maxWidth: "480px",
+                          borderRadius: "8px",
+                          border: "1px solid #d1d5db",
+                          margin: "3px auto 10px auto",
+                        }}
+                      />
+                    </div>
+                  )}
 
                   <div className="mq-item-input">
                     {item.type === "mcq_single" && item.options && (
@@ -325,7 +375,7 @@ const MicroQuizRunner: React.FC = () => {
                                   handleMultiChange(
                                     item.id,
                                     opt.key,
-                                    e.target.checked,
+                                    e.target.checked
                                   )
                                 }
                               />
@@ -384,22 +434,19 @@ const MicroQuizRunner: React.FC = () => {
 
                     {item.type === "uml_json" && (
                       <div className="mq-placeholder-block">
-                        <p className="mq-placeholder-label">UML workspace</p>
                         <p className="mq-placeholder-caption">
-                          Placeholder for the Apollon UML editor. For now we
-                          capture a short textual description or paste of JSON.
-                          Later you can wire this to your UML canvas and store
-                          its JSON here.
+                          Create your Factory Method diagram.
                         </p>
-                        <textarea
-                          className="mq-textarea mq-uml-textarea"
-                          rows={6}
-                          value={currentAnswer ?? ""}
-                          onChange={(e) =>
-                            handleTextChange(item.id, e.target.value)
-                          }
-                          placeholder="Describe or paste your UML solution here for now…"
-                        />
+                        <div
+                          className="mq-uml-editor-shell"
+                          style={{ minHeight: 360 }}
+                        >
+                          <ApollonUmlEditor
+                            ref={(instance) => {
+                              umlRefs.current[item.id] = instance ?? null;
+                            }}
+                          />
+                        </div>
                       </div>
                     )}
                   </div>

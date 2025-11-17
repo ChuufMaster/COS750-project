@@ -5,9 +5,11 @@ import Playground from "./pages/Playground/Playground";
 import Quiz from "./pages/Quiz/Quiz";
 import UML from "./pages/UML/UML";
 import Home from "./pages/Home/Home";
-import FM from "./pages/FMQuiz/FM";
+import FM from "./pages/FMWalkthrough/FM";
 import Admin from "./pages/Admin/Admin";
-import MicroQuizRunner from "./pages/Quiz/MicroQuizRunner"; // <-- NEW
+import MicroQuizRunner from "./pages/Quiz/MicroQuizRunner";
+import Lessons from "./pages/Lessons";
+import LessonRunner from "./pages/LessonRunner";
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
         {/* micro-quiz selection + runner */}
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/quiz/:mqId" element={<MicroQuizRunner />} />
+        {/* lessons */}
+        <Route path="/lessons" element={<Lessons />} />
+        <Route path="/lessons/:lessonId" element={<LessonRunner />} />
         {/* legacy / dev routes */}
         <Route path="/playground" element={<Playground />} />
         <Route path="/uml" element={<UML />} />
@@ -28,4 +33,3 @@ function App() {
 }
 
 export default App;
-
