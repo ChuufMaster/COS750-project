@@ -618,7 +618,7 @@ public:
                 "If it is, name the Creator and Product roles; if not, briefly justify "
                 "why FM is not present."
             ),
-            image_url="http://localhost:8000/static/UML/DTC/prompt.png",
+            image_url="http://localhost:8000/api/static/UML/DTC/prompt.png",
             answer=(
                 "A correct answer either (1) identifies a consistent set of Creator, "
                 "ConcreteCreator, Product, and ConcreteProduct classes with a factory "
@@ -633,7 +633,7 @@ public:
         Item(
             id="mq3_q3",
             type="mcq_single",
-            image_url="http://localhost:8000/static/UML/DTC/prompt.png",
+            image_url="http://localhost:8000/api/static/UML/DTC/prompt.png",
             prompt=(
                 "Which diagram correctly shows the "
                 "factory operation on Creator returning Product (not a concrete type)?"
@@ -706,7 +706,7 @@ public:
                 "Which snippet will cause undefined "
                 "behaviour when deleting via Product*?"
             ),
-            image_url="http://localhost:8000/static/UML/DTC/prompt.png",
+            image_url="http://localhost:8000/api/static/UML/DTC/prompt.png",
             options=[
                 ItemOption(
                     key="A",

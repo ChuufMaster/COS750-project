@@ -63,21 +63,13 @@ const Home: React.FC = () => {
           <h2 className="home-section-title">Student activities</h2>
 
           <div className="home-card-list">
-            <Link
-              to="/factorymethod"
-              className="home-card home-card--primary"
-            >
-              <h3 className="home-card-title">
-                Factory Method walk-through
-              </h3>
+            <Link to="/factorymethod" className="home-card home-card--primary">
+              <h3 className="home-card-title">Factory Method walk-through</h3>
               <p className="home-card-text">
-                Follow the recommended sequence: short micro-lessons, quiz,
-                UML activity and code refactor. Designed as the main student
-                flow.
+                Follow the recommended sequence: short micro-lessons, quiz, UML
+                activity and code refactor. Designed as the main student flow.
               </p>
-              <span className="home-card-cta">
-                Start guided practice →
-              </span>
+              <span className="home-card-cta">Start guided practice →</span>
             </Link>
 
             <Link to="/quiz" className="home-card">
@@ -88,11 +80,18 @@ const Home: React.FC = () => {
               </p>
             </Link>
 
+            <Link to="/lessons" className="home-card">
+              <h3 className="home-card-title">Content</h3>
+              <p className="home-card-text">
+                Revisit the bite-sized lessons covering Factory Method theory.
+              </p>
+            </Link>
+
             <Link to="/uml" className="home-card">
               <h3 className="home-card-title">UML Workspace</h3>
               <p className="home-card-text">
-                Work with Factory Method UML diagrams: build or inspect
-                diagrams and check whether the pattern is present.
+                Work with Factory Method UML diagrams: build or inspect diagrams
+                and check whether the pattern is present.
               </p>
             </Link>
 

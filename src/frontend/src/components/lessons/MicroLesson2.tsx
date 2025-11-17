@@ -1,120 +1,21 @@
 import React from "react";
 import CodeViewer from "../CodeViewer";
-import { useNavigate } from "react-router-dom";
-import { submitAndProgress } from "./helpers/Mock_results_api";
 
-type MicroLesson2Props = {
-  handleProceed: () => void;
-  studentId: string;
-};
-
-const MicroLesson2: React.FC<MicroLesson2Props> = ({
-  handleProceed,
-  studentId,
-}) => {
-  const navigate = useNavigate();
-
-  const handleSubmit = async () => {
-    const results = {
-      marks: "5",
-    };
-
-    try {
-      await submitAndProgress(studentId, results); // wait for this
-      handleProceed(); // only run after success
-    } catch (err) {
-      console.error("Failed to submit and progress:", err);
-      // optionally show an error message here
-    }
-  };
-
+const MicroLesson2: React.FC = () => {
   return (
-    <main
-      className="full-width"
+    <section
       style={{
-        padding: "24px 0",
-        margin: "0 auto",
+        borderRadius: 12,
+        margin: "16px auto",
+        padding: "16px",
+        maxWidth: "960px",
         display: "flex",
         flexDirection: "column",
-        gap: "16px",
+        backgroundColor: "#1f2937",
+        color: "white",
+        gap: 12,
       }}
     >
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          backgroundColor: "#242424",
-          padding: "16px 0",
-          borderBottom: "2px solid #333",
-        }}
-      >
-        <section
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "8px",
-            maxWidth: "1200px",
-            minWidth: "1200px",
-          }}
-        >
-          <h1 style={{ margin: 0, fontSize: "1.5rem" }}>
-            🏭 Factory Method - Lesson 2
-          </h1>
-          {/* enable when results are submitted */}
-          <div>
-            <button
-              type="button"
-              onClick={() => {
-                navigate("/");
-              }}
-              style={{
-                padding: "8px 36px",
-                borderRadius: 999,
-                marginRight: "12px",
-                border: "none",
-                background: "#eb254dff",
-                color: "#ffffff",
-                fontWeight: 500,
-                cursor: "pointer",
-              }}
-            >
-              Exit ➜
-            </button>
-            <button
-              type="button"
-              onClick={handleSubmit}
-              style={{
-                padding: "8px 16px",
-                borderRadius: 999,
-                border: "none",
-                background: "#2563eb",
-                color: "#ffffff",
-                fontWeight: 500,
-                cursor: "pointer",
-              }}
-            >
-              Proceed ➜
-            </button>
-          </div>
-        </section>
-      </header>
-      {/* Main lesson content */}
-      <section
-        style={{
-          borderRadius: 12,
-          margin: "16px 200px",
-          padding: "16px",
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: "#1f2937",
-          color: "white",
-          gap: 12,
-        }}
-      >
         <h2 style={{ margin: 0, fontSize: "1.25rem" }}>
           Lesson 2 – C++ Coding Concepts Behind Factory Method
         </h2>
@@ -270,7 +171,6 @@ void clientCode(const Creator& creator) {
           correct.
         </p>
       </section>
-    </main>
   );
 };
 export default MicroLesson2;
