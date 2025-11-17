@@ -25,3 +25,316 @@ html {
   width: 100%;
   max-width: 1200px;
 }
+
+/* ---- Micro-quiz layout ---- */
+
+.mq-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 32px auto 48px;
+  padding: 24px 24px 32px;
+  border-radius: 16px;
+  background-color: #111827; /* slightly lighter than the main background */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  color: #f9fafb;
+}
+
+.mq-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.mq-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.mq-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.mq-subtitle {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  max-width: 720px;
+}
+
+.mq-header-actions {
+  margin-top: 8px;
+}
+
+.mq-link {
+  font-size: 0.85rem;
+  color: #a5b4fc;
+}
+
+.mq-link:hover {
+  color: #6ee7b7; /* same green family as your hover tweak */
+}
+
+/* ---- MQ list page ---- */
+
+.mq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.mq-card {
+  background-color: #1f2937;
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+  border: 1px solid #374151;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mq-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.mq-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.mq-card-id {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.mq-card-desc {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.mq-card-meta {
+  display: flex;
+  gap: 16px;
+  margin: 4px 0 8px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.mq-card-meta dt {
+  font-weight: 500;
+}
+
+.mq-card-meta dd {
+  margin: 0;
+}
+
+.mq-card-footer {
+  margin-top: 4px;
+}
+
+/* primary + secondary button styles re-usable */
+.mq-primary-button,
+.mq-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mq-primary-button {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.mq-primary-button:hover {
+  background-color: #22c55e; /* green on hover */
+}
+
+.mq-secondary-button {
+  background-color: transparent;
+  color: #e5e7eb;
+  border: 1px solid #4b5563;
+}
+
+.mq-secondary-button:hover {
+  border-color: #22c55e;
+  color: #bbf7d0;
+}
+
+/* ---- MQ runner ---- */
+
+.mq-error {
+  color: #fecaca;
+  font-size: 0.9rem;
+}
+
+.mq-result-summary {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background-color: #022c22;
+  border: 1px solid #059669;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.mq-score {
+  font-weight: 600;
+}
+
+.mq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mq-item {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  background-color: #020617;
+}
+
+.mq-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.mq-item-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.mq-item-type {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.mq-item-prompt {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.mq-item-input {
+  margin-bottom: 8px;
+}
+
+.mq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mq-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.mq-option input {
+  margin-top: 2px;
+}
+
+.mq-option-key {
+  font-weight: 600;
+  min-width: 1.5rem;
+}
+
+.mq-textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  padding: 8px 10px;
+  background-color: #020617;
+  color: #f9fafb;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.mq-textarea:focus {
+  outline: 2px solid #22c55e;
+  outline-offset: 1px;
+}
+
+.mq-placeholder-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mq-placeholder-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.mq-placeholder-caption {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.mq-code-textarea {
+  font-family: Consolas, "Fira Code", "Source Code Pro", monospace;
+}
+
+.mq-item-feedback {
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.mq-item-feedback-correct {
+  background-color: #022c22;
+  border: 1px solid #059669;
+}
+
+.mq-item-feedback-incorrect {
+  background-color: #1f2937;
+  border: 1px solid #b91c1c;
+}
+
+.mq-item-feedback-score {
+  margin: 0 0 4px;
+}
+
+.mq-item-feedback-text {
+  margin: 0;
+}
+
+.mq-item-expected {
+  margin-top: 6px;
+}
+
+.mq-item-expected summary {
+  cursor: pointer;
+  color: #a5b4fc;
+}
+
+.mq-item-expected pre {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.mq-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
