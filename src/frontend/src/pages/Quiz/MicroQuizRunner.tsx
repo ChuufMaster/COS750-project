@@ -104,7 +104,7 @@ const MicroQuizRunner: React.FC = () => {
         setResult(null);
         setAnswers({});
         const resp = await axios.get<MicroQuiz>(
-          `http://127.0.0.1:8000/quiz/mq/${mqId}?shuffle=true`
+          `http://127.0.0.1:8000/quiz/mq/${mqId}?shuffle=false`
         );
         setMq(resp.data);
       } catch (e: any) {

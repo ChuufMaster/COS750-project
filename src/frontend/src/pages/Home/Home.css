@@ -162,3 +162,47 @@
 .home-note-list li + li {
   margin-top: 0.25rem;
 }
+
+.home-login {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 auto 24px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.home-login-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-login-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.home-login-input {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #f9fafb;
+  font-size: 0.95rem;
+}
+
+.home-login-input:focus {
+  outline: none;
+  border-color: #22c55e; /* green focus line */
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.5);
+}
+
+.home-login-hint {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
