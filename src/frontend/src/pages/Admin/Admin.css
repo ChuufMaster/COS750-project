@@ -287,3 +287,114 @@
   color: #bfdbfe;
   text-decoration: underline;
 }
+
+/* --- Fix compact recent attempts table --- */
+
+.admin-table-wrapper--compact {
+  margin-top: 1rem;
+  background-color: #020617;        /* dark card background */
+  border-radius: 12px;
+  padding: 0.75rem 0.75rem 0.25rem;
+}
+
+.admin-table.admin-table--compact {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Make header and body text properly visible */
+.admin-table--compact th,
+.admin-table--compact td {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.85rem;
+  color: #7ff4de;                   /* light gray text */
+}
+
+/* Row striping so lines are actually readable */
+.admin-table--compact tbody tr:nth-child(odd) {
+  background-color: #020617;
+}
+
+.admin-table--compact tbody tr:nth-child(even) {
+  background-color: #0b1120;
+}
+
+/* Optional: subtle hover so you can follow a row with your eye */
+.admin-table--compact tbody tr:hover {
+  background-color: #111827;
+}
+
+.admin-table--compact thead th {
+  background-color: #020617;        /* same as card background */
+  border-bottom: 1px solid #1f2937; /* subtle separator */
+  color: #f9fafb;                   /* bright text */
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  letter-spacing: 0.03em;
+}
+/* Header right-side (timestamp + back link) */
+.admin-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.admin-back-link {
+  font-size: 0.9rem;
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.admin-back-link:hover {
+  text-decoration: underline;
+}
+
+/* LO pill base */
+.admin-lo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* Gentle band colours (very light) */
+.admin-lo-pill--band1 {
+  background: rgba(59, 131, 246, 0.55);      /* blue */
+  color: #192e48;
+}
+
+.admin-lo-pill--band2 {
+  background: rgba(138, 92, 246, 0.493);     /* violet */
+  color: #192e48;
+}
+
+.admin-lo-pill--band3 {
+  background: rgba(16, 185, 129, 0.463);     /* teal/green */
+  color: #192e48;
+}
+
+.admin-lo-pill--band4 {
+  background: rgba(249, 116, 22, 0.502);     /* orange for LO24 */
+  color: #192e48;
+}
+
+/* Legend layout */
+.admin-lo-band-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.admin-lo-band-label {
+  opacity: 0.7;
+}

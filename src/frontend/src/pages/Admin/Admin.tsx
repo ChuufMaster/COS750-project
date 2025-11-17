@@ -1,7 +1,7 @@
 // src/pages/Admin/Admin.tsx
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";   // ⬅ add this
+import { Link } from "react-router-dom";
 import "./Admin.css";
 
 type AttemptRow = {
@@ -28,6 +28,15 @@ type LOStat = {
   totalMarksPossible: number;
   errorCounts: Record<string, number>;
 };
+
+type LoBand = "band1" | "band2" | "band3" | "band4";
+
+function getLoBand(loId: number): LoBand {
+  if (loId <= 9) return "band1";      // LO 1–9
+  if (loId <= 15) return "band2";     // LO 10–15
+  if (loId <= 23) return "band3";     // LO 16–23
+  return "band4";                     // LO 24
+}
 
 const Admin: React.FC = () => {
   const [data, setData] = useState<AttemptRow[]>([]);
@@ -57,7 +66,6 @@ const Admin: React.FC = () => {
   }, []);
 
   // ---- Derived aggregates ----
-
   const {
     loStats,
     distinctStudents,
@@ -119,11 +127,8 @@ const Admin: React.FC = () => {
   // Sort LOs by weakest pass rate first (for intervention)
   const sortedLoStats = useMemo(() => {
     return [...loStats].sort((a, b) => {
-      const passRateA =
-        a.attempts > 0 ? a.passCount / a.attempts : 1;
-      const passRateB =
-        b.attempts > 0 ? b.passCount / b.attempts : 1;
-      // ascending: weakest first
+      const passRateA = a.attempts > 0 ? a.passCount / a.attempts : 1;
+      const passRateB = b.attempts > 0 ? b.passCount / b.attempts : 1;
       return passRateA - passRateB;
     });
   }, [loStats]);
@@ -136,11 +141,7 @@ const Admin: React.FC = () => {
   return (
     <main className="admin-page semi-width">
       <header className="admin-header">
-        <div className="admin-header-main">
-          <Link to="/" className="admin-back-link">
-            ← Back to home
-          </Link>
-
+        <div>
           <p className="admin-kicker">Lecturer / Admin view</p>
           <h1 className="admin-title">Factory Method analytics</h1>
           <p className="admin-subtitle">
@@ -148,12 +149,15 @@ const Admin: React.FC = () => {
             see which concepts need intervention.
           </p>
         </div>
-
-        <p className="admin-updated">
-          Last updated: <span>{formattedLastUpdated}</span>
-        </p>
+        <div className="admin-header-right">
+          <p className="admin-updated">
+            Last updated: <span>{formattedLastUpdated}</span>
+          </p>
+          <Link to="/" className="admin-back-link">
+            ← Back to home
+          </Link>
+        </div>
       </header>
-
 
       {loading && <p>Loading analytics…</p>}
       {error && <p className="admin-error">{error}</p>}
@@ -199,12 +203,31 @@ const Admin: React.FC = () => {
           {/* LO-level difficulty table */}
           <section className="admin-section">
             <header className="admin-section-header">
-              <h2>Learning outcome overview</h2>
-              <p>
-                Sorted by weakest pass rate first. Use this to identify LOs
-                where students are struggling and might need targeted micro-lessons
-                or explanation.
-              </p>
+              <div>
+                <h2>Learning outcome overview</h2>
+                <p>
+                  Sorted by weakest pass rate first. Use this to identify LOs
+                  where students are struggling and might need targeted
+                  micro-lessons or explanation.
+                </p>
+              </div>
+
+              {/* Colour band legend */}
+              <div className="admin-lo-band-legend">
+                <span className="admin-lo-band-label">LO bands:</span>
+                <span className="admin-lo-pill admin-lo-pill--band1">
+                  LO 1–9
+                </span>
+                <span className="admin-lo-pill admin-lo-pill--band2">
+                  LO 10–15
+                </span>
+                <span className="admin-lo-pill admin-lo-pill--band3">
+                  LO 16–23
+                </span>
+                <span className="admin-lo-pill admin-lo-pill--band4">
+                  LO 24
+                </span>
+              </div>
             </header>
 
             <div className="admin-table-wrapper">
@@ -230,7 +253,6 @@ const Admin: React.FC = () => {
                           100
                         : 0;
 
-                    // find most frequent error_class
                     let topError = "—";
                     let topErrorCount = 0;
                     for (const [err, count] of Object.entries(
@@ -242,10 +264,14 @@ const Admin: React.FC = () => {
                       }
                     }
 
+                    const band = getLoBand(lo.loId);
+
                     return (
                       <tr key={lo.loId}>
                         <td>
-                          <span className="admin-lo-pill">
+                          <span
+                            className={`admin-lo-pill admin-lo-pill--${band}`}
+                          >
                             LO {lo.loId}
                           </span>
                         </td>
@@ -295,7 +321,7 @@ const Admin: React.FC = () => {
             </div>
           </section>
 
-          {/* Optional: recent raw rows for debugging / SE write-up */}
+          {/* Recent rows table */}
           <section className="admin-section">
             <header className="admin-section-header">
               <h2>Recent attempts (debug view)</h2>
@@ -336,7 +362,11 @@ const Admin: React.FC = () => {
                         <td>{row.student_id || "—"}</td>
                         <td>{row.mq_id}</td>
                         <td>{row.item_id}</td>
-                        <td>{row.lo_ids && row.lo_ids.length > 0 ? row.lo_ids.join(", ") : "—"}</td>
+                        <td>
+                          {row.lo_ids && row.lo_ids.length > 0
+                            ? row.lo_ids.join(", ")
+                            : "—"}
+                        </td>
                         <td>
                           {row.pass_fail === 1 ? (
                             <span className="admin-pass-pill">Pass</span>
