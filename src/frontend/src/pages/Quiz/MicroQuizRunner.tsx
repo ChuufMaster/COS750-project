@@ -55,6 +55,7 @@ type SubmitResult = {
 
 const SESSION_KEY = "fm-session-id";
 const ATTEMPT_KEY = "fm-mq-attempts";
+const STUDENT_KEY = "cos214_student_id"; // <-- same key as Home page
 
 function getOrCreateSessionId(): string {
   try {
@@ -69,7 +70,6 @@ function getOrCreateSessionId(): string {
     }
     return id;
   } catch {
-    // worst case – per-run anonymous id
     return `session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
   }
 }
@@ -95,6 +95,18 @@ const MicroQuizRunner: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<SubmitResult | null>(null);
+  const [studentId, setStudentId] = useState<string | null>(null); // <-- NEW
+
+  // Load student ID once
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(STUDENT_KEY) || "";
+      const trimmed = raw.trim();
+      setStudentId(trimmed.length > 0 ? trimmed : null);
+    } catch {
+      setStudentId(null);
+    }
+  }, []);
 
   useEffect(() => {
     if (!mqId) return;
@@ -106,7 +118,8 @@ const MicroQuizRunner: React.FC = () => {
         setResult(null);
         setAnswers({});
         const resp = await axios.get<MicroQuiz>(
-          `${API_URL}/quiz/mq/${mqId}?shuffle=true`,
+          `${API_URL}/quiz/mq/${mqId}?shuffle=false`,
+
         );
         setMq(resp.data);
       } catch (e: any) {
@@ -154,10 +167,20 @@ const MicroQuizRunner: React.FC = () => {
       const sessionId = getOrCreateSessionId();
       const attemptNumber = nextAttemptNumber(mq.id);
 
+      // Read student id again at submit time (in case they changed it and came back)
+      let storedId: string | null = null;
+      try {
+        const raw = window.localStorage.getItem(STUDENT_KEY) || "";
+        const trimmed = raw.trim();
+        storedId = trimmed.length > 0 ? trimmed : null;
+      } catch {
+        storedId = null;
+      }
+
       const payload = {
         session_id: sessionId,
         mq_id: mq.id,
-        student_id: null,
+        student_id: storedId, // ✅ now sent to backend
         attempt_number: attemptNumber,
         attempts: mq.items.map((item) => ({
           item_id: item.id,
@@ -174,7 +197,6 @@ const MicroQuizRunner: React.FC = () => {
         payload,
       );
       setResult(resp.data);
-      // Optional: scroll to top so they see the summary
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (e: any) {
       console.error(e);
@@ -197,6 +219,11 @@ const MicroQuizRunner: React.FC = () => {
           <h1 className="mq-title">
             {mq ? mq.title : mqId ? mqId.toUpperCase() : "Micro-quiz"}
           </h1>
+          {studentId && (
+            <p className="mq-student-tag">
+              Student: <strong>{studentId}</strong>
+            </p>
+          )}
         </div>
         {mq && <p className="mq-subtitle">{mq.desc}</p>}
         <div className="mq-header-actions">
@@ -211,7 +238,6 @@ const MicroQuizRunner: React.FC = () => {
 
       {mq && !loading && (
         <>
-          {/* Summary after submit */}
           {result && (
             <section className="mq-result-summary">
               <h2>
@@ -229,7 +255,6 @@ const MicroQuizRunner: React.FC = () => {
             </section>
           )}
 
-          {/* Items */}
           <section className="mq-items">
             {mq.items.map((item, index) => {
               const currentAnswer = answers[item.id];
@@ -262,7 +287,6 @@ const MicroQuizRunner: React.FC = () => {
 
                   <p className="mq-item-prompt">{item.prompt}</p>
 
-                  {/* Input controls */}
                   <div className="mq-item-input">
                     {item.type === "mcq_single" && item.options && (
                       <div className="mq-options">
@@ -373,7 +397,6 @@ const MicroQuizRunner: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Per-item feedback after submit */}
                   {itemResult && (
                     <footer
                       className={
@@ -405,7 +428,6 @@ const MicroQuizRunner: React.FC = () => {
             })}
           </section>
 
-          {/* Action buttons */}
           <section className="mq-actions">
             {!result && (
               <button
